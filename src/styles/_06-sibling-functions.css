@@ -1,0 +1,158 @@
+@layer speaker-talk {
+	@layer topics {
+		@layer sibling-functions {
+			/* Slide 2: Sibling Functions - Dynamic Circular Arrangement
+       Demonstrates sibling-index() and sibling-count() for positioning items
+       in a circle using pure CSS math and trigonometric functions */
+
+			/* Registered custom property for current element's angle position
+       Used to animate rotation as items expand/collapse in the circle */
+			@property --sibling-current-angle {
+				syntax: "<angle>";
+				initial-value: 0deg;
+				inherits: false;
+			}
+
+			/* Registered custom property for next element's angle position
+       Used for smooth mask transitions at circle boundaries */
+			@property --sibling-next-angle {
+				syntax: "<angle>";
+				initial-value: 0deg;
+				inherits: false;
+			}
+
+			/* Container for multiple sibling circles, displayed side-by-side */
+			.sibling-containers {
+				display: flex;
+				gap: 3rem;
+
+				inline-size: 100%;
+			}
+
+			/* Individual circle container that holds all sponsor logos */
+			.sibling-container {
+				/* Size of each logo in the circle */
+				--sibling-logo-size: 15rem;
+				/* Spacing gap between logos at circle perimeter */
+				--sibling-logo-gap: 1rem;
+
+				display: inline-grid;
+				place-content: center;
+				aspect-ratio: 1;
+				width: 50%;
+				/* Enable container queries for responsive radius calculation */
+				container-type: inline-size;
+				margin: 5px;
+			}
+
+			/* Individual sponsor logo positioned on circle perimeter */
+			.sibling-logo {
+				/* Arc angle per logo (accounts for logo size and gap)
+         Uses inverse sine to calculate angle subtended by each logo+gap at circle center */
+				--sibling-arc-angle: calc(
+					2 *
+					asin(
+						(var(--sibling-logo-size) + var(--sibling-logo-gap)) /
+						(2 * var(--sibling-circle-radius))
+					) -
+					1turn /
+					sibling-count()
+				);
+
+				/* Circle radius calculated responsively
+         Uses min() to clamp radius based on container size (cqw units)
+         Falls back to mathematical circle packing formula */
+				--sibling-circle-radius: min(
+					50cqw -
+					var(--sibling-logo-size) /
+					2,
+					(var(--sibling-logo-size) + var(--sibling-logo-gap)) /
+					(2 * sin(0.5turn / sibling-count()))
+				);
+
+				/* Current position angle on circle
+         Divides full rotation by sibling count to distribute items evenly
+         Includes optional offset (--sibling-expand-offset) for hover expand effect */
+				--sibling-current-angle: calc(
+					1turn *
+					sibling-index() /
+					sibling-count() +
+					var(--sibling-expand-offset, 0deg)
+				);
+
+				/* Next element's angle (for smooth mask transition at boundaries)
+         Used to create smooth visual transition between adjacent logos */
+				--sibling-next-angle: calc(
+					1turn *
+					(sibling-index() + 1) /
+					sibling-count() +
+					var(--sibling-next-expand-offset, 0deg)
+				);
+
+				grid-area: 1 / 1;
+				width: var(--sibling-logo-size);
+				aspect-ratio: 1;
+				border: 3px solid #fff;
+				border-radius: 50%;
+				padding: 1rem;
+				background: #000;
+				object-fit: contain;
+
+				/* Transform chain: rotate → translate to radius → counter-rotate
+         This positions element on circle while keeping image upright */
+				transform: rotate(calc(-1 * var(--sibling-current-angle)))
+					translate(var(--sibling-circle-radius))
+					rotate(var(--sibling-current-angle));
+
+				/* Smooth animation of position and next-angle on hover */
+				transition:
+					--sibling-current-angle 0.4s linear,
+					--sibling-next-angle 0.4s linear;
+
+				/* Radial mask creates smooth circle boundary without harsh edges
+         Uses trigonometric coordinates (cos/sin) to calculate mask gradient position
+         based on current and next element angles */
+				mask: radial-gradient(
+					50% 50% at
+						calc(
+							50% +
+							var(--sibling-circle-radius) *
+							(
+								cos(var(--sibling-next-angle)) -
+								cos(var(--sibling-current-angle))
+							)
+						)
+						calc(
+							50% +
+							var(--sibling-circle-radius) *
+							(
+								sin(var(--sibling-current-angle)) -
+								sin(var(--sibling-next-angle))
+							)
+						),
+					#fff0 calc(100% - 1px + var(--sibling-logo-gap)),
+					#fff calc(100% + var(--sibling-logo-gap))
+				);
+
+				cursor: pointer;
+			}
+
+			/* Expand all logos when hovering over the container
+       Sets larger offset angles so all items spread further apart */
+			.sibling-container:has(:hover) .sibling-logo {
+				--sibling-expand-offset: var(--sibling-arc-angle);
+				--sibling-next-expand-offset: var(--sibling-arc-angle);
+			}
+
+			/* Contract individual logo back to center when directly hovered
+       Resets offset to normal position while siblings remain expanded */
+			.sibling-container .sibling-logo:hover {
+				--sibling-expand-offset: 0deg;
+				box-shadow:
+					0 0 0 2px #000,
+					0 0 1.5rem 0.5rem rgba(0, 245, 255, 0.4),
+					0 0 2.5rem 1rem rgba(255, 149, 0, 0.2);
+			}
+		}
+	}
+}
