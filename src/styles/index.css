@@ -1,2 +1,16 @@
 @import "npm:@pixu-talks/fonts";
 @import "npm:@pixu-talks/theme";
+
+@import "_doodle.css";
+@import "_motion.css";
+
+/* Motion modules - per-slide animations and choreography */
+@import "_00-fps-basics.css";
+@import "_01-starting-style.css";
+@import "_02-architecture.css";
+@import "_03-performance.css";
+@import "_04-scroll-view-appearing.css";
+@import "_05-gaussian-curve.css";
+@import "_07-trigonometric-positioning.css";
+@import "_09-sibling-functions.css";
+@import "_10-tilt-layered-card.css";

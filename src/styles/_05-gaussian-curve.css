@@ -1,0 +1,148 @@
+@layer speaker-talk {
+	@layer topics {
+		@layer gaussian-curve {
+			/* Slide 3: Gaussian Curve - Pure CSS Bell Curve
+       Uses shape() for the curve and CSS math functions for runtime gaussian calculation.
+       No SVG, no JavaScript - sibling-index(), sibling-count(), exp(), pow() do the work. */
+
+			@property --logo-breath-scale {
+				syntax: "<number>";
+				initial-value: 1;
+				inherits: false;
+			}
+
+			@keyframes gaussian-breath {
+				0%,
+				100% {
+					--logo-breath-scale: 1;
+				}
+
+				50% {
+					--logo-breath-scale: 1.2;
+				}
+			}
+
+			.gaussian-container {
+				--curve-width: 90%;
+				--curve-height: 35rem;
+				--logo-size: 12rem;
+
+				/* Gaussian parameters: μ = 50 (center), σ = 18 (spread) */
+				--mu: 50;
+				--sigma: 18;
+
+				position: relative;
+				width: var(--curve-width);
+				height: calc(var(--curve-height) + var(--logo-size) + 2.5rem);
+				margin: 2rem auto 0;
+			}
+
+			/* Curve background with shape() function
+       Gaussian formula computed at runtime: f(x) = e^(-(x-μ)²/(2σ²))
+       shape() draws the bell curve using move/line commands with calc()
+       16 points matching exactly the logo positions: (i-1)/15*100 */
+			.gaussian-curve-bg {
+				position: absolute;
+				inset: 0 0 1.5rem;
+			}
+
+			/* Curve outline via pseudo-element */
+			.gaussian-curve-bg::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-bottom: 1px solid #00f5ff;
+			}
+
+			/* Mean line (μ) */
+			.gaussian-mean-line {
+				position: absolute;
+				left: 50%;
+				bottom: 2.5rem;
+				width: 2px;
+				height: var(--curve-height);
+				background: repeating-linear-gradient(
+					to top,
+					#ff9500 0 4px,
+					transparent 4px 8px
+				);
+				opacity: 0.6;
+				transform: translateX(-50%);
+			}
+
+			/* Logos container */
+			.gaussian-logos {
+				position: absolute;
+				inset: 0 0 5rem;
+				margin: 0;
+				padding: 0;
+			}
+
+			/* Individual logo - uses sibling-index() and sibling-count() for dynamic positioning
+       Gaussian y-value computed at runtime using the same formula as the curve shape */
+			.gaussian-logo {
+				/* Calculate x position as percentage (0 to 100) based on index
+         sibling-index() is 1-based, so subtract 1 for 0-based positioning */
+				--x-percent: calc((sibling-index() - 1) / (sibling-count() - 1) * 100);
+
+				/* Calculate gaussian y-value at runtime: f(x) = e^(-(x-μ)²/(2σ²)) */
+				--gaussian-y: exp(
+					calc(
+						-1 *
+						pow(var(--x-percent) - var(--mu), 2) /
+						(2 * pow(var(--sigma), 2))
+					)
+				);
+
+				position: absolute;
+				left: calc(var(--x-percent) * 1%);
+				bottom: calc(var(--gaussian-y) * var(--curve-height));
+				width: var(--logo-size);
+				height: var(--logo-size);
+				transform: translate(-50%, 50%)
+					scale(
+						calc((0.7 + var(--gaussian-y) * 0.3) * var(--logo-breath-scale, 1))
+					);
+				animation: gaussian-breath 4s linear infinite;
+				animation-delay: calc((sibling-index() - 1) * 0.5s);
+				animation-fill-mode: both;
+
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					border-radius: 50%;
+					border: 2px solid rgba(0, 245, 255, 0.5);
+					box-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+					background: #1a1a2e;
+				}
+			}
+
+			/* Axis labels */
+			.gaussian-label {
+				position: absolute;
+				bottom: 0;
+				font-size: 1.5rem;
+				color: var(--text-color, #e0e6ed);
+				opacity: 0.7;
+			}
+
+			.gaussian-label--left {
+				left: 0;
+			}
+
+			.gaussian-label--center {
+				left: 50%;
+				transform: translateX(-50%);
+				font-weight: bold;
+				opacity: 1;
+				color: #ff9500;
+			}
+
+			.gaussian-label--right {
+				right: 0;
+			}
+		}
+	}
+}

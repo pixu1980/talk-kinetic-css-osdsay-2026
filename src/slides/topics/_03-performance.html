@@ -1,0 +1,46 @@
+<!-- Slide 23: Performance -->
+<!-- Speaker notes: Motion without jank. Understanding what triggers layout, paint, and composite helps you ship smooth animations. -->
+<section data-topic="performance" data-menu-title="Performance">
+  <h3>Performance</h3>
+  <small balance>A set of CSS properties to know what triggers layout, paint, and composition.</small>
+  <div class="perf-grid">
+    <div class="perf-card perf-good fragment">
+      <strong>Composition</strong>
+      <ul>
+        <li><code>transform</code></li>
+        <li><code>opacity</code></li>
+        <li><code>filter</code> (GPU)</li>
+        <li><code>clip-path</code> (simple)</li>
+      </ul>
+      <span class="perf-badge">60fps</span>
+    </div>
+    <div class="perf-card perf-warn fragment">
+      <strong>Paint</strong>
+      <ul>
+        <li><code>background</code></li>
+        <li><code>color</code></li>
+        <li><code>box-shadow</code></li>
+        <li><code>border-radius</code></li>
+      </ul>
+      <span class="perf-badge">Careful</span>
+    </div>
+    <div class="perf-card perf-bad fragment">
+      <strong>Layout</strong>
+      <ul>
+        <li><code>width</code>, <code>height</code></li>
+        <li><code>margin</code>, <code>padding</code></li>
+        <li><code>top</code>, <code>left</code></li>
+        <li><code>font-size</code></li>
+      </ul>
+      <span class="perf-badge">At your own risk</span>
+    </div>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>Stick to transform and opacity for silky animations</li>
+      <li>will-change hints the browser but overuse hurts memory</li>
+      <li>Use DevTools Performance panel to profile</li>
+      <li>content-visibility can help with off-screen elements</li>
+    </ul>
+  </aside>
+</section>

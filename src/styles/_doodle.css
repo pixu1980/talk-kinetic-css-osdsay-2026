@@ -1,0 +1,160 @@
+/* Doodle CSS - Fresh start */
+@property --doodle-hue {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 210;
+}
+
+@layer speaker-talk {
+	@layer doodle {
+		/* Animatable hue property for color cycling */
+
+		/* Center the slide */
+		section[intro] {
+			display: grid;
+			place-items: center;
+			height: 100%;
+			min-block-size: 40rem;
+		}
+
+		/* Stage (16:9, centered) */
+		.stage {
+			--doodle-orbit-inner-size: 25rem;
+			--doodle-orbit-middle-size: 31rem;
+			--doodle-orbit-outer-size: 37rem;
+			--doodle-orbit-fourth-size: 43rem;
+			--doodle-orbit-fifth-size: 49rem;
+			--doodle-title-x: 50%;
+			--doodle-title-y: 50%;
+			--doodle-title-offset: 1rem;
+
+			--doodle-hue: 210; /* Hue variable for animation */
+
+			position: relative;
+			width: 90%;
+			height: 80%;
+			margin: 5rem auto auto; /* Center the stage with a bit more headroom */
+
+			overflow: visible;
+		}
+
+		/* Animate hue cycling */
+		@keyframes hue-cycle {
+			to {
+				--doodle-hue: 570; /* Full cycle + 210 = 360 + 210 */
+			}
+		}
+
+		.stage {
+			animation: hue-cycle 6s linear infinite;
+		}
+
+		/* System container */
+		.system {
+			position: absolute;
+			inset: 0;
+			display: grid;
+			place-items: center;
+		}
+
+		/* Title with anchor positioning */
+		.title {
+			margin: 0;
+			font-size: clamp(3rem, 7vw, 6.2rem);
+			line-height: 1;
+			display: grid;
+			place-items: center;
+			text-align: center;
+			background: linear-gradient(
+				90deg,
+				oklch(0.75 0.2 calc(var(--doodle-hue) * 1deg)),
+				oklch(0.75 0.2 calc((var(--doodle-hue) + 60) * 1deg)),
+				oklch(0.75 0.2 calc((var(--doodle-hue) + 120) * 1deg))
+			);
+			background-clip: text;
+			color: transparent;
+			filter: drop-shadow(0 2px 6px hsl(0 0% 0% / 0.35));
+			cursor: grab;
+			user-select: none;
+			touch-action: none;
+			position: absolute;
+			left: var(--doodle-title-x, 50%);
+			top: var(--doodle-title-y, 50%);
+			transform: translate(-50%, -50%);
+			white-space: nowrap;
+		}
+
+		.title:active {
+			cursor: grabbing;
+		}
+
+		.title:focus-visible {
+			outline: 2px dashed oklch(0.7 0.15 calc(var(--doodle-hue) * 1deg) / 0.8);
+			outline-offset: 6px;
+		}
+
+		/* Three concentric orbital rings */
+		.orbit {
+			position: absolute;
+			border-radius: 50%;
+			border-width: var(--doodle-orbit-thickness, 2px);
+			border-style: solid;
+			border-color: oklch(
+				0.7 0.15 calc(var(--doodle-hue) * 1deg) /
+				calc(0.3 + var(--doodle-orbit-opacity, 0))
+			);
+			pointer-events: none;
+			/* Orbits read these values; JS controls the trailing motion */
+			left: var(--doodle-orbit-x, var(--doodle-title-x, 50%));
+			top: var(--doodle-orbit-y, var(--doodle-title-y, 50%));
+			/* Transform with configurable rotation */
+			transform-origin: center;
+			transform: translate(-50%, -50%) rotateZ(var(--doodle-orbit-rotate, 0deg));
+		}
+
+		.orbit--inner {
+			--doodle-orbit-opacity: 0.1;
+			--doodle-orbit-thickness: 3px;
+			--doodle-orbit-rotate: 5deg;
+
+			width: var(--doodle-orbit-inner-size);
+			height: var(--doodle-orbit-inner-size);
+		}
+
+		.orbit--middle {
+			--doodle-orbit-opacity: 0.15;
+			--doodle-orbit-thickness: 4px;
+			--doodle-orbit-rotate: 10deg;
+
+			width: var(--doodle-orbit-middle-size);
+			height: var(--doodle-orbit-middle-size);
+		}
+
+		.orbit--outer {
+			--doodle-orbit-opacity: 0.2;
+			--doodle-orbit-thickness: 5px;
+			--doodle-orbit-rotate: 15deg;
+
+			width: var(--doodle-orbit-outer-size);
+			height: var(--doodle-orbit-outer-size);
+		}
+
+		.orbit--fourth {
+			--doodle-orbit-opacity: 0.25;
+			--doodle-orbit-thickness: 5px;
+			--doodle-orbit-rotate: 22deg;
+
+			width: var(--doodle-orbit-fourth-size);
+			height: var(--doodle-orbit-fourth-size);
+		}
+
+		.orbit--fifth {
+			--doodle-orbit-opacity: 0.3;
+			--doodle-orbit-thickness: 6px;
+			--doodle-orbit-rotate: 28deg;
+
+			width: var(--doodle-orbit-fifth-size);
+			height: var(--doodle-orbit-fifth-size);
+		}
+	}
+}

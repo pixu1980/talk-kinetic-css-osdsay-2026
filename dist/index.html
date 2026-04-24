@@ -1,15 +1,27 @@
-<!DOCTYPE html><html lang="it"><head>
+<!DOCTYPE html><html lang="it"><head><script type="importmap">{"imports":{"RUhTQ":"/talk-kinetic-css-osdsay-2026.dd61bbfa.js","pTTrj":"/talk-kinetic-css-osdsay-2026.df678803.js"}}</script><script type="module" src="/talk-kinetic-css-osdsay-2026.dd61bbfa.js"></script><script type="module" src="/talk-kinetic-css-osdsay-2026.df678803.js"></script>
     <meta charset="utf-8">
-    <title>Talk Title</title>
+    <title>Kinetic CSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="talk-template.ee5fb5fc.css">
+    <link rel="stylesheet" href="/talk-kinetic-css-osdsay-2026.ebeadb08.css">
   </head>
   <body>
     <main class="reveal">
       <div class="slides">
-        <section intro="">
-  <h2>This slide acts like a doodle visually resuming the talk</h2>
+        <section intro="" aria-label="Kinetic CSS visual intro">
+  <figure class="stage" role="figure" aria-label="Radial animation with CSS only">
+    <div class="system" role="img">
+      <div class="orbit orbit--inner" aria-hidden="true"></div>
+      <div class="orbit orbit--middle" aria-hidden="true"></div>
+      <div class="orbit orbit--outer" aria-hidden="true"></div>
+      <div class="orbit orbit--fourth" aria-hidden="true"></div>
+      <div class="orbit orbit--fifth" aria-hidden="true"></div>
+      <h1 class="title" role="button" aria-label="Drag Kinetic CSS" tabindex="0" style="white-space: nowrap">
+        Kinetic CSS<br>
+        <small>OSDay26 Edition</small>
+      </h1>
+    </div>
+  </figure>
 </section>
 
 <section>
@@ -18,8 +30,8 @@
       <left>
         <figure>
           <picture>
-            <source srcset="pixu.ea6d4c65.webp" type="image/webp">
-            <img src="pixu.06482de6.jpg" alt="Pixu">
+            <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
+            <img src="/pixu.8cd71433.jpg" alt="Pixu">
           </picture>
         </figure>
         <h3>Emiliano <mark>Pisu</mark></h3>
@@ -35,31 +47,31 @@
       </left>
       <right class="fragment">
         <h6>
-          <img src="linkedin.51093a7b.svg" alt="pixu1980@linkedin">
+          <img src="/linkedin.1b8d1573.svg" alt="pixu1980@linkedin">
           linkedin.com/in/pixu1980
         </h6>
         <h6>
-          <img src="github.21123c11.svg" alt="pixu1980@github">
+          <img src="/github.dd65c88f.svg" alt="pixu1980@github">
           github.com/pixu1980
         </h6>
         <h6>
-          <img src="codepen.4a2f346e.svg" alt="pixu1980@codepen">
+          <img src="/codepen.1d70fbe2.svg" alt="pixu1980@codepen">
           codepen.io/pixu1980
         </h6>
         <h6>
-          <img src="linkedin.51093a7b.svg" alt="devdojo@linkedin">
+          <img src="/linkedin.1b8d1573.svg" alt="devdojo@linkedin">
           linkedin.com/company/dev-dojo-it/
         </h6>
         <h6>
-          <img src="youtube.4857fd9d.svg" alt="devdojo@youtube">
+          <img src="/youtube.33d88a05.svg" alt="devdojo@youtube">
           youtube.com/@devdojo_it
         </h6>
         <h6>
-          <img src="twitch.3c1587e7.svg" alt="devdojo@twitch">
+          <img src="/twitch.b8c97bdd.svg" alt="devdojo@twitch">
           twitch.tv/devdojo_it
         </h6>
         <h6>
-          <img src="telegram.6f39ff43.svg" alt="devdojo@telegram">
+          <img src="/telegram.baf0a86a.svg" alt="devdojo@telegram">
           @devdojo_it
         </h6>
       </right>
@@ -69,10 +81,10 @@
 
 <section>
   <section>
-    <h4>Here goes the <mark>main</mark> topic title</h4>
+    <h4 balance="">Modern CSS <mark>motion</mark> APIs for choreography without JavaScript</h4>
   </section>
   <section>
-    <h4>Here goes the main topic description</h4>
+    <p balance="">A <mark>fast tour</mark> through the new CSS primitives that power <mark>transitions</mark>, <mark>timelines</mark>, and <mark>reactive motion</mark>.</p>
   </section>
 </section>
 
@@ -82,13 +94,17 @@
     <h4>What are we going to <br><mark>talk about</mark> today?</h4>
   </section>
   <section>
-    <h4>Topic Name</h4>
+    <h4>Agenda</h4>
     <small>
       <ul>
-        <li class="fragment">argument 1</li>
-        <li class="fragment">argument 2</li>
-        <li class="fragment">argument 3</li>
-        <li class="fragment">argument 4</li>
+        <li class="fragment"><mark>@starting-style</mark> for entry animations</li>
+        <li class="fragment">A motion architecture blueprint</li>
+        <li class="fragment">Performance rules for smooth motion</li>
+        <li class="fragment">Scroll driven reveals with <mark>animation-timeline: view()</mark></li>
+        <li class="fragment">A gaussian curve with <mark>exp()</mark> and <mark>pow()</mark></li>
+        <li class="fragment"><mark>sibling-index()</mark> and <mark>sibling-count()</mark> for layout math</li>
+        <li class="fragment">Trigonometric positioning with <mark>sin()</mark></li>
+        <li class="fragment">A layered tilt card (pointer driven 3D)</li>
       </ul>
     </small>
   </section>
@@ -109,52 +125,1265 @@
 
 
 <section>
-  <!-- Here goes the talk slides -->
+  <section data-menu-title="FPS Basics">
+    <h3>What are FPS?</h3>
+    <small balance="">FPS means <mark>frames per second</mark>: how many complete images the browser can present every second.</small>
+    <div class="fps-card-grid" aria-label="Frame rates from 24 to 120 frames per second">
+      <article class="fps-card">
+        <strong>24fps</strong>
+        <small>cinema cadence</small>
+      </article>
+      <article class="fps-card">
+        <strong>30fps</strong>
+        <small>feels acceptable, not snappy</small>
+      </article>
+      <article class="fps-card fps-card--focus">
+        <strong>60fps</strong>
+        <small>baseline for fluid UI</small>
+      </article>
+      <article class="fps-card">
+        <strong>120fps</strong>
+        <small>same rules, half budget</small>
+      </article>
+    </div>
+  </section>
+  <section data-menu-title="Event Loop + Frame Budget">
+    <h3>A <mark>60Hz screen</mark> gives <mark>16.67ms</mark></h3>
+    <small balance="">
+      A <mark>60Hz display</mark> refreshes 60 times per second, so one frame slot is <mark>1000 / 60 = 16.67ms</mark>. Miss that slot and the browser shows the previous frame again. On
+      <mark>120Hz</mark>, the budget drops to <mark>8.33ms</mark>.
+    </small>
+  </section>
+  <section data-menu-title="Event Loop + Frame Budget">
+    <h3 balance=""><mark>Before rendering</mark> pixels, event loop <mark>gets a turn</mark></h3>
+    <small balance="" class="fragment">
+      The browser event loop <mark>runs</mark> a task, <mark>flushes</mark> microtasks, then gives <mark>rendering</mark> a chance. If your code overstays, <mark>the next frame waits</mark>.
+    </small>
+    <div class="event-loop-flow" role="img" aria-label="Task queue, microtasks, requestAnimationFrame, and rendering steps">
+      <article class="loop-card fragment">
+        <strong>Task queue</strong>
+        <small>input, timers, event handlers</small>
+      </article>
+      <article class="loop-card fragment">
+        <strong>Microtasks</strong>
+        <small>promises, MutationObserver</small>
+      </article>
+      <article class="loop-card fragment">
+        <strong>requestAnimationFrame</strong>
+        <small>last safe JavaScript before render</small>
+      </article>
+      <article class="loop-card fragment">
+        <strong>Render work</strong>
+        <small>style, layout, paint, composition</small>
+      </article>
+    </div>
+  </section>
+  <section data-menu-title="FPS Basics">
+    <h3>What does <mark>60fps</mark> mean?</h3>
+    <small balance="">It means delivering <mark>60 fresh frames every second</mark>. When you miss one slot, browser repeats previous frame and motion instantly feels late.</small>
+    <div class="fps-demo" data-fps-demo="">
+      <div class="fps-demo-stage">
+        <div class="fps-demo-screen">
+          <div class="fps-demo-guide" aria-hidden="true">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+          <div class="fps-demo-scene" data-fps-preview="" role="img" aria-label="A CSS comet animation sampled across the timeline"></div>
+        </div>
+        <p class="fps-demo-status" aria-live="polite">
+          <strong data-fps-status-rate="">60fps</strong>
+          <span data-fps-status-budget="">16.67ms per frame</span>
+        </p>
+      </div>
+
+      <div class="fps-demo-controls" role="group" aria-label="Animation sampling controls">
+        <label class="fps-demo-control">
+          <span>Timeline position</span>
+          <input type="range" min="0" max="100" step="0.1" value="0" data-fps-position="" aria-label="Animation position from zero to one hundred percent">
+          <output data-fps-position-output="">0.0%</output>
+        </label>
+
+        <label class="fps-demo-control">
+          <span>Throttle to FPS</span>
+          <input type="range" min="12" max="120" step="6" value="60" data-fps-rate="" aria-label="Target frames per second for the sampled playback">
+          <output data-fps-rate-output="">60fps</output>
+        </label>
+
+        <button class="fps-demo-play" type="button" data-fps-play="" aria-pressed="false">Play image</button>
+      </div>
+
+      <div class="fps-cadence" aria-label="Six sampled frames from the same CSS animation">
+        <article class="fps-frame" data-fps-frame="">
+          <div class="fps-frame-scene"></div>
+          <strong>frame 1</strong>
+          <small data-fps-frame-progress="">0.0%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame="">
+          <div class="fps-frame-scene"></div>
+          <strong>frame 2</strong>
+          <small data-fps-frame-progress="">1.7%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame="">
+          <div class="fps-frame-scene"></div>
+          <strong>frame 3</strong>
+          <small data-fps-frame-progress="">3.3%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame="">
+          <div class="fps-frame-scene"></div>
+          <strong>frame 4</strong>
+          <small data-fps-frame-progress="">5.0%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame="">
+          <div class="fps-frame-scene"></div>
+          <strong>frame 5</strong>
+          <small data-fps-frame-progress="">6.7%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame="">
+          <div class="fps-frame-scene"></div>
+          <strong>frame 6</strong>
+          <small data-fps-frame-progress="">8.3%</small>
+        </article>
+      </div>
+    </div>
+    <p class="fps-basics-note">Scrub the CSS motion, lower the FPS, then open Performance Monitor and watch the cadence change in the overlay.</p>
+  </section>
 </section>
 
 <section>
+  <h3>Demo <mark>Time</mark></h3>
+</section>
+<!-- Slide 5: Sponsors Grid Initial Entrance -->
+<!-- Speaker notes: All sponsor logos enter with staggered @starting-style. Each logo has a CSS variable --i for delay. -->
+<section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <h4>Starting with Our <mark>Sponsors</mark></h4>
+  </section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <div class="sponsor-logo-container">
+      <img style="--i: 0" src="/altum-host.9838337b.svg" alt="Altum Host" class="sponsor-logo">
+      <img style="--i: 1" src="/cursor.a491d13b.svg" alt="Cursor" class="sponsor-logo">
+      <img style="--i: 2" src="/elastic.4e977806.svg" alt="Elastic" invert="" class="sponsor-logo">
+      <img style="--i: 3" src="/immobiliare-labs.9b59b7ff.svg" alt="Immobiliare Labs" invert="" class="sponsor-logo">
+      <img style="--i: 4" src="/krateo-platformops.369c3378.svg" alt="Krateo PlatformOps" class="sponsor-logo">
+      <img style="--i: 5" src="/nephila.b30d2e7b.svg" alt="Nephila" invert="" class="sponsor-logo">
+      <img style="--i: 6" src="/only-office.e7d853cb.svg" alt="Only Office" class="sponsor-logo">
+      <img style="--i: 7" src="/red-carbon.e73bad37.svg" alt="Red Carbon" invert="" class="sponsor-logo">
+      <img style="--i: 8" src="/schrodinger-hat.f316fd2f.svg" alt="Schrödinger Hat" invert="" class="sponsor-logo">
+      <img style="--i: 9" src="/seeweb.21650517.svg" alt="Seeweb" invert="" class="sponsor-logo">
+      <img style="--i: 10" src="/the-social-hub.d5e1e4ba.svg" alt="The Social Hub" class="sponsor-logo">
+      <img style="--i: 11" src="/welyk.507d84e9.svg" alt="Welyk" invert="" class="sponsor-logo">
+    </div>
+  </section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <small balance="">A staggered entrance animation done with <mark>@starting-style</mark> and a simple per-item delay based on <mark>sibling-index()</mark> with a custom property fallback.</small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|2|20-23|13-14|16-18|25-28|30-40">
+.sponsor-logo-container {
+  --stagger-base: 0.25s;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  
+  ...
+}
+
+.sponsor-logo {
+  ...
+  
+  opacity: 1;
+  transform: scale(1) translateY(0);
+
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.5) translateY(40px);
+  }
+
+  @supports (--index: calc(sibling-index() * 1s)) {
+    transition-delay: 
+      calc(sibling-index() * var(--stagger-base));
+  }
+
+  @supports not (--index: calc(sibling-index() * 1s)) {
+    /*
+      Fallback: explicit --i on elements 
+      (or via nth-child rules elsewhere).
+    */
+    transition-delay: 
+      calc((var(--i, 0) + 1) * var(--stagger-base));
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>Roll call: logos arrive in waves, like an impulse traveling left to right</li>
+        <li>Each logo has a micro tilt and settle, so the grid feels alive but not chaotic</li>
+        <li>The stagger uses --i for delay calculation: 80ms between each logo</li>
+        <li>@starting-style handles the initial hidden state</li>
+        <li>API focus: grid layout, :nth-child for stagger, @starting-style</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <h4><mark>@starting-style</mark></h4>
+    <small balance="">
+      Entry animations without JS are finally possible thanks to <mark>@starting-style</mark> at-rule: the CSS selector defines a starting style, then transitions it to the <mark>normal styles</mark>.
+    </small>
+    <baseline-status featureid="starting-style"></baseline-status>
+  </section>
+</section>
+
+<!-- Slide 22: Architecture -->
+<!-- Speaker notes: This slide summarizes how CSS motion APIs layer together. Think of it as the blueprint for a motion design system. -->
+<section data-topic="architecture" data-menu-title="Architecture">
+  <h3>Motion Architecture</h3>
+  <small balance="">A "blueprint" about how CSS motion APIs layer together into a coherent system.</small>
+  <div class="architecture-diagram">
+    <div class="arch-layer fragment" style="--layer: 0">
+      <strong>Foundation</strong>
+      <span>@property, Custom Properties, Design Tokens</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 1">
+      <strong>Primitives</strong>
+      <span>translate, scale, rotate, offset-path, filter</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 2">
+      <strong>Triggers</strong>
+      <span>:hover, :focus, @starting-style, scroll(), view()</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 3">
+      <strong>Composition</strong>
+      <span>animation-composition, View Transitions, timeline ranges</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 4">
+      <strong>Guardians</strong>
+      <span>prefers-reduced-motion, container queries, @supports</span>
+    </div>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>Foundation: typed variables for interpolation</li>
+      <li>Primitives: the transform and filter building blocks</li>
+      <li>Triggers: what starts the motion</li>
+      <li>Composition: layering and sequencing</li>
+      <li>Guardians: accessibility and progressive enhancement</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- Slide 23: Performance -->
+<!-- Speaker notes: Motion without jank. Understanding what triggers layout, paint, and composite helps you ship smooth animations. -->
+<section data-topic="performance" data-menu-title="Performance">
+  <h3>Performance</h3>
+  <small balance="">A set of CSS properties to know what triggers layout, paint, and composition.</small>
+  <div class="perf-grid">
+    <div class="perf-card perf-good fragment">
+      <strong>Composition</strong>
+      <ul>
+        <li><code>transform</code></li>
+        <li><code>opacity</code></li>
+        <li><code>filter</code> (GPU)</li>
+        <li><code>clip-path</code> (simple)</li>
+      </ul>
+      <span class="perf-badge">60fps</span>
+    </div>
+    <div class="perf-card perf-warn fragment">
+      <strong>Paint</strong>
+      <ul>
+        <li><code>background</code></li>
+        <li><code>color</code></li>
+        <li><code>box-shadow</code></li>
+        <li><code>border-radius</code></li>
+      </ul>
+      <span class="perf-badge">Careful</span>
+    </div>
+    <div class="perf-card perf-bad fragment">
+      <strong>Layout</strong>
+      <ul>
+        <li><code>width</code>, <code>height</code></li>
+        <li><code>margin</code>, <code>padding</code></li>
+        <li><code>top</code>, <code>left</code></li>
+        <li><code>font-size</code></li>
+      </ul>
+      <span class="perf-badge">At your own risk</span>
+    </div>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>Stick to transform and opacity for silky animations</li>
+      <li>will-change hints the browser but overuse hurts memory</li>
+      <li>Use DevTools Performance panel to profile</li>
+      <li>content-visibility can help with off-screen elements</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- Slide: Scroll View Appearing Animation -->
+<!-- Speaker notes: Demonstrates scroll-driven animations that make elements appear as they enter the viewport. Using animation-timeline: view() for smooth, performance-optimized reveal animations. -->
+<section>
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <h4 balance="">
+      <mark>Scroll-driven</mark> Container <br>
+      with Appearing <del>Cards</del>&nbsp;<mark>Logos</mark>
+    </h4>
+  </section>
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <div class="scroll-view-container">
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/altum-host.9838337b.svg" alt="Altum Host" loading="lazy">
+          <h5>Altum Host</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/cursor.a491d13b.svg" alt="Cursor" loading="lazy">
+          <h5>Cursor</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/elastic.4e977806.svg" alt="Elastic" loading="lazy">
+          <h5>Elastic</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/immobiliare-labs.9b59b7ff.svg" alt="Immobiliare Labs" loading="lazy">
+          <h5>Immobiliare Labs</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/krateo-platformops.369c3378.svg" alt="Krateo PlatformOps" loading="lazy">
+          <h5>Krateo PlatformOps</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/nephila.b30d2e7b.svg" alt="Nephila" loading="lazy">
+          <h5>Nephila</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/only-office.e7d853cb.svg" alt="Only Office" loading="lazy">
+          <h5>Only Office</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/red-carbon.e73bad37.svg" alt="Red Carbon" loading="lazy">
+          <h5>Red Carbon</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/schrodinger-hat.f316fd2f.svg" alt="Schrödinger Hat" loading="lazy">
+          <h5>Schrödinger Hat</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/seeweb.21650517.svg" alt="Seeweb" loading="lazy">
+          <h5>Seeweb</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/the-social-hub.d5e1e4ba.svg" alt="The Social Hub" loading="lazy">
+          <h5>The Social Hub</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="/welyk.507d84e9.svg" alt="Welyk" loading="lazy">
+          <h5>Welyk</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <small balance=""> Using <mark>animation-timeline: view()</mark> to drive reveal animations based on viewport intersection. </small>
+    <pre><code class="hljs css" data-trim="" data-line-numbers="|2-10|14-19|21-35">
+@supports (animation-timeline: view(inline)) {
+  .scroll-view-card {
+    animation: reveal-and-elevate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+    /* Precise control over animation range */
+    animation-range:
+      entry 35% /* start after element enters from right by its 35% */
+      cover 70%; /* end 70% through cover phase */
+
+    animation-timeline: view(inline);
+  }
+}
+
+@supports not (animation-timeline: view(inline)) {
+  .scroll-view-card {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes reveal-and-elevate {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(8rem);
+    filter: blur(8px);
+  }
+
+  50% { filter: blur(4px); }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+    </code></pre>
+    <aside class="notes">
+      animation-timeline: view(inline) ties the animation to the element's position in a horizontal scroll viewport. entry 0% means the animation starts as soon as the element enters the viewport.
+      cover 30% means it reaches its final state after traversing 30% of the viewport. This ensures elements reveal quickly as they scroll into view.
+    </aside>
+  </section>
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <h3><mark>scroll-driven</mark> Animations</h3>
+    <small balance="">
+      The animation-timeline, scroll-timeline, and view-timeline CSS properties advance animations based on the user's scroll position. Here using <mark>animation-timeline: view(inline)</mark> for
+      native scroll-driven effects, no JavaScript required.
+    </small>
+    <baseline-status featureid="scroll-driven-animations"></baseline-status>
+  </section>
+</section>
+
+<!-- Slide: Gaussian Curve - Sponsors on a Bell Curve -->
+<!-- Speaker notes: Demonstrates positioning elements along a gaussian distribution curve using pure CSS custom properties and clip-path. No SVG, no JavaScript. -->
+<section>
+  <section data-topic="gaussian-curve" data-menu-title="Gaussian Curve">
+    <h4 balance="">
+      Gaussian-like Curve with our<br>
+      "breathing" <mark>16 Sponsors</mark>
+    </h4>
+  </section>
+  <section data-topic="gaussian-curve" data-menu-title="Gaussian Curve">
+    <figure class="gaussian-container" role="img" aria-label="Gaussian curve with sponsors positioned along the bell curve">
+      <!-- Curve background with clip-path -->
+      <div class="gaussian-curve-bg"></div>
+      <!-- Mean line -->
+      <div class="gaussian-mean-line"></div>
+      <!-- Logo positions computed at runtime using sibling-index(), sibling-count(), exp(), pow() -->
+      <div class="gaussian-logos">
+        <div class="gaussian-logo" aria-label="Altum Host">
+          <img src="/altum-host.9838337b.svg" alt="Altum Host" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Cursor">
+          <img src="/cursor.a491d13b.svg" alt="Cursor" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Elastic">
+          <img src="/elastic.4e977806.svg" alt="Elastic" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Immobiliare Labs">
+          <img src="/immobiliare-labs.9b59b7ff.svg" alt="Immobiliare Labs" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Krateo PlatformOps">
+          <img src="/krateo-platformops.369c3378.svg" alt="Krateo PlatformOps" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Nephila">
+          <img src="/nephila.b30d2e7b.svg" alt="Nephila" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Only Office">
+          <img src="/only-office.e7d853cb.svg" alt="Only Office" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Red Carbon">
+          <img src="/red-carbon.e73bad37.svg" alt="Red Carbon" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Schrödinger Hat">
+          <img src="/schrodinger-hat.f316fd2f.svg" alt="Schrödinger Hat" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Seeweb">
+          <img src="/seeweb.21650517.svg" alt="Seeweb" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="The Social Hub">
+          <img src="/the-social-hub.d5e1e4ba.svg" alt="The Social Hub" loading="lazy">
+        </div>
+        <div class="gaussian-logo" aria-label="Welyk">
+          <img src="/welyk.507d84e9.svg" alt="Welyk" loading="lazy">
+        </div>
+      </div>
+      <!-- Axis labels -->
+      <span class="gaussian-label gaussian-label--left">-3σ</span>
+      <span class="gaussian-label gaussian-label--center">μ</span>
+      <span class="gaussian-label gaussian-label--right">+3σ</span>
+    </figure>
+  </section>
+  <section data-topic="gaussian-curve" data-menu-title="Gaussian Curve">
+    <small balance=""> Runtime gaussian calculation using <mark>sibling-index()</mark>, <mark>sibling-count()</mark>, <mark>exp()</mark>, and <mark>pow()</mark>. </small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|6-8|18-23|30-35">
+.gaussian-container {
+  --curve-width: 90%;
+  --curve-height: 35rem;
+  --logo-size: 7rem;
+
+  /* Gaussian parameters: μ = 50 (center), σ = 18 (spread) */
+  --mu: 50;
+  --sigma: 18;
+
+  position: relative;
+  width: var(--curve-width);
+  height: calc(var(--curve-height) + var(--logo-size) + 2.5rem);
+}
+
+/* Individual logo - uses sibling-index() and sibling-count() for dynamic positioning
+  Gaussian y-value computed at runtime using the same formula as the curve shape */
+.gaussian-logo {
+  /* Calculate x position as percentage (0 to 100) based on index
+    sibling-index() is 1-based, so subtract 1 for 0-based positioning */
+  --x-percent: calc((sibling-index() - 1) / (sibling-count() - 1) * 100);
+
+  /* Calculate gaussian y-value at runtime: f(x) = e^(-(x-μ)²/(2σ²)) */
+  --gaussian-y: exp(calc(-1 * pow(var(--x-percent) - var(--mu), 2) / (2 * pow(var(--sigma), 2))));
+
+  position: absolute;
+  left: calc(var(--x-percent) * 1%);
+  bottom: calc(var(--gaussian-y) * var(--curve-height));
+  width: var(--logo-size);
+  height: var(--logo-size);
+  transform: 
+    translate(-50%, 50%) 
+    scale(calc(
+      (0.7 + var(--gaussian-y) * 0.3) * 
+      var(--logo-breath-scale, 1)
+    ));
+    
+  ...
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      No precomputed values! The gaussian is calculated at runtime using CSS math functions. sibling-index() provides the element's position, sibling-count() the total count. exp() and pow() compute
+      the bell curve formula directly in CSS. shape() generates the curve background with the same math, ensuring perfect alignment.
+    </aside>
+  </section>
+  <section data-topic="gaussian-curve" data-menu-title="Gaussian Curve">
+    <small balance=""> The <mark>"breathing" animation</mark> transitions a registered <mark>@property</mark> for scaling up the logos and <mark>sibling-index()</mark> for properly delaying </small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|12|4-9|16-20|22-31">
+.gaussian-logo {
+  ...
+  
+  transform: 
+    translate(-50%, 50%) 
+    scale(calc(
+      (0.7 + var(--gaussian-y) * 0.3) * 
+      var(--logo-breath-scale, 1)
+    ));
+
+  animation: gaussian-breath 4s linear infinite;
+  animation-delay: calc((sibling-index() - 1) * .5s);
+  animation-fill-mode: both;
+}
+
+@property --logo-breath-scale {
+  syntax: '&lt;number&gt;';
+  initial-value: 1;
+  inherits: false;
+}
+
+@keyframes gaussian-breath {
+  0%,
+  100% {
+    --logo-breath-scale: 1;
+  }
+
+  50% {
+    --logo-breath-scale: 1.2;
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      No precomputed values! The gaussian is calculated at runtime using CSS math functions. sibling-index() provides the element's position, sibling-count() the total count. exp() and pow() compute
+      the bell curve formula directly in CSS. shape() generates the curve background with the same math, ensuring perfect alignment.
+    </aside>
+  </section>
+  <section data-topic="gaussian-curve" data-menu-title="Gaussian Curve">
+    <h3>Advanced with CSS <mark>Math</mark></h3>
+    <small balance="">Position elements along a bell curve using CSS <mark>exp()</mark> and <mark>pow()</mark> functions: zero SVG, zero JavaScript... just pure stylesheet magic.</small>
+    <baseline-status featureid="exp-functions"></baseline-status>
+  </section>
+</section>
+
+<!-- Slide: Doodle Orbital Motion System -->
+<!-- Speaker notes: The intro doodle uses @property for hue cycling and JS for drag + lemniscate auto-motion + orbit trailing via rAF. -->
+<section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <h4><mark>@property</mark> + rAF orbit trailing</h4>
+  </section>
+  <section intro="" aria-label="60fps or nothing visual intro">
+    <figure class="stage" role="figure" aria-label="Performance-first motion system">
+      <div class="system" role="img">
+        <div class="orbit orbit--inner" aria-hidden="true"></div>
+        <div class="orbit orbit--middle" aria-hidden="true"></div>
+        <div class="orbit orbit--outer" aria-hidden="true"></div>
+        <div class="orbit orbit--fourth" aria-hidden="true"></div>
+        <div class="orbit orbit--fifth" aria-hidden="true"></div>
+        <h1 class="title" role="button" aria-label="Drag 60fps or nothing" tabindex="0">
+          Kinetic CSS<br>
+          <small>OSDay26 Edition</small>
+        </h1>
+      </div>
+    </figure>
+  </section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <small balance="">
+      The intro <mark>doodle</mark> combines a CSS animatable custom property for hue cycling with JS driven drag, auto-motion on a lemniscate curve, and trailing orbits via
+      <mark>requestAnimationFrame</mark>.
+    </small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|2-5|8-10|14-16|19-22|28-30|34-38">
+@property --doodle-hue {
+  syntax: '&lt;number&gt;';
+  inherits: true;
+  initial-value: 210;
+}
+
+@keyframes hue-cycle {
+  to { --doodle-hue: 570; }
+  /* 360 full cycle + 210 start */
+}
+
+.stage {
+  animation: hue-cycle 6s linear infinite;
+  --doodle-title-x: 50%;
+  --doodle-title-y: 50%;
+}
+
+.title {
+  background: linear-gradient(90deg,
+    oklch(0.75 0.2 calc(var(--doodle-hue) * 1deg)),
+    oklch(0.75 0.2 calc((var(--doodle-hue) + 120) * 1deg)));
+  background-clip: text;
+  color: transparent;
+  cursor: grab;
+  ...
+}
+
+.orbit {
+  left: var(--doodle-orbit-x, var(--doodle-title-x));
+  top: var(--doodle-orbit-y, var(--doodle-title-y));
+  border-color: oklch(0.7 0.15
+    calc(var(--doodle-hue) * 1deg) / 0.3);
+}
+
+.orbit--inner  { --doodle-orbit-rotate:  5deg; }
+.orbit--middle { --doodle-orbit-rotate: 10deg; }
+.orbit--outer  { --doodle-orbit-rotate: 15deg; }
+.orbit--fourth { --doodle-orbit-rotate: 20deg; }
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>@property registers --doodle-hue as a number so CSS can interpolate it in @keyframes</li>
+        <li>The gradient picks up the animated hue to cycle colors smoothly</li>
+        <li>Orbits read --doodle-orbit-x/y which JS updates with trailing interpolation</li>
+        <li>Each orbit ring has a different rotation for visual depth</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <small balance="">JS drives the motion: a <mark>lemniscate</mark> (figure 8) path for auto-motion, pointer drag, and per-orbit <mark>lerp trailing</mark> at decreasing speeds.</small>
+    <pre>      <code class="hljs js" data-trim="" data-line-numbers="|1-5|7-16|18-24|26-34">
+const trailConfigs = [
+  { selector: '.orbit--inner',  speed: 0.27 },
+  { selector: '.orbit--middle', speed: 0.20 },
+  { selector: '.orbit--outer',  speed: 0.13 },
+];
+
+// Orbit trailing: each ring lerps toward the title
+const animateOrbitTrail = () =&gt; {
+  orbitTrail.forEach((orbit) =&gt; {
+    orbit.currentX +=
+      (orbit.targetX - orbit.currentX) * orbit.speed;
+    orbit.element.style.setProperty(
+      '--doodle-orbit-x', `${orbit.currentX}%`);
+  });
+  requestAnimationFrame(animateOrbitTrail);
+};
+
+// Lemniscate auto-motion (figure 8 curve)
+const angle = phase * Math.PI * 2;
+const denom = Math.sin(angle) ** 2 + 1;
+const rawX  = Math.cos(angle) / denom;
+const rawY  = (Math.sin(angle) * Math.cos(angle))
+              / denom;
+setPosition(50 + rawX * 36, 50 + rawY * 28);
+
+// Drag writes CSS custom properties directly
+title.addEventListener('pointermove', (e) =&gt; {
+  const rect = stage.getBoundingClientRect();
+  const px = ((e.clientX - rect.left) / rect.width)
+             * 100;
+  const py = ((e.clientY - rect.top) / rect.height)
+             * 100;
+  setPosition(px, py);
+});
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>Each orbit has a decreasing speed factor: inner follows fast, outer lags behind</li>
+        <li>The lemniscate parametric equation creates a smooth infinite figure 8 path</li>
+        <li>setPosition() writes --doodle-title-x/y to both stage and title, then updates orbit targets</li>
+        <li>On user pointer interaction, auto-motion stops and drag takes over</li>
+        <li>All visual output is CSS: JS only sets custom properties</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <h4><mark>@property</mark></h4>
+    <small balance="">
+      Registered custom properties with <mark>@property</mark> unlock CSS animation on values that would otherwise be static strings. The browser can interpolate typed values like
+      <mark>&lt;number&gt;</mark>, <mark>&lt;angle&gt;</mark>, and <mark>&lt;color&gt;</mark> across keyframes.
+    </small>
+    <baseline-status featureid="registered-custom-properties"></baseline-status>
+  </section>
+</section>
+
+<!-- Slide: Trigonometric Positioning & Animation -->
+<!-- Speaker notes: Demonstrates using trigonometric functions (sin, cos, tan) to create circular orbits, wave patterns, and complex spatial arrangements using pure CSS math. -->
+<section>
+  <section data-topic="trigonometric-positioning" data-menu-title="Trigonometry in Motion">
+    <h4 balance="">
+      Our Sponsors along a <br>
+      sneaking <mark>sinusoidal wave</mark>
+    </h4>
+  </section>
+  <section data-topic="trigonometric-positioning" data-menu-title="Trigonometry in Motion">
+    <div class="trigonometric-sponsors-wave">
+      <!-- 16 sponsor logos positioned along a sinusoidal wave -->
+      <div class="sponsor-wave-item" style="--index: 0">
+        <img src="/altum-host.9838337b.svg" alt="Altum Host" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 1">
+        <img src="/cursor.a491d13b.svg" alt="Cursor" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 2">
+        <img src="/elastic.4e977806.svg" alt="Elastic" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 3">
+        <img src="/immobiliare-labs.9b59b7ff.svg" alt="Immobiliare Labs" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 4">
+        <img src="/krateo-platformops.369c3378.svg" alt="Krateo PlatformOps" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 5">
+        <img src="/nephila.b30d2e7b.svg" alt="Nephila" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 6">
+        <img src="/only-office.e7d853cb.svg" alt="Only Office" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 7">
+        <img src="/red-carbon.e73bad37.svg" alt="Red Carbon" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 8">
+        <img src="/schrodinger-hat.f316fd2f.svg" alt="Schrödinger Hat" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 9">
+        <img src="/seeweb.21650517.svg" alt="Seeweb" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 10">
+        <img src="/the-social-hub.d5e1e4ba.svg" alt="The Social Hub" loading="lazy">
+      </div>
+      <div class="sponsor-wave-item" style="--index: 11">
+        <img src="/welyk.507d84e9.svg" alt="Welyk" loading="lazy">
+      </div>
+    </div>
+  </section>
+  <section data-topic="trigonometric-positioning" data-menu-title="Trigonometry in Motion">
+    <small balance=""> Position elements along a sinusoidal wave using <mark>sin()</mark> with animated phase offset.</small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|2-10|15-28|33-41|43-50">
+.trigonometric-sponsors-wave {
+  --wave-length: 360deg;
+  --wave-amplitude: 15rem;
+  --steps: calc(sibling-count() - 1);
+
+  --scale-min: 0.8;
+  --scale-max: 1.25;
+
+  --logo-size-min: 12rem;
+  --logo-gap: clamp(0.4rem, 0.9vw, 0.6rem);
+
+  ...
+}
+
+.sponsor-wave-item {
+  --index: calc(sibling-index() - 1);
+  
+  width: var(--logo-size-min);
+  height: var(--logo-size-min);
+  left: calc((var(--index) / var(--steps)) * 100%);
+
+  transform: 
+    translateX(calc(-50% + var(--index) * var(--logo-gap)))
+    translateY(-50%);
+  will-change: left, transform;
+
+  animation: sponsor-travel 12s ease-in-out infinite;
+}
+
+/* Move each logo along the wave by shifting its parameter (index + travel).
+  We animate real properties (left/transform/filter), so it stays smooth without @property registration. */
+@keyframes sponsor-travel {
+  0%,
+  100% {
+    /* travel = -3 (can go out of bounds, container clips it) */
+    left: calc(((var(--index) - 3) / var(--steps)) * 100%);
+    transform: 
+      translateX(calc(-50% + var(--index) * var(--logo-gap)))
+      translateY(calc(-50% + var(--wave-amplitude) * sin(calc((var(--index) - 3) / var(--steps) * var(--wave-length)))))
+      scale(calc(var(--scale-min) + (var(--scale-max) - var(--scale-min)) * ((sin(calc((var(--index) - 3) / var(--steps) * var(--wave-length))) + 1) / 2)));
+  }
+
+  50% {
+    /* travel = +3 */
+    left: calc(((var(--index) + 3) / var(--steps)) * 100%);
+    transform: 
+      translateX(calc(-50% + var(--index) * var(--logo-gap)))
+      translateY(calc(-50% + var(--wave-amplitude) * sin(calc((var(--index) + 3) / var(--steps) * var(--wave-length)))))
+      scale(calc(var(--scale-min) + (var(--scale-max) - var(--scale-min)) * ((sin(calc((var(--index) + 3) / var(--steps) * var(--wave-length))) + 1) / 2)));
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      Trigonometric CSS functions are now available in the latest versions of Chrome, Firefox, Safari, and Edge. For older browsers, you can provide fallback styles with static positions or implement
+      the calculation in JavaScript.
+    </aside>
+  </section>
+  <section data-topic="trigonometric-positioning" data-menu-title="Trigonometry in Motion">
+    <h4>Trigonometric <mark>Positioning</mark></h4>
+    <small balance="">
+      Use <mark>sin()</mark>, <mark>cos()</mark>, and <mark>tan()</mark> to create circular orbits, wave patterns, and dynamic spatial arrangements. Transform Cartesian geometry into visual
+      choreography.
+    </small>
+    <baseline-status featureid="trig-functions"></baseline-status>
+  </section>
+</section>
+
+<!-- Slide: Dive In Stacked Parallax -->
+<!-- Speaker notes: The "Let's Dive In" effect uses a Custom Element that assigns --index to each stack-item and writes --mouse-x/--mouse-y from mousemove. CSS handles all the parallax, blur, and sizing. -->
+<section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <h4><mark>Custom Element</mark> + CSS parallax</h4>
+  </section>
+  <section class="slide-dive-in" data-auto-animate="">
+    <div sr-only="" data-menu-title="">Let's dive in</div>
+    <dive-in>
+      <stack-container>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+      </stack-container>
+    </dive-in>
+  </section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <small balance="">
+      The <mark>dive-in</mark> component stacks text layers with depth. CSS uses <mark>--index</mark>, <mark>--mouse-x</mark>, and <mark>--mouse-y</mark> custom properties to create parallax, blur,
+      and opacity gradients, all without a single animation in JS.
+    </small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|2-3|6-8|11-14|17-19|22-29">
+stack-container {
+  --mouse-x: 0;
+  --mouse-y: 0;
+  ...
+}
+
+stack-item {
+  --threshold: 0.1 * var(--index);
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  filter: blur(100%);
+  opacity: calc(1 - (0.2 * var(--index)));
+  will-change: font-size, filter, text-shadow;
+}
+
+stack-container:hover {
+  width: 117rem;
+  height: 50rem;
+
+  stack-item {
+    top:  calc(50% + (var(--mouse-y)
+                      * var(--threshold)));
+    left: calc(50% + (var(--mouse-x)
+                      * var(--threshold)));
+    font-size: calc(15rem
+                    - (1rem * var(--index)));
+    filter: blur(calc(0.1rem * var(--index)));
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>--index is set per item by JS (reversed order: back layers get higher index)</li>
+        <li>--threshold multiplies --index to create depth-dependent parallax displacement</li>
+        <li>On hover the container expands and items unblur, revealing the stacked parallax</li>
+        <li>Opacity decreases with --index: front layer is fully opaque, back layers fade</li>
+        <li>font-size shrinks with --index to add perspective to the stack</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <small balance="">
+      The <mark>DiveInElement</mark> custom element does two things: assigns reversed <mark>--index</mark> values and writes mouse offset as CSS variables. All visual logic stays in CSS.
+    </small>
+    <pre>      <code class="hljs js" data-trim="" data-line-numbers="|1-3|5-10|12-21">
+class DiveInElement extends HTMLElement {
+  static { customElements.define('dive-in',
+           DiveInElement); }
+
+  connectedCallback() {
+    const items = [...this.querySelectorAll(
+                    'stack-item')].reverse();
+    items.forEach((item, i) =&gt;
+      item.style.setProperty('--index', i));
+    document.addEventListener('mousemove',
+                              this.handleMouseMove);
+  }
+
+  handleMouseMove(event) {
+    const container =
+      this.querySelector('stack-container');
+    const offsetX =
+      window.innerWidth / 2 - event.clientX;
+    const offsetY =
+      window.innerHeight / 2 - event.clientY;
+    container.style.setProperty('--mouse-x',
+                                `${offsetX}px`);
+    container.style.setProperty('--mouse-y',
+                                `${offsetY}px`);
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>Items are reversed so the last DOM element (visually on top) gets --index: 0</li>
+        <li>Mouse offset is computed from viewport center, creating natural parallax direction</li>
+        <li>JS only writes three CSS custom properties; CSS does all positioning and effects</li>
+        <li>The custom element self-registers via a static initializer block</li>
+        <li>Cleanup happens in disconnectedCallback (event listener removal)</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <h4><mark>Custom Elements</mark></h4>
+    <small balance="">
+      The <mark>Custom Elements API</mark> lets you define new HTML elements with their own behavior. Here a custom element is used purely as a <mark>CSS variable bridge</mark>: it reads user input
+      and writes custom properties that CSS consumes for parallax and depth effects.
+    </small>
+    <baseline-status featureid="autonomous-custom-elements"></baseline-status>
+  </section>
+</section>
+
+<!-- Slide: Sibling Functions - Dynamic Circular Arrangement -->
+<!-- Speaker notes: Demonstrates sibling-index() and sibling-count() for dynamic circular layout. No JavaScript, pure CSS calculations. -->
+<section>
+  <section data-topic="sibling-functions" data-menu-title="Sibling Functions">
+    <h4 balance="">
+      <mark>Sponsors</mark> in two circles<br>
+      <small>(NOTE: works well in chromium based browsers only)</small>
+    </h4>
+  </section>
+  <section data-topic="sibling-functions" data-menu-title="Sibling Functions">
+    <div class="sibling-containers">
+      <div class="sibling-container">
+        <img src="/altum-host.9838337b.svg" alt="Altum Host" class="sibling-logo">
+        <img src="/cursor.a491d13b.svg" alt="Cursor" class="sibling-logo">
+        <img src="/elastic.4e977806.svg" alt="Elastic" class="sibling-logo">
+        <img src="/immobiliare-labs.9b59b7ff.svg" alt="Immobiliare Labs" class="sibling-logo">
+        <img src="/krateo-platformops.369c3378.svg" alt="Krateo PlatformOps" class="sibling-logo">
+        <img src="/nephila.b30d2e7b.svg" alt="Nephila" class="sibling-logo">
+      </div>
+      <div class="sibling-container">
+        <img src="/only-office.e7d853cb.svg" alt="Only Office" class="sibling-logo">
+        <img src="/red-carbon.e73bad37.svg" alt="Red Carbon" class="sibling-logo">
+        <img src="/schrodinger-hat.f316fd2f.svg" alt="Schrödinger Hat" class="sibling-logo">
+        <img src="/seeweb.21650517.svg" alt="Seeweb" class="sibling-logo">
+        <img src="/the-social-hub.d5e1e4ba.svg" alt="The Social Hub" class="sibling-logo">
+        <img src="/welyk.507d84e9.svg" alt="Welyk" class="sibling-logo">
+      </div>
+    </div>
+  </section>
+  <section data-topic="sibling-functions" data-menu-title="Sibling Functions">
+    <small balance="">
+      A circular arrangement calculated purely with <mark>sibling-index()</mark> and <mark>sibling-count()</mark>. Positioning items in circles is done using <mark>asin()</mark> and
+      <mark>sibling-count()</mark> functions.
+    </small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|2-4|6-8|10-12|14-16|18-24|26-29|31-38">
+.sibling-logo {
+  /* arc angle per logo uses asin() to calculate
+    angle subtended by each logo+gap at circle center */
+  --sibling-arc-angle: calc(2 * asin((var(--sibling-logo-size) + var(--sibling-logo-gap)) / (2 * var(--sibling-circle-radius))) - 1turn / sibling-count());
+
+  /* logo circle radius calculated responsively
+    using min() and container query units */
+  --sibling-circle-radius: min(50cqw - var(--sibling-logo-size) / 2, (var(--sibling-logo-size) + var(--sibling-logo-gap)) / (2 * sin(0.5turn / sibling-count())));
+
+  /* current logo angle dividing full rotation
+    by sibling-count() to distribute items evenly */
+  --sibling-current-angle: calc(1turn * sibling-index() / sibling-count() + var(--sibling-expand-offset, 0deg));
+
+  /* next logo angle used to create smooth visual
+    transition between adjacent logos */
+  --sibling-next-angle: calc(1turn * (sibling-index() + 1) / sibling-count() + var(--sibling-next-expand-offset, 0deg));
+
+  /* transform chain: 
+    rotate → translate to radius → counter-rotate
+    this positions element on circle while keeping image upright */
+  transform: 
+    rotate(calc(-1 * var(--sibling-current-angle)))
+    translate(var(--sibling-circle-radius))
+    rotate(var(--sibling-current-angle));
+
+  /* smooth animation of position and next-angle on hover */
+  transition:
+    --sibling-current-angle 0.4s linear,
+    --sibling-next-angle 0.4s linear;
+
+  /* radial mask creates smooth circle boundary without harsh edges
+    uses trigonometric coordinates (cos/sin) to calculate
+    mask gradient position based on current and next element angles */
+  mask: radial-gradient(
+    50% 50% at calc(50% + var(--sibling-circle-radius) * (cos(var(--sibling-next-angle)) - cos(var(--sibling-current-angle)))) calc(50% + var(--sibling-circle-radius) * (sin(var(--sibling-current-angle)) - sin(var(--sibling-next-angle)))),
+    #fff0 calc(100% - 1px + var(--sibling-logo-gap)),
+    #fff calc(100% + var(--sibling-logo-gap))
+  );
+
+  ...
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>No JavaScript loops: sibling-index() and sibling-count() do the heavy lifting</li>
+        <li>Each image knows its position in the circle automatically</li>
+        <li>Hover on the container expands all; hover on individual resets it</li>
+        <li>Uses trig: sin and asin to compute radius and angles for perfect circular packing</li>
+        <li>Container queries (cqw) adapt radius to viewport</li>
+        <li>Pure CSS, fully responsive, scales to any number of siblings</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="sibling-functions" data-menu-title="Sibling Functions">
+    <h4><mark>sibling-index()</mark> and <mark>sibling-count()</mark></h4>
+    <small balance=""> Sibling functions allow CSS to know the position and total count of elements in their parent. <mark>No JavaScript needed</mark> </small>
+    <baseline-status featureid="sibling-count"></baseline-status>
+  </section>
+</section>
+
+<section>
+  <section data-topic="tilt-card-demo" data-menu-title="Tilt Layered Card">
+    <h4 balance="">Last but not least, thanks a lot... this conference deserves <mark>a special animation</mark>: the infinite tilt layered card!</h4>
+  </section>
+  <section data-topic="tilt-card-demo" data-menu-title="Tilt Layered Card">
+    <div class="card-container" aria-label="Tilted Opens Source Day 2026 card demo">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-layers">
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+            <div class="card-layer">
+              <img src="/osday26-logo.9b6c6dd5.svg" alt="Open Source Day 2026" loading="lazy">
+              <img src="/schroddy.f42af5ba.png" alt="Schroddy" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="card-back">
+          <p>
+            Te pensavi <br>
+            eh?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-topic="tilt-card" data-menu-title="Tilt Layered Card">
+    <small balance="">
+      A stack of translucent layers, layered by translating z-axis with <mark>sibling-index()</mark>, driven by registered <mark>@property</mark> using CSS <mark>trigonometric functions</mark> and
+      peek into <mark>perspective</mark>/<mark>perspective-origin</mark>.
+    </small>
+    <pre>      <code class="hljs css" data-trim="" data-line-numbers="|1-11|13-25|27-29|31-39|41-51|53-57">
+@property --tilt-card--pos-x {
+  syntax: '&lt;number&gt;';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --tilt-card--pos-y {
+  syntax: '&lt;number&gt;';
+  inherits: true;
+  initial-value: 0;
+}
+
+.card-container {
+  --tilt-card--perspective: 50rem;
+  --tilt-card--pos-x: 0;
+  --tilt-card--pos-y: 0;
+
+  perspective: var(--tilt-card--perspective);
+  
+  transition:
+    --tilt-card--pos-x 800ms cubic-bezier(0.2, 0.85, 0.3, 1),
+    --tilt-card--pos-y 800ms cubic-bezier(0.2, 0.85, 0.3, 1);
+  
+  ...
+}
+
+.card-container * {
+  transform-style: preserve-3d;
+}
+
+.card {
+  --tilt-card--x: calc(var(--tilt-card--pos-y, 0.1) * -120deg);
+  --tilt-card--y: calc(var(--tilt-card--pos-x, 0.1) * 120deg);
+
+  transform: rotateX(var(--tilt-card--x)) rotateY(var(--tilt-card--y));
+  transition: transform 800ms cubic-bezier(0.2, 0.85, 0.3, 1);
+  
+  ...
+}
+
+.card-content {
+  overflow: clip;
+  backface-visibility: hidden;
+
+  filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.6));
+
+  perspective: calc(cos(var(--tilt-card--x)) * cos(var(--tilt-card--y)) * var(--tilt-card--perspective));
+  perspective-origin: calc(50% - cos(var(--tilt-card--x)) * sin(var(--tilt-card--y)) * var(--tilt-card--perspective)) calc(50% + sin(var(--tilt-card--x)) * var(--tilt-card--perspective));
+  
+  ...
+}
+
+.card-layer {
+  transform: translateZ(calc((sibling-index() - 1) * -2rem));
+  
+  ...
+}
+      </code>
+    </pre>
+    <aside class="notes">This layered stack blends 3D transforms with pointer math; each layer translates along z so the card feels volumetric while staying rooted in CSS.</aside>
+  </section>
+  <section data-topic="tilt-card" data-menu-title="Tilt Layered Card">
+    <h4>registered <mark>@property</mark></h4>
+    <small balance="">
+      Differently than normal custom properties, the ones registered via <mark>@property</mark> at-rule are transitionable and animatable, allowing to <mark>calculate interpolation</mark> between all
+      the specified values.
+    </small>
+    <baseline-status featureid="registered-custom-properties"></baseline-status>
+  </section>
+</section>
+
+
+<section>
   <section data-transition="convex">
-    <h4>Wrapping up</h4>
+    <h3>Wrapping up</h3>
   </section>
   <section data-transition="convex">
+    <p balance="">With modern <mark>CSS Motion APIs</mark> it's possible to create small <mark>scenes</mark>.</p>
+  </section>
+  <!-- <section data-transition="convex">
     <comparison>
       <left>
-        <h4>Pros</h4>
+        <h4>What worked</h4>
         <small>
           <ul>
-            <li class="fragment">pro 1</li>
-            <li class="fragment">pro 2</li>
-            <li class="fragment">pro 3</li>
-            <li class="fragment">pro 4</li>
+            <li class="fragment">CSS first motion: minimal JavaScript glue</li>
+            <li class="fragment">Real math in styles: <mark>sin()</mark>, <mark>exp()</mark>, <mark>pow()</mark></li>
+            <li class="fragment">Timing patterns: <mark>@starting-style</mark>, stagger, view timelines</li>
+            <li class="fragment">Local View Transitions for clean state changes</li>
           </ul>
         </small>
       </left>
       <right>
-        <h4>Cons</h4>
+        <h4>What to watch</h4>
         <small>
           <ul>
-            <li class="fragment">con 1</li>
-            <li class="fragment">con 2</li>
-            <li class="fragment">con 3</li>
-            <li class="fragment">con 4</li>
+            <li class="fragment">Support varies: use <mark>@supports</mark> and check Baseline</li>
+            <li class="fragment">Some APIs are still new: test across browsers</li>
+            <li class="fragment">Performance: prefer <mark>transform</mark> and <mark>opacity</mark></li>
+            <li class="fragment">Accessibility: honor <mark>prefers-reduced-motion</mark></li>
           </ul>
         </small>
       </right>
     </comparison>
+  </section> -->
+  <section data-transition="convex">
+    <p balance="">Motion is <mark>choreography</mark>: state, timing, and meaning. <br></p>
   </section>
   <section data-transition="convex">
-    <h4>Conclusions</h4>
+    <p balance="">Use <mark>CSS</mark> as the <mark>primary language</mark>, then add JavaScript only for input and orchestration.</p>
+  </section>
+  <section data-transition="convex">
+    <small>
+      <ul>
+        <li>Start with <mark>entrance</mark>, <mark>scroll reveal</mark>, or <mark>state change</mark></li>
+        <li class="fragment"><mark>Make values editable</mark> with custom properties</li>
+        <li class="fragment">Add progressive enhancement with <mark>@supports</mark></li>
+      </ul>
+    </small>
   </section>
 </section>
 
 <section>
-  <!-- <section data-transition="convex">
+  <section data-transition="convex">
   <h4>Slides Links</h4>
-  <comparison links>
+  <comparison links="">
     <figure>
       <picture>
-        <source srcset="./assets/qrcodes/slides.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/slides.png" alt="Slides" />
+        <source srcset="/slides.edab5ca8.webp" type="image/webp">
+        <img src="/slides.1deb7d95.png" alt="Slides">
       </picture>
       <figcaption>
         <small>Slides</small>
@@ -162,23 +1391,23 @@
     </figure>
     <figure>
       <picture>
-        <source srcset="./assets/qrcodes/slides-repo.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/slides-repo.png" alt="Slides Repo on Github" />
+        <source srcset="/slides-repo.0d605d4e.webp" type="image/webp">
+        <img src="/slides-repo.fe295744.png" alt="Slides Repo on Github">
       </picture>
       <figcaption>
         <small>Slides Repo</small>
       </figcaption>
     </figure>
   </comparison>
-</section> -->
-
+</section>
+<!-- 
 <section data-transition="convex">
   <h4>Personal Links</h4>
-  <comparison links="">
+  <comparison links>
     <figure>
       <picture>
-        <source srcset="pixu-dev.78fd730f.webp" type="image/webp">
-        <img src="pixu-dev.deaa6f1c.png" alt="Pixu.dev">
+        <source srcset="./assets/qrcodes/pixu-dev.png?as=webp" type="image/webp" />
+        <img src="./assets/qrcodes/pixu-dev.png" alt="Pixu.dev" />
       </picture>
       <figcaption>
         <small>pixu.dev</small>
@@ -186,8 +1415,8 @@
     </figure>
     <figure>
       <picture>
-        <source srcset="linkedin.ba7af5d7.webp" type="image/webp">
-        <img src="linkedin.0ce1d20b.png" alt="Pixu LinkedIn Profile">
+        <source srcset="./assets/qrcodes/linkedin.png?as=webp" type="image/webp" />
+        <img src="./assets/qrcodes/linkedin.png" alt="Pixu LinkedIn Profile" />
       </picture>
       <figcaption>
         <small>LinkedIn</small>
@@ -198,11 +1427,11 @@
 
 <section data-transition="convex">
   <h4>DevDojo Links</h4>
-  <comparison links="">
+  <comparison links>
     <figure>
       <picture>
-        <source srcset="dev-dojo.0d19364d.webp" type="image/webp">
-        <img src="dev-dojo.dca9c419.png" alt="devdojo.it">
+        <source srcset="./assets/qrcodes/dev-dojo.png?as=webp" type="image/webp" />
+        <img src="./assets/qrcodes/dev-dojo.png" alt="devdojo.it" />
       </picture>
       <figcaption>
         <small>devdojo.it</small>
@@ -210,19 +1439,19 @@
     </figure>
     <figure>
       <picture>
-        <source srcset="dev-dojo-linkedin.2373522e.webp" type="image/webp">
-        <img src="dev-dojo-linkedin.527c0107.png" alt="devdojo @ linkedin">
+        <source srcset="./assets/qrcodes/dev-dojo-linkedin.png?as=webp" type="image/webp" />
+        <img src="./assets/qrcodes/dev-dojo-linkedin.png" alt="devdojo @ linkedin" />
       </picture>
       <figcaption>
         <small>LinkedIn</small>
       </figcaption>
     </figure>
   </comparison>
-</section>
+</section> -->
 
   <section class="slide-outro-taf" data-transition="convex">
   <!-- <div sr-only data-menu-title>That's All Folks</div> -->
-  <audio data-autoplay="" src="taf.f9b512b9.mp3"></audio>
+  <audio data-autoplay="" src="/taf.d3b3531a.mp3"></audio>
   <div class="taf-wrapper">
     <div class="circles">
       <div class="circle one"></div>
@@ -235,8 +1464,8 @@
     </div>
     <figure speaker="">
       <picture>
-        <source srcset="pixu.ea6d4c65.webp" type="image/webp">
-        <img src="pixu.06482de6.jpg" alt="Pixu">
+        <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
+        <img src="/pixu.8cd71433.jpg" alt="Pixu">
       </picture>
     </figure>
     <svg style="isolation: isolate" viewBox="0 0 566.44 157.5">
@@ -295,12 +1524,12 @@
       </div>
       <a brand="" href="https://www.devdojo.it" target="_blank" rel="noopener noreferrer">
   <figure>
-    <img src="dev-dojo.3f2f430c.png" alt="Dev Dojo IT Logo">
+    <img src="/dev-dojo.2f055838.png" alt="Dev Dojo IT Logo">
   </figure>
 </a>
 
     </main>
-    <script src="talk-template.1fb66e63.js" type="module"></script>
+    <script src="/talk-kinetic-css-osdsay-2026.c6396971.js" type="module"></script>
   
 
 </body></html>

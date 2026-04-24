@@ -1,0 +1,137 @@
+<section>
+  <section data-topic="tilt-card-demo" data-menu-title="Tilt Layered Card">
+    <h4 balance>Last but not least, thanks a lot... this conference deserves <mark>a special animation</mark>: the infinite tilt layered card!</h4>
+  </section>
+  <section data-topic="tilt-card-demo" data-menu-title="Tilt Layered Card">
+    <div class="card-container" aria-label="Tilted Opens Source Day 2026 card demo">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-layers">
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+            <div class="card-layer">
+              <img src="./assets/logo/osday26-logo.svg" alt="Open Source Day 2026" loading="lazy" />
+              <img src="./assets/logo/schroddy.png" alt="Schroddy" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <div class="card-back">
+          <p>
+            Te pensavi <br />
+            eh?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-topic="tilt-card" data-menu-title="Tilt Layered Card">
+    <small balance>
+      A stack of translucent layers, layered by translating z-axis with <mark>sibling-index()</mark>, driven by registered <mark>@property</mark> using CSS <mark>trigonometric functions</mark> and
+      peek into <mark>perspective</mark>/<mark>perspective-origin</mark>.
+    </small>
+    <pre>
+      <code class="hljs css" data-trim data-line-numbers="|1-11|13-25|27-29|31-39|41-51|53-57">
+@property --tilt-card--pos-x {
+  syntax: '&lt;number&gt;';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --tilt-card--pos-y {
+  syntax: '&lt;number&gt;';
+  inherits: true;
+  initial-value: 0;
+}
+
+.card-container {
+  --tilt-card--perspective: 50rem;
+  --tilt-card--pos-x: 0;
+  --tilt-card--pos-y: 0;
+
+  perspective: var(--tilt-card--perspective);
+  
+  transition:
+    --tilt-card--pos-x 800ms cubic-bezier(0.2, 0.85, 0.3, 1),
+    --tilt-card--pos-y 800ms cubic-bezier(0.2, 0.85, 0.3, 1);
+  
+  ...
+}
+
+.card-container * {
+  transform-style: preserve-3d;
+}
+
+.card {
+  --tilt-card--x: calc(var(--tilt-card--pos-y, 0.1) * -120deg);
+  --tilt-card--y: calc(var(--tilt-card--pos-x, 0.1) * 120deg);
+
+  transform: rotateX(var(--tilt-card--x)) rotateY(var(--tilt-card--y));
+  transition: transform 800ms cubic-bezier(0.2, 0.85, 0.3, 1);
+  
+  ...
+}
+
+.card-content {
+  overflow: clip;
+  backface-visibility: hidden;
+
+  filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.6));
+
+  perspective: calc(cos(var(--tilt-card--x)) * cos(var(--tilt-card--y)) * var(--tilt-card--perspective));
+  perspective-origin: calc(50% - cos(var(--tilt-card--x)) * sin(var(--tilt-card--y)) * var(--tilt-card--perspective)) calc(50% + sin(var(--tilt-card--x)) * var(--tilt-card--perspective));
+  
+  ...
+}
+
+.card-layer {
+  transform: translateZ(calc((sibling-index() - 1) * -2rem));
+  
+  ...
+}
+      </code>
+    </pre>
+    <aside class="notes">This layered stack blends 3D transforms with pointer math; each layer translates along z so the card feels volumetric while staying rooted in CSS.</aside>
+  </section>
+  <section data-topic="tilt-card" data-menu-title="Tilt Layered Card">
+    <h4>registered <mark>@property</mark></h4>
+    <small balance>
+      Differently than normal custom properties, the ones registered via <mark>@property</mark> at-rule are transitionable and animatable, allowing to <mark>calculate interpolation</mark> between all
+      the specified values.
+    </small>
+    <baseline-status featureId="registered-custom-properties"></baseline-status>
+  </section>
+</section>

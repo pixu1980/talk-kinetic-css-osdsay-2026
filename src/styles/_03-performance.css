@@ -1,0 +1,74 @@
+@layer speaker-talk {
+	@layer topics {
+		@layer performance {
+			/* Slide 23: Performance Cards */
+			.perf-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+
+			.perf-card {
+				display: flex;
+				flex-flow: column;
+				place-items: start;
+				place-content: start;
+				gap: 1.5rem;
+				padding: 1.5rem;
+				border-radius: 12px;
+				background: oklch(0.15 0.02 250);
+				border: 2px solid;
+				position: relative;
+			}
+
+			.perf-card ul {
+				margin: 1rem 0 1rem 2rem;
+				padding-left: 1rem;
+				font-size: 2rem;
+			}
+
+			.perf-card li {
+				margin-bottom: 0.5rem;
+			}
+
+			.perf-badge {
+				position: absolute;
+				top: -0.75rem;
+				right: 1rem;
+				padding: 0.25rem 0.75rem;
+				border-radius: 1rem;
+				font-size: 1.25rem;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+
+			.perf-good {
+				border-color: oklch(0.6 0.2 140);
+			}
+
+			.perf-good .perf-badge {
+				background: oklch(0.6 0.2 140);
+				color: oklch(0.1 0 0);
+			}
+
+			.perf-warn {
+				border-color: oklch(0.7 0.2 80);
+			}
+
+			.perf-warn .perf-badge {
+				background: oklch(0.7 0.2 80);
+				color: oklch(0.1 0 0);
+			}
+
+			.perf-bad {
+				border-color: oklch(0.6 0.2 30);
+			}
+
+			.perf-bad .perf-badge {
+				background: oklch(0.6 0.2 30);
+				color: oklch(0.1 0 0);
+			}
+		}
+	}
+}

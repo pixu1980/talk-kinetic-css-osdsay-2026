@@ -1,0 +1,120 @@
+<!-- Slide: Dive In Stacked Parallax -->
+<!-- Speaker notes: The "Let's Dive In" effect uses a Custom Element that assigns --index to each stack-item and writes --mouse-x/--mouse-y from mousemove. CSS handles all the parallax, blur, and sizing. -->
+<section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <h4><mark>Custom Element</mark> + CSS parallax</h4>
+  </section>
+  <section class="slide-dive-in" data-auto-animate>
+    <div sr-only data-menu-title>Let's dive in</div>
+    <dive-in>
+      <stack-container>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+        <stack-item>Let's <mark>dive</mark> in</stack-item>
+      </stack-container>
+    </dive-in>
+  </section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <small balance>
+      The <mark>dive-in</mark> component stacks text layers with depth. CSS uses <mark>--index</mark>, <mark>--mouse-x</mark>, and <mark>--mouse-y</mark> custom properties to create parallax, blur,
+      and opacity gradients, all without a single animation in JS.
+    </small>
+    <pre>
+      <code class="hljs css" data-trim data-line-numbers="|2-3|6-8|11-14|17-19|22-29">
+stack-container {
+  --mouse-x: 0;
+  --mouse-y: 0;
+  ...
+}
+
+stack-item {
+  --threshold: 0.1 * var(--index);
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  filter: blur(100%);
+  opacity: calc(1 - (0.2 * var(--index)));
+  will-change: font-size, filter, text-shadow;
+}
+
+stack-container:hover {
+  width: 117rem;
+  height: 50rem;
+
+  stack-item {
+    top:  calc(50% + (var(--mouse-y)
+                      * var(--threshold)));
+    left: calc(50% + (var(--mouse-x)
+                      * var(--threshold)));
+    font-size: calc(15rem
+                    - (1rem * var(--index)));
+    filter: blur(calc(0.1rem * var(--index)));
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>--index is set per item by JS (reversed order: back layers get higher index)</li>
+        <li>--threshold multiplies --index to create depth-dependent parallax displacement</li>
+        <li>On hover the container expands and items unblur, revealing the stacked parallax</li>
+        <li>Opacity decreases with --index: front layer is fully opaque, back layers fade</li>
+        <li>font-size shrinks with --index to add perspective to the stack</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <small balance>
+      The <mark>DiveInElement</mark> custom element does two things: assigns reversed <mark>--index</mark> values and writes mouse offset as CSS variables. All visual logic stays in CSS.
+    </small>
+    <pre>
+      <code class="hljs js" data-trim data-line-numbers="|1-3|5-10|12-21">
+class DiveInElement extends HTMLElement {
+  static { customElements.define('dive-in',
+           DiveInElement); }
+
+  connectedCallback() {
+    const items = [...this.querySelectorAll(
+                    'stack-item')].reverse();
+    items.forEach((item, i) =>
+      item.style.setProperty('--index', i));
+    document.addEventListener('mousemove',
+                              this.handleMouseMove);
+  }
+
+  handleMouseMove(event) {
+    const container =
+      this.querySelector('stack-container');
+    const offsetX =
+      window.innerWidth / 2 - event.clientX;
+    const offsetY =
+      window.innerHeight / 2 - event.clientY;
+    container.style.setProperty('--mouse-x',
+                                `${offsetX}px`);
+    container.style.setProperty('--mouse-y',
+                                `${offsetY}px`);
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>Items are reversed so the last DOM element (visually on top) gets --index: 0</li>
+        <li>Mouse offset is computed from viewport center, creating natural parallax direction</li>
+        <li>JS only writes three CSS custom properties; CSS does all positioning and effects</li>
+        <li>The custom element self-registers via a static initializer block</li>
+        <li>Cleanup happens in disconnectedCallback (event listener removal)</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="dive-in" data-menu-title="Dive In Parallax">
+    <h4><mark>Custom Elements</mark></h4>
+    <small balance>
+      The <mark>Custom Elements API</mark> lets you define new HTML elements with their own behavior. Here a custom element is used purely as a <mark>CSS variable bridge</mark>: it reads user input
+      and writes custom properties that CSS consumes for parallax and depth effects.
+    </small>
+    <baseline-status featureId="autonomous-custom-elements"></baseline-status>
+  </section>
+</section>

@@ -1,0 +1,141 @@
+/* Scroll View Appearing Animation - _05-scroll-view-appearing.css */
+
+@layer speaker-talk {
+	@layer topics {
+		/* @keyframes appear-in {
+			from {
+				opacity: 0;
+				transform: scale(0.8) translateY(40px);
+			}
+
+			to {
+				opacity: 1;
+				transform: scale(1) translateY(0);
+			}
+		} */
+
+		@keyframes reveal-and-elevate {
+			0% {
+				opacity: 0;
+				transform: scale(0.85) translateY(8rem);
+				filter: blur(8px);
+			}
+
+			50% {
+				filter: blur(4px);
+			}
+
+			100% {
+				opacity: 1;
+				transform: scale(1) translateY(0);
+				filter: blur(0);
+			}
+		}
+
+		/* Scroll container with horizontal scroll */
+		.scroll-view-container {
+			display: grid;
+			grid-auto-flow: column;
+			grid-auto-columns: minmax(300px, 1fr);
+			width: 80%;
+			margin: 0 auto;
+			gap: 1.5rem;
+			padding: 2rem 1rem;
+			overflow-x: auto;
+			overflow-y: hidden;
+			scroll-snap-type: x mandatory;
+			border-radius: 0.75rem;
+			background: linear-gradient(
+				135deg,
+				rgba(0, 245, 255, 0.05),
+				rgba(255, 149, 0, 0.05)
+			);
+			border: 1px solid rgba(0, 245, 255, 0.2);
+			height: 350px;
+
+			@media (max-width: 900px) {
+				grid-auto-columns: minmax(280px, 1fr);
+				height: 320px;
+				padding: 1.5rem 1rem;
+			}
+
+			@media (max-width: 600px) {
+				grid-auto-columns: minmax(260px, 1fr);
+				height: 300px;
+				padding: 1rem;
+				gap: 1rem;
+			}
+		}
+
+		/* Card with scroll-driven reveal animation */
+		.scroll-view-card {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 2rem;
+			border-radius: 0.5rem;
+			background: linear-gradient(
+				135deg,
+				rgba(26, 26, 46, 0.8),
+				rgba(16, 21, 36, 0.9)
+			);
+			border: 1px solid rgba(0, 245, 255, 0.3);
+			scroll-snap-align: start;
+			flex-shrink: 0;
+
+			img {
+				width: 70%;
+				height: auto;
+				object-fit: contain;
+				/* filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.3)); */
+			}
+
+			&:hover {
+				border-color: rgba(0, 245, 255, 0.6);
+				box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+			}
+		}
+
+		.card-inner {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1.5rem;
+		}
+
+		.scroll-view-card h5 {
+			font-size: 2rem;
+			margin: 0;
+			color: #e0e6ed;
+			font-family: var(--font-primary);
+			text-transform: uppercase;
+			letter-spacing: 0.1rem;
+		}
+
+		.present:has(:scope > .scroll-view-container) {
+			@supports (animation-timeline: view(inline)) {
+				.scroll-view-card {
+					animation: reveal-and-elevate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)
+						both;
+					animation-range: entry 35% cover 70%;
+
+					&:nth-child(even) {
+						animation-name: reveal-and-elevate;
+					}
+				}
+
+				.scroll-view-card {
+					animation-timeline: view(inline);
+				}
+			}
+
+			@supports not (animation-timeline: view(inline)) {
+				.scroll-view-card {
+					opacity: 1;
+					transform: scale(1) translateY(0);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,124 @@
+<section>
+  <section data-menu-title="FPS Basics">
+    <h3>What are FPS?</h3>
+    <small balance>FPS means <mark>frames per second</mark>: how many complete images the browser can present every second.</small>
+    <div class="fps-card-grid" aria-label="Frame rates from 24 to 120 frames per second">
+      <article class="fps-card">
+        <strong>24fps</strong>
+        <small>cinema cadence</small>
+      </article>
+      <article class="fps-card">
+        <strong>30fps</strong>
+        <small>feels acceptable, not snappy</small>
+      </article>
+      <article class="fps-card fps-card--focus">
+        <strong>60fps</strong>
+        <small>baseline for fluid UI</small>
+      </article>
+      <article class="fps-card">
+        <strong>120fps</strong>
+        <small>same rules, half budget</small>
+      </article>
+    </div>
+  </section>
+  <section data-menu-title="Event Loop + Frame Budget">
+    <h3>A <mark>60Hz screen</mark> gives <mark>16.67ms</mark></h3>
+    <small balance>
+      A <mark>60Hz display</mark> refreshes 60 times per second, so one frame slot is <mark>1000 / 60 = 16.67ms</mark>. Miss that slot and the browser shows the previous frame again. On
+      <mark>120Hz</mark>, the budget drops to <mark>8.33ms</mark>.
+    </small>
+  </section>
+  <section data-menu-title="Event Loop + Frame Budget">
+    <h3 balance><mark>Before rendering</mark> pixels, event loop <mark>gets a turn</mark></h3>
+    <small balance class="fragment">
+      The browser event loop <mark>runs</mark> a task, <mark>flushes</mark> microtasks, then gives <mark>rendering</mark> a chance. If your code overstays, <mark>the next frame waits</mark>.
+    </small>
+    <div class="event-loop-flow" role="img" aria-label="Task queue, microtasks, requestAnimationFrame, and rendering steps">
+      <article class="loop-card fragment">
+        <strong>Task queue</strong>
+        <small>input, timers, event handlers</small>
+      </article>
+      <article class="loop-card fragment">
+        <strong>Microtasks</strong>
+        <small>promises, MutationObserver</small>
+      </article>
+      <article class="loop-card fragment">
+        <strong>requestAnimationFrame</strong>
+        <small>last safe JavaScript before render</small>
+      </article>
+      <article class="loop-card fragment">
+        <strong>Render work</strong>
+        <small>style, layout, paint, composition</small>
+      </article>
+    </div>
+  </section>
+  <section data-menu-title="FPS Basics">
+    <h3>What does <mark>60fps</mark> mean?</h3>
+    <small balance>It means delivering <mark>60 fresh frames every second</mark>. When you miss one slot, browser repeats previous frame and motion instantly feels late.</small>
+    <div class="fps-demo" data-fps-demo>
+      <div class="fps-demo-stage">
+        <div class="fps-demo-screen">
+          <div class="fps-demo-guide" aria-hidden="true">
+            <span>0%</span>
+            <span>100%</span>
+          </div>
+          <div class="fps-demo-scene" data-fps-preview role="img" aria-label="A CSS comet animation sampled across the timeline"></div>
+        </div>
+        <p class="fps-demo-status" aria-live="polite">
+          <strong data-fps-status-rate>60fps</strong>
+          <span data-fps-status-budget>16.67ms per frame</span>
+        </p>
+      </div>
+
+      <div class="fps-demo-controls" role="group" aria-label="Animation sampling controls">
+        <label class="fps-demo-control">
+          <span>Timeline position</span>
+          <input type="range" min="0" max="100" step="0.1" value="0" data-fps-position aria-label="Animation position from zero to one hundred percent" />
+          <output data-fps-position-output>0.0%</output>
+        </label>
+
+        <label class="fps-demo-control">
+          <span>Throttle to FPS</span>
+          <input type="range" min="12" max="120" step="6" value="60" data-fps-rate aria-label="Target frames per second for the sampled playback" />
+          <output data-fps-rate-output>60fps</output>
+        </label>
+
+        <button class="fps-demo-play" type="button" data-fps-play aria-pressed="false">Play image</button>
+      </div>
+
+      <div class="fps-cadence" aria-label="Six sampled frames from the same CSS animation">
+        <article class="fps-frame" data-fps-frame>
+          <div class="fps-frame-scene"></div>
+          <strong>frame 1</strong>
+          <small data-fps-frame-progress>0.0%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame>
+          <div class="fps-frame-scene"></div>
+          <strong>frame 2</strong>
+          <small data-fps-frame-progress>1.7%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame>
+          <div class="fps-frame-scene"></div>
+          <strong>frame 3</strong>
+          <small data-fps-frame-progress>3.3%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame>
+          <div class="fps-frame-scene"></div>
+          <strong>frame 4</strong>
+          <small data-fps-frame-progress>5.0%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame>
+          <div class="fps-frame-scene"></div>
+          <strong>frame 5</strong>
+          <small data-fps-frame-progress>6.7%</small>
+        </article>
+        <article class="fps-frame" data-fps-frame>
+          <div class="fps-frame-scene"></div>
+          <strong>frame 6</strong>
+          <small data-fps-frame-progress>8.3%</small>
+        </article>
+      </div>
+    </div>
+    <p class="fps-basics-note">Scrub the CSS motion, lower the FPS, then open Performance Monitor and watch the cadence change in the overlay.</p>
+  </section>
+</section>

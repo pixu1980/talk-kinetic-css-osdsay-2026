@@ -1,6 +1,6 @@
 {
-	"name": "talk-template",
-	"version": "0.2.0",
+	"name": "kinetic-css",
+	"version": "0.2.2",
 	"license": "MIT",
 	"private": true,
 	"scripts": {
@@ -34,12 +34,14 @@
 		"@parcel/transformer-inline-string": "2.16.4",
 		"@parcel/transformer-sass": "2.16.4",
 		"baseline-browser-mapping": "2.10.21",
-		"lightningcss": "1.32.0",
 		"parcel": "2.16.4",
 		"posthtml": "0.16.7",
 		"posthtml-include": "2.0.1",
 		"prettier": "3.8.3",
 		"sharp": "0.33.5",
 		"svgo": "4.0.1"
-	}
+	},
+	"browserslist": [
+		"last 1 major version"
+	]
 }

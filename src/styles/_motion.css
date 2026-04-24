@@ -1,0 +1,38 @@
+/* Motion Primitives - Kinetic CSS */
+
+/* ========================================
+   Design Tokens - Duration, Easing, Spacing
+   ======================================== */
+
+:root {
+	/* Durations */
+	--duration-fast: 150ms;
+	--duration-normal: 300ms;
+	--duration-slow: 600ms;
+	--duration-cinematic: 800ms;
+
+	/* Easing */
+	--ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+	--ease-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
+	--ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	--ease-snap: cubic-bezier(0.5, 1.5, 0.75, 1);
+
+	/* Stagger base delay */
+	--stagger-base: 80ms;
+}
+
+/* ========================================
+   Reduced Motion - Global Override
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

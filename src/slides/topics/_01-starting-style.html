@@ -1,0 +1,84 @@
+<!-- Slide 5: Sponsors Grid Initial Entrance -->
+<!-- Speaker notes: All sponsor logos enter with staggered @starting-style. Each logo has a CSS variable --i for delay. -->
+<section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <h4>Starting with Our <mark>Sponsors</mark></h4>
+  </section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <div class="sponsor-logo-container">
+      <img style="--i: 0" src="./assets/sponsors/altum-host.svg" alt="Altum Host" class="sponsor-logo" />
+      <img style="--i: 1" src="./assets/sponsors/cursor.svg" alt="Cursor" class="sponsor-logo" />
+      <img style="--i: 2" src="./assets/sponsors/elastic.svg" alt="Elastic" invert class="sponsor-logo" />
+      <img style="--i: 3" src="./assets/sponsors/immobiliare-labs.svg" alt="Immobiliare Labs" invert class="sponsor-logo" />
+      <img style="--i: 4" src="./assets/sponsors/krateo-platformops.svg" alt="Krateo PlatformOps" class="sponsor-logo" />
+      <img style="--i: 5" src="./assets/sponsors/nephila.svg" alt="Nephila" invert class="sponsor-logo" />
+      <img style="--i: 6" src="./assets/sponsors/only-office.svg" alt="Only Office" class="sponsor-logo" />
+      <img style="--i: 7" src="./assets/sponsors/red-carbon.svg" alt="Red Carbon" invert class="sponsor-logo" />
+      <img style="--i: 8" src="./assets/sponsors/schrodinger-hat.svg" alt="Schrödinger Hat" invert class="sponsor-logo" />
+      <img style="--i: 9" src="./assets/sponsors/seeweb.svg" alt="Seeweb" invert class="sponsor-logo" />
+      <img style="--i: 10" src="./assets/sponsors/the-social-hub.svg" alt="The Social Hub" class="sponsor-logo" />
+      <img style="--i: 11" src="./assets/sponsors/welyk.svg" alt="Welyk" invert class="sponsor-logo" />
+    </div>
+  </section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <small balance>A staggered entrance animation done with <mark>@starting-style</mark> and a simple per-item delay based on <mark>sibling-index()</mark> with a custom property fallback.</small>
+    <pre>
+      <code class="hljs css" data-trim data-line-numbers="|2|20-23|13-14|16-18|25-28|30-40">
+.sponsor-logo-container {
+  --stagger-base: 0.25s;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  
+  ...
+}
+
+.sponsor-logo {
+  ...
+  
+  opacity: 1;
+  transform: scale(1) translateY(0);
+
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.5) translateY(40px);
+  }
+
+  @supports (--index: calc(sibling-index() * 1s)) {
+    transition-delay: 
+      calc(sibling-index() * var(--stagger-base));
+  }
+
+  @supports not (--index: calc(sibling-index() * 1s)) {
+    /*
+      Fallback: explicit --i on elements 
+      (or via nth-child rules elsewhere).
+    */
+    transition-delay: 
+      calc((var(--i, 0) + 1) * var(--stagger-base));
+  }
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>Roll call: logos arrive in waves, like an impulse traveling left to right</li>
+        <li>Each logo has a micro tilt and settle, so the grid feels alive but not chaotic</li>
+        <li>The stagger uses --i for delay calculation: 80ms between each logo</li>
+        <li>@starting-style handles the initial hidden state</li>
+        <li>API focus: grid layout, :nth-child for stagger, @starting-style</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="sponsors" data-menu-title="Sponsors">
+    <h4><mark>@starting-style</mark></h4>
+    <small balance>
+      Entry animations without JS are finally possible thanks to <mark>@starting-style</mark> at-rule: the CSS selector defines a starting style, then transitions it to the <mark>normal styles</mark>.
+    </small>
+    <baseline-status featureId="starting-style"></baseline-status>
+  </section>
+</section>

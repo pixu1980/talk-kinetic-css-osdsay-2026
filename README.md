@@ -1,7 +1,7 @@
-# talk-template
+# kinetic-css
 
-Talk Template
+Kinetic CSS slides for the Open Source Day 2026
 
 Check the slides here
 
-[Talk Template](https://pixu1980.github.io/talk-template/)
+[Kinetic CSS](https://pixu1980.github.io/talk-kinetic-css-osdsay-2026/)

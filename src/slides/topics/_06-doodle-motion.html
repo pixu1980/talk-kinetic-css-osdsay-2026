@@ -1,0 +1,136 @@
+<!-- Slide: Doodle Orbital Motion System -->
+<!-- Speaker notes: The intro doodle uses @property for hue cycling and JS for drag + lemniscate auto-motion + orbit trailing via rAF. -->
+<section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <h4><mark>@property</mark> + rAF orbit trailing</h4>
+  </section>
+  <section intro aria-label="60fps or nothing visual intro">
+    <figure class="stage" role="figure" aria-label="Performance-first motion system">
+      <div class="system" role="img">
+        <div class="orbit orbit--inner" aria-hidden="true"></div>
+        <div class="orbit orbit--middle" aria-hidden="true"></div>
+        <div class="orbit orbit--outer" aria-hidden="true"></div>
+        <div class="orbit orbit--fourth" aria-hidden="true"></div>
+        <div class="orbit orbit--fifth" aria-hidden="true"></div>
+        <h1 class="title" role="button" aria-label="Drag 60fps or nothing" tabindex="0">
+          Kinetic CSS<br />
+          <small>OSDay26 Edition</small>
+        </h1>
+      </div>
+    </figure>
+  </section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <small balance>
+      The intro <mark>doodle</mark> combines a CSS animatable custom property for hue cycling with JS driven drag, auto-motion on a lemniscate curve, and trailing orbits via
+      <mark>requestAnimationFrame</mark>.
+    </small>
+    <pre>
+      <code class="hljs css" data-trim data-line-numbers="|2-5|8-10|14-16|19-22|28-30|34-38">
+@property --doodle-hue {
+  syntax: '&lt;number&gt;';
+  inherits: true;
+  initial-value: 210;
+}
+
+@keyframes hue-cycle {
+  to { --doodle-hue: 570; }
+  /* 360 full cycle + 210 start */
+}
+
+.stage {
+  animation: hue-cycle 6s linear infinite;
+  --doodle-title-x: 50%;
+  --doodle-title-y: 50%;
+}
+
+.title {
+  background: linear-gradient(90deg,
+    oklch(0.75 0.2 calc(var(--doodle-hue) * 1deg)),
+    oklch(0.75 0.2 calc((var(--doodle-hue) + 120) * 1deg)));
+  background-clip: text;
+  color: transparent;
+  cursor: grab;
+  ...
+}
+
+.orbit {
+  left: var(--doodle-orbit-x, var(--doodle-title-x));
+  top: var(--doodle-orbit-y, var(--doodle-title-y));
+  border-color: oklch(0.7 0.15
+    calc(var(--doodle-hue) * 1deg) / 0.3);
+}
+
+.orbit--inner  { --doodle-orbit-rotate:  5deg; }
+.orbit--middle { --doodle-orbit-rotate: 10deg; }
+.orbit--outer  { --doodle-orbit-rotate: 15deg; }
+.orbit--fourth { --doodle-orbit-rotate: 20deg; }
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>@property registers --doodle-hue as a number so CSS can interpolate it in @keyframes</li>
+        <li>The gradient picks up the animated hue to cycle colors smoothly</li>
+        <li>Orbits read --doodle-orbit-x/y which JS updates with trailing interpolation</li>
+        <li>Each orbit ring has a different rotation for visual depth</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <small balance>JS drives the motion: a <mark>lemniscate</mark> (figure 8) path for auto-motion, pointer drag, and per-orbit <mark>lerp trailing</mark> at decreasing speeds.</small>
+    <pre>
+      <code class="hljs js" data-trim data-line-numbers="|1-5|7-16|18-24|26-34">
+const trailConfigs = [
+  { selector: '.orbit--inner',  speed: 0.27 },
+  { selector: '.orbit--middle', speed: 0.20 },
+  { selector: '.orbit--outer',  speed: 0.13 },
+];
+
+// Orbit trailing: each ring lerps toward the title
+const animateOrbitTrail = () => {
+  orbitTrail.forEach((orbit) => {
+    orbit.currentX +=
+      (orbit.targetX - orbit.currentX) * orbit.speed;
+    orbit.element.style.setProperty(
+      '--doodle-orbit-x', `${orbit.currentX}%`);
+  });
+  requestAnimationFrame(animateOrbitTrail);
+};
+
+// Lemniscate auto-motion (figure 8 curve)
+const angle = phase * Math.PI * 2;
+const denom = Math.sin(angle) ** 2 + 1;
+const rawX  = Math.cos(angle) / denom;
+const rawY  = (Math.sin(angle) * Math.cos(angle))
+              / denom;
+setPosition(50 + rawX * 36, 50 + rawY * 28);
+
+// Drag writes CSS custom properties directly
+title.addEventListener('pointermove', (e) => {
+  const rect = stage.getBoundingClientRect();
+  const px = ((e.clientX - rect.left) / rect.width)
+             * 100;
+  const py = ((e.clientY - rect.top) / rect.height)
+             * 100;
+  setPosition(px, py);
+});
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>Each orbit has a decreasing speed factor: inner follows fast, outer lags behind</li>
+        <li>The lemniscate parametric equation creates a smooth infinite figure 8 path</li>
+        <li>setPosition() writes --doodle-title-x/y to both stage and title, then updates orbit targets</li>
+        <li>On user pointer interaction, auto-motion stops and drag takes over</li>
+        <li>All visual output is CSS: JS only sets custom properties</li>
+      </ul>
+    </aside>
+  </section>
+  <section data-topic="doodle" data-menu-title="Doodle Motion">
+    <h4><mark>@property</mark></h4>
+    <small balance>
+      Registered custom properties with <mark>@property</mark> unlock CSS animation on values that would otherwise be static strings. The browser can interpolate typed values like
+      <mark>&lt;number&gt;</mark>, <mark>&lt;angle&gt;</mark>, and <mark>&lt;color&gt;</mark> across keyframes.
+    </small>
+    <baseline-status featureId="registered-custom-properties"></baseline-status>
+  </section>
+</section>

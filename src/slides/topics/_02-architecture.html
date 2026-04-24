@@ -1,0 +1,37 @@
+<!-- Slide 22: Architecture -->
+<!-- Speaker notes: This slide summarizes how CSS motion APIs layer together. Think of it as the blueprint for a motion design system. -->
+<section data-topic="architecture" data-menu-title="Architecture">
+  <h3>Motion Architecture</h3>
+  <small balance>A "blueprint" about how CSS motion APIs layer together into a coherent system.</small>
+  <div class="architecture-diagram">
+    <div class="arch-layer fragment" style="--layer: 0">
+      <strong>Foundation</strong>
+      <span>@property, Custom Properties, Design Tokens</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 1">
+      <strong>Primitives</strong>
+      <span>translate, scale, rotate, offset-path, filter</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 2">
+      <strong>Triggers</strong>
+      <span>:hover, :focus, @starting-style, scroll(), view()</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 3">
+      <strong>Composition</strong>
+      <span>animation-composition, View Transitions, timeline ranges</span>
+    </div>
+    <div class="arch-layer fragment" style="--layer: 4">
+      <strong>Guardians</strong>
+      <span>prefers-reduced-motion, container queries, @supports</span>
+    </div>
+  </div>
+  <aside class="notes">
+    <ul>
+      <li>Foundation: typed variables for interpolation</li>
+      <li>Primitives: the transform and filter building blocks</li>
+      <li>Triggers: what starts the motion</li>
+      <li>Composition: layering and sequencing</li>
+      <li>Guardians: accessibility and progressive enhancement</li>
+    </ul>
+  </aside>
+</section>

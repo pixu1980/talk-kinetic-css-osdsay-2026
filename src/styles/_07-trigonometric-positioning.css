@@ -1,0 +1,148 @@
+/* Trigonometric Positioning & Animation - _05-trigonometric-positioning.css */
+
+@layer speaker-talk {
+	@layer topics {
+		@layer trigonometric-positioning {
+			/* ===== SINUSOIDAL WAVE WITH SPONSOR LOGOS ===== */
+			.trigonometric-sponsors-wave {
+				--wave-length: 360deg;
+				--wave-amplitude: 15rem;
+				--steps: calc(sibling-count() - 1);
+				--logo-size-min: 12rem;
+				--scale-min: 0.8;
+				--scale-max: 1.25;
+				--logo-gap: clamp(0.4rem, 0.9vw, 0.6rem);
+
+				position: relative;
+				width: 92%;
+				max-width: 90rem;
+				height: 400px;
+				margin-block: 2rem;
+				margin-inline: auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+
+				border: 2px solid rgba(0, 245, 255, 0.35);
+				border-radius: 0.75rem;
+				box-shadow: 0 0 20px rgba(0, 245, 255, 0.25);
+			}
+
+			/* Position each sponsor along a sinusoidal wave with animation */
+			.present:has(:scope > .trigonometric-sponsors-wave) {
+				.sponsor-wave-item {
+					--index: calc(sibling-index() - 1);
+
+					position: absolute;
+					top: 50%;
+					width: var(--logo-size-min);
+					height: var(--logo-size-min);
+					left: calc((var(--index) / var(--steps)) * 100%);
+					transform: translateX(calc(-50% + var(--index) * var(--logo-gap)))
+						translateY(-50%);
+					will-change: left, transform;
+					animation: sponsor-travel 12s ease-in-out infinite;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+						transition: filter 0.3s ease;
+						will-change: filter;
+						animation: sponsor-glow 12s ease-in-out infinite;
+					}
+				}
+			}
+
+			/* Move each logo along the wave by shifting its parameter (index + travel).
+		   We animate real properties (left/transform/filter), so it stays smooth without @property registration. */
+			@keyframes sponsor-travel {
+				0%,
+				100% {
+					/* travel = -3 (can go out of bounds, container clips it) */
+					left: calc(((var(--index) - 3) / var(--steps)) * 100%);
+					transform: translateX(calc(-50% + var(--index) * var(--logo-gap)))
+						translateY(
+							calc(
+								-50% +
+								var(--wave-amplitude) *
+								sin(
+									calc((var(--index) - 3) / var(--steps) * var(--wave-length))
+								)
+							)
+						)
+						scale(
+							calc(
+								var(--scale-min) +
+								(var(--scale-max) - var(--scale-min)) *
+								(
+									(
+										sin(
+											calc(
+												(var(--index) - 3) /
+												var(--steps) *
+												var(--wave-length)
+											)
+										) +
+										1
+									) /
+									2
+								)
+							)
+						);
+				}
+
+				50% {
+					/* travel = +3 */
+					left: calc(((var(--index) + 3) / var(--steps)) * 100%);
+					transform: translateX(calc(-50% + var(--index) * var(--logo-gap)))
+						translateY(
+							calc(
+								-50% +
+								var(--wave-amplitude) *
+								sin(
+									calc((var(--index) + 3) / var(--steps) * var(--wave-length))
+								)
+							)
+						)
+						scale(
+							calc(
+								var(--scale-min) +
+								(var(--scale-max) - var(--scale-min)) *
+								(
+									(
+										sin(
+											calc(
+												(var(--index) + 3) /
+												var(--steps) *
+												var(--wave-length)
+											)
+										) +
+										1
+									) /
+									2
+								)
+							)
+						);
+				}
+			}
+
+			@keyframes sponsor-glow {
+				0%,
+				100% {
+					filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.55));
+				}
+
+				50% {
+					filter: drop-shadow(0 0 22px rgba(0, 245, 255, 0.85));
+				}
+			}
+
+			.sponsor-wave-item:hover img {
+				filter: drop-shadow(0 0 20px rgba(0, 245, 255, 1))
+					drop-shadow(0 0 10px rgba(255, 0, 200, 0.6));
+			}
+		}
+	}
+}

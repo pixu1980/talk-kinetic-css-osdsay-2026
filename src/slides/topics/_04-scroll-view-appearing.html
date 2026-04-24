@@ -1,0 +1,139 @@
+<!-- Slide: Scroll View Appearing Animation -->
+<!-- Speaker notes: Demonstrates scroll-driven animations that make elements appear as they enter the viewport. Using animation-timeline: view() for smooth, performance-optimized reveal animations. -->
+<section>
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <h4 balance>
+      <mark>Scroll-driven</mark> Container <br />
+      with Appearing <del>Cards</del>&nbsp;<mark>Logos</mark>
+    </h4>
+  </section>
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <div class="scroll-view-container">
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/altum-host.svg" alt="Altum Host" loading="lazy" />
+          <h5>Altum Host</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/cursor.svg" alt="Cursor" loading="lazy" />
+          <h5>Cursor</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/elastic.svg" alt="Elastic" loading="lazy" />
+          <h5>Elastic</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/immobiliare-labs.svg" alt="Immobiliare Labs" loading="lazy" />
+          <h5>Immobiliare Labs</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/krateo-platformops.svg" alt="Krateo PlatformOps" loading="lazy" />
+          <h5>Krateo PlatformOps</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/nephila.svg" alt="Nephila" loading="lazy" />
+          <h5>Nephila</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/only-office.svg" alt="Only Office" loading="lazy" />
+          <h5>Only Office</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/red-carbon.svg" alt="Red Carbon" loading="lazy" />
+          <h5>Red Carbon</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/schrodinger-hat.svg" alt="Schrödinger Hat" loading="lazy" />
+          <h5>Schrödinger Hat</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/seeweb.svg" alt="Seeweb" loading="lazy" />
+          <h5>Seeweb</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/the-social-hub.svg" alt="The Social Hub" loading="lazy" />
+          <h5>The Social Hub</h5>
+        </div>
+      </div>
+      <div class="scroll-view-card">
+        <div class="card-inner">
+          <img src="./assets/sponsors/welyk.svg" alt="Welyk" loading="lazy" />
+          <h5>Welyk</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <small balance> Using <mark>animation-timeline: view()</mark> to drive reveal animations based on viewport intersection. </small>
+    <pre><code class="hljs css" data-trim data-line-numbers="|2-10|14-19|21-35">
+@supports (animation-timeline: view(inline)) {
+  .scroll-view-card {
+    animation: reveal-and-elevate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+    /* Precise control over animation range */
+    animation-range:
+      entry 35% /* start after element enters from right by its 35% */
+      cover 70%; /* end 70% through cover phase */
+
+    animation-timeline: view(inline);
+  }
+}
+
+@supports not (animation-timeline: view(inline)) {
+  .scroll-view-card {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes reveal-and-elevate {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(8rem);
+    filter: blur(8px);
+  }
+
+  50% { filter: blur(4px); }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+    </code></pre>
+    <aside class="notes">
+      animation-timeline: view(inline) ties the animation to the element's position in a horizontal scroll viewport. entry 0% means the animation starts as soon as the element enters the viewport.
+      cover 30% means it reaches its final state after traversing 30% of the viewport. This ensures elements reveal quickly as they scroll into view.
+    </aside>
+  </section>
+  <section data-topic="scroll-view-appearing" data-menu-title="Scroll View Appearing">
+    <h3><mark>scroll-driven</mark> Animations</h3>
+    <small balance>
+      The animation-timeline, scroll-timeline, and view-timeline CSS properties advance animations based on the user's scroll position. Here using <mark>animation-timeline: view(inline)</mark> for
+      native scroll-driven effects, no JavaScript required.
+    </small>
+    <baseline-status featureId="scroll-driven-animations"></baseline-status>
+  </section>
+</section>
