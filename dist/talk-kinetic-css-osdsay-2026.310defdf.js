@@ -339,12 +339,12 @@ function $parcel$interopDefault(a) {
 
 
 //#region js/utils/util.ts
-var $35d9630704992433$var$e = (e, t)=>{
+var $c33c79a16a3591fd$var$e = (e, t)=>{
     for(let n in t)e[n] = t[n];
     return e;
-}, $35d9630704992433$var$t = (e, t)=>Array.from(e.querySelectorAll(t)), $35d9630704992433$var$n = (e, t, n)=>{
+}, $c33c79a16a3591fd$var$t = (e, t)=>Array.from(e.querySelectorAll(t)), $c33c79a16a3591fd$var$n = (e, t, n)=>{
     n ? e.classList.add(t) : e.classList.remove(t);
-}, $35d9630704992433$var$r = (e)=>{
+}, $c33c79a16a3591fd$var$r = (e)=>{
     if (typeof e == "string") {
         if (e === "null") return null;
         if (e === "true") return !0;
@@ -352,23 +352,23 @@ var $35d9630704992433$var$e = (e, t)=>{
         if (e.match(/^-?[\d\.]+$/)) return parseFloat(e);
     }
     return e;
-}, $35d9630704992433$var$i = (e, t)=>{
+}, $c33c79a16a3591fd$var$i = (e, t)=>{
     e.style.transform = t;
-}, $35d9630704992433$var$a = (e, t)=>{
+}, $c33c79a16a3591fd$var$a = (e, t)=>{
     let n = e.matches || e.matchesSelector || e.msMatchesSelector;
     return !!(n && n.call(e, t));
-}, $35d9630704992433$var$o = (e, t)=>{
+}, $c33c79a16a3591fd$var$o = (e, t)=>{
     if (e && typeof e.closest == "function") return e.closest(t);
     for(; e;){
-        if ($35d9630704992433$var$a(e, t)) return e;
+        if ($c33c79a16a3591fd$var$a(e, t)) return e;
         e = e.parentElement;
     }
     return null;
-}, $35d9630704992433$var$s = (e)=>{
+}, $c33c79a16a3591fd$var$s = (e)=>{
     e = e || document.documentElement;
     let t = e.requestFullscreen || e.webkitRequestFullscreen || e.webkitRequestFullScreen || e.mozRequestFullScreen || e.msRequestFullscreen;
     t && t.apply(e);
-}, $35d9630704992433$var$c = (e, t, n, r = "")=>{
+}, $c33c79a16a3591fd$var$c = (e, t, n, r = "")=>{
     let i = e.querySelectorAll("." + n);
     for(let t = 0; t < i.length; t++){
         let n = i[t];
@@ -376,10 +376,10 @@ var $35d9630704992433$var$e = (e, t)=>{
     }
     let a = document.createElement(t);
     return a.className = n, a.innerHTML = r, e.appendChild(a), a;
-}, $35d9630704992433$var$l = (e)=>{
+}, $c33c79a16a3591fd$var$l = (e)=>{
     let t = document.createElement("style");
     return e && e.length > 0 && t.appendChild(document.createTextNode(e)), document.head.appendChild(t), t;
-}, $35d9630704992433$var$u = ()=>{
+}, $c33c79a16a3591fd$var$u = ()=>{
     let e = {};
     location.search.replace(/[A-Z0-9]+?=([\w\.%-]*)/gi, (t)=>{
         let n = t.split("=").shift(), r = t.split("=").pop();
@@ -387,28 +387,28 @@ var $35d9630704992433$var$e = (e, t)=>{
     });
     for(let t in e){
         let n = e[t];
-        e[t] = $35d9630704992433$var$r(unescape(n));
+        e[t] = $c33c79a16a3591fd$var$r(unescape(n));
     }
     return e.dependencies !== void 0 && delete e.dependencies, e;
-}, $35d9630704992433$var$d = (e, t = 0)=>{
+}, $c33c79a16a3591fd$var$d = (e, t = 0)=>{
     if (e) {
         var n;
         let r, i = e.style.height;
         return e.style.height = "0px", e.parentElement && (e.parentElement.style.height = "auto"), r = t - (((n = e.parentElement) == null ? void 0 : n.offsetHeight) || 0), e.style.height = i + "px", e.parentElement && e.parentElement.style.removeProperty("height"), r;
     }
     return t;
-}, $35d9630704992433$var$f = {
+}, $c33c79a16a3591fd$var$f = {
     mp4: "video/mp4",
     m4a: "video/mp4",
     ogv: "video/ogg",
     mpeg: "video/mpeg",
     webm: "video/webm"
-}, $35d9630704992433$var$p = (e = "")=>{
+}, $c33c79a16a3591fd$var$p = (e = "")=>{
     let t = e.split(".").pop();
-    return t ? $35d9630704992433$var$f[t] : void 0;
-}, $35d9630704992433$var$m = (e = "")=>encodeURI(e).replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[!'()*]/g, (e)=>`%${e.charCodeAt(0).toString(16).toUpperCase()}`), $35d9630704992433$var$h = navigator.userAgent, $35d9630704992433$var$g = /(iphone|ipod|ipad|android)/gi.test($35d9630704992433$var$h) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
-/chrome/i.test($35d9630704992433$var$h) && /edge/i.test($35d9630704992433$var$h);
-var $35d9630704992433$var$_ = /android/gi.test($35d9630704992433$var$h), $35d9630704992433$var$v = function(e) {
+    return t ? $c33c79a16a3591fd$var$f[t] : void 0;
+}, $c33c79a16a3591fd$var$m = (e = "")=>encodeURI(e).replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[!'()*]/g, (e)=>`%${e.charCodeAt(0).toString(16).toUpperCase()}`), $c33c79a16a3591fd$var$h = navigator.userAgent, $c33c79a16a3591fd$var$g = /(iphone|ipod|ipad|android)/gi.test($c33c79a16a3591fd$var$h) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+/chrome/i.test($c33c79a16a3591fd$var$h) && /edge/i.test($c33c79a16a3591fd$var$h);
+var $c33c79a16a3591fd$var$_ = /android/gi.test($c33c79a16a3591fd$var$h), $c33c79a16a3591fd$var$v = function(e) {
     if (e) {
         var t = function(e) {
             return [].slice.call(e);
@@ -537,36 +537,36 @@ var $35d9630704992433$var$_ = /android/gi.test($35d9630704992433$var$h), $35d963
 }(typeof window > "u" ? null : window);
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/typeof.js
-function $35d9630704992433$var$y(e) {
+function $c33c79a16a3591fd$var$y(e) {
     "@babel/helpers - typeof";
-    return $35d9630704992433$var$y = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(e) {
+    return $c33c79a16a3591fd$var$y = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(e) {
         return typeof e;
     } : function(e) {
         return e && typeof Symbol == "function" && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
-    }, $35d9630704992433$var$y(e);
+    }, $c33c79a16a3591fd$var$y(e);
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/toPrimitive.js
-function $35d9630704992433$var$b(e, t) {
-    if ($35d9630704992433$var$y(e) != "object" || !e) return e;
+function $c33c79a16a3591fd$var$b(e, t) {
+    if ($c33c79a16a3591fd$var$y(e) != "object" || !e) return e;
     var n = e[Symbol.toPrimitive];
     if (n !== void 0) {
         var r = n.call(e, t || "default");
-        if ($35d9630704992433$var$y(r) != "object") return r;
+        if ($c33c79a16a3591fd$var$y(r) != "object") return r;
         throw TypeError("@@toPrimitive must return a primitive value.");
     }
     return (t === "string" ? String : Number)(e);
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/toPropertyKey.js
-function $35d9630704992433$var$x(e) {
-    var t = $35d9630704992433$var$b(e, "string");
-    return $35d9630704992433$var$y(t) == "symbol" ? t : t + "";
+function $c33c79a16a3591fd$var$x(e) {
+    var t = $c33c79a16a3591fd$var$b(e, "string");
+    return $c33c79a16a3591fd$var$y(t) == "symbol" ? t : t + "";
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/defineProperty.js
-function $35d9630704992433$var$S(e, t, n) {
-    return (t = $35d9630704992433$var$x(t)) in e ? Object.defineProperty(e, t, {
+function $c33c79a16a3591fd$var$S(e, t, n) {
+    return (t = $c33c79a16a3591fd$var$x(t)) in e ? Object.defineProperty(e, t, {
         value: n,
         enumerable: !0,
         configurable: !0,
@@ -575,9 +575,9 @@ function $35d9630704992433$var$S(e, t, n) {
 }
 //#endregion
 //#region js/controllers/slidecontent.js
-var $35d9630704992433$var$ee = class {
+var $c33c79a16a3591fd$var$ee = class {
     constructor(e){
-        $35d9630704992433$var$S(this, "allowedToPlayAudio", null), this.Reveal = e, this.startEmbeddedMedia = this.startEmbeddedMedia.bind(this), this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this), this.preventIframeAutoFocus = this.preventIframeAutoFocus.bind(this), this.ensureMobileMediaPlaying = this.ensureMobileMediaPlaying.bind(this), this.failedAudioPlaybackTargets = /* @__PURE__ */ new Set(), this.failedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.failedMutedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.renderMediaPlayButton();
+        $c33c79a16a3591fd$var$S(this, "allowedToPlayAudio", null), this.Reveal = e, this.startEmbeddedMedia = this.startEmbeddedMedia.bind(this), this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this), this.preventIframeAutoFocus = this.preventIframeAutoFocus.bind(this), this.ensureMobileMediaPlaying = this.ensureMobileMediaPlaying.bind(this), this.failedAudioPlaybackTargets = /* @__PURE__ */ new Set(), this.failedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.failedMutedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.renderMediaPlayButton();
     }
     renderMediaPlayButton() {
         this.mediaPlayButton = document.createElement("button"), this.mediaPlayButton.className = "r-overlay-button r-media-play-button", this.mediaPlayButton.addEventListener("click", ()=>{
@@ -603,14 +603,14 @@ var $35d9630704992433$var$ee = class {
             let t = r.replace(/\s*!important\s*$/, "").trim();
             e.style.setProperty("display", t, "important");
         } else e.style.display = r;
-        $35d9630704992433$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
+        $c33c79a16a3591fd$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
             let t = e.tagName === "IFRAME";
             (!t || this.shouldPreload(e)) && (e.setAttribute("src", e.getAttribute("data-src")), e.setAttribute("data-lazy-loaded", ""), e.removeAttribute("data-src"), t && e.addEventListener("load", this.preventIframeAutoFocus));
-        }), $35d9630704992433$var$t(e, "video, audio").forEach((e)=>{
+        }), $c33c79a16a3591fd$var$t(e, "video, audio").forEach((e)=>{
             let n = 0;
-            $35d9630704992433$var$t(e, "source[data-src]").forEach((e)=>{
+            $c33c79a16a3591fd$var$t(e, "source[data-src]").forEach((e)=>{
                 e.setAttribute("src", e.getAttribute("data-src")), e.removeAttribute("data-src"), e.setAttribute("data-lazy-loaded", ""), n += 1;
-            }), $35d9630704992433$var$g && e.tagName === "VIDEO" && e.setAttribute("playsinline", ""), n > 0 && e.load();
+            }), $c33c79a16a3591fd$var$g && e.tagName === "VIDEO" && e.setAttribute("playsinline", ""), n > 0 && e.load();
         });
         let i = e.slideBackgroundElement;
         if (i) {
@@ -619,13 +619,13 @@ var $35d9630704992433$var$ee = class {
             if (i.hasAttribute("data-loaded") === !1) {
                 i.setAttribute("data-loaded", "true");
                 let a = e.getAttribute("data-background-image"), o = e.getAttribute("data-background-video"), s = e.hasAttribute("data-background-video-loop"), c = e.hasAttribute("data-background-video-muted");
-                if (a) /^data:/.test(a.trim()) ? t.style.backgroundImage = `url(${a.trim()})` : t.style.backgroundImage = a.split(",").map((e)=>`url(${$35d9630704992433$var$m(decodeURI(e.trim()))})`).join(",");
+                if (a) /^data:/.test(a.trim()) ? t.style.backgroundImage = `url(${a.trim()})` : t.style.backgroundImage = a.split(",").map((e)=>`url(${$c33c79a16a3591fd$var$m(decodeURI(e.trim()))})`).join(",");
                 else if (o) {
                     let e = document.createElement("video");
-                    s && e.setAttribute("loop", ""), (c || this.Reveal.isSpeakerNotes()) && (e.muted = !0), $35d9630704992433$var$g && e.setAttribute("playsinline", ""), o.split(",").forEach((t)=>{
+                    s && e.setAttribute("loop", ""), (c || this.Reveal.isSpeakerNotes()) && (e.muted = !0), $c33c79a16a3591fd$var$g && e.setAttribute("playsinline", ""), o.split(",").forEach((t)=>{
                         let n = document.createElement("source");
                         n.setAttribute("src", t);
-                        let r = $35d9630704992433$var$p(t);
+                        let r = $c33c79a16a3591fd$var$p(t);
                         r && n.setAttribute("type", r), e.appendChild(n);
                     }), t.appendChild(e);
                 } else if (r && n.excludeIframes !== !0) {
@@ -640,7 +640,7 @@ var $35d9630704992433$var$ee = class {
     }
     layout(e) {
         Array.from(e.querySelectorAll(".r-fit-text")).forEach((e)=>{
-            $35d9630704992433$var$v(e, {
+            $c33c79a16a3591fd$var$v(e, {
                 minSize: 24,
                 maxSize: this.Reveal.getConfig().height * .8,
                 observeMutations: !1,
@@ -651,17 +651,17 @@ var $35d9630704992433$var$ee = class {
     unload(e) {
         e.style.display = "none";
         let n = this.Reveal.getSlideBackground(e);
-        n && (n.style.display = "none", $35d9630704992433$var$t(n, "iframe[src]").forEach((e)=>{
+        n && (n.style.display = "none", $c33c79a16a3591fd$var$t(n, "iframe[src]").forEach((e)=>{
             e.removeAttribute("src");
-        })), $35d9630704992433$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
+        })), $c33c79a16a3591fd$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
-        }), $35d9630704992433$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
+        }), $c33c79a16a3591fd$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
         });
     }
     formatEmbeddedContent() {
         let e = (e, n, r)=>{
-            $35d9630704992433$var$t(this.Reveal.getSlidesElement(), "iframe[" + e + "*=\"" + n + "\"]").forEach((t)=>{
+            $c33c79a16a3591fd$var$t(this.Reveal.getSlidesElement(), "iframe[" + e + "*=\"" + n + "\"]").forEach((t)=>{
                 let n = t.getAttribute(e);
                 n && n.indexOf(r) === -1 && t.setAttribute(e, n + (/\?/.test(n) ? "&" : "?") + r);
             });
@@ -671,23 +671,23 @@ var $35d9630704992433$var$ee = class {
     startEmbeddedContent(e) {
         if (e) {
             let n = this.Reveal.isSpeakerNotes();
-            $35d9630704992433$var$t(e, "img[src$=\".gif\"]").forEach((e)=>{
+            $c33c79a16a3591fd$var$t(e, "img[src$=\".gif\"]").forEach((e)=>{
                 e.setAttribute("src", e.getAttribute("src"));
-            }), $35d9630704992433$var$t(e, "video, audio").forEach((e)=>{
-                if ($35d9630704992433$var$o(e, ".fragment") && !$35d9630704992433$var$o(e, ".fragment.visible")) return;
+            }), $c33c79a16a3591fd$var$t(e, "video, audio").forEach((e)=>{
+                if ($c33c79a16a3591fd$var$o(e, ".fragment") && !$c33c79a16a3591fd$var$o(e, ".fragment.visible")) return;
                 let t = this.Reveal.getConfig().autoPlayMedia;
-                if (typeof t != "boolean" && (t = e.hasAttribute("data-autoplay") || !!$35d9630704992433$var$o(e, ".slide-background")), t && typeof e.play == "function") {
+                if (typeof t != "boolean" && (t = e.hasAttribute("data-autoplay") || !!$c33c79a16a3591fd$var$o(e, ".slide-background")), t && typeof e.play == "function") {
                     if (n && !e.muted) return;
                     e.readyState > 1 ? this.startEmbeddedMedia({
                         target: e
-                    }) : $35d9630704992433$var$g ? (e.addEventListener("canplay", this.ensureMobileMediaPlaying), this.playMediaElement(e)) : (e.removeEventListener("loadeddata", this.startEmbeddedMedia), e.addEventListener("loadeddata", this.startEmbeddedMedia));
+                    }) : $c33c79a16a3591fd$var$g ? (e.addEventListener("canplay", this.ensureMobileMediaPlaying), this.playMediaElement(e)) : (e.removeEventListener("loadeddata", this.startEmbeddedMedia), e.addEventListener("loadeddata", this.startEmbeddedMedia));
                 }
-            }), n || ($35d9630704992433$var$t(e, "iframe[src]").forEach((e)=>{
-                $35d9630704992433$var$o(e, ".fragment") && !$35d9630704992433$var$o(e, ".fragment.visible") || this.startEmbeddedIframe({
+            }), n || ($c33c79a16a3591fd$var$t(e, "iframe[src]").forEach((e)=>{
+                $c33c79a16a3591fd$var$o(e, ".fragment") && !$c33c79a16a3591fd$var$o(e, ".fragment.visible") || this.startEmbeddedIframe({
                     target: e
                 });
-            }), $35d9630704992433$var$t(e, "iframe[data-src]").forEach((e)=>{
-                $35d9630704992433$var$o(e, ".fragment") && !$35d9630704992433$var$o(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
+            }), $c33c79a16a3591fd$var$t(e, "iframe[data-src]").forEach((e)=>{
+                $c33c79a16a3591fd$var$o(e, ".fragment") && !$c33c79a16a3591fd$var$o(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
             }));
         }
     }
@@ -699,7 +699,7 @@ var $35d9630704992433$var$ee = class {
         }, 1e3);
     }
     startEmbeddedMedia(e) {
-        let t = !!$35d9630704992433$var$o(e.target, "html"), n = !!$35d9630704992433$var$o(e.target, ".present");
+        let t = !!$c33c79a16a3591fd$var$o(e.target, "html"), n = !!$c33c79a16a3591fd$var$o(e.target, ".present");
         t && n && (e.target.paused || e.target.ended) && (e.target.currentTime = 0, this.playMediaElement(e.target)), e.target.removeEventListener("loadeddata", this.startEmbeddedMedia);
     }
     playMediaElement(e) {
@@ -710,7 +710,7 @@ var $35d9630704992433$var$ee = class {
             if (t.name === "NotAllowedError") {
                 if (this.allowedToPlayAudio = !1, e.tagName === "VIDEO") {
                     this.onVideoPlaybackNotAllowed(e);
-                    let t = !!$35d9630704992433$var$o(e, "html"), n = !!$35d9630704992433$var$o(e, ".present"), r = e.muted;
+                    let t = !!$c33c79a16a3591fd$var$o(e, "html"), n = !!$c33c79a16a3591fd$var$o(e, ".present"), r = e.muted;
                     t && n && !r && (e.setAttribute("data-muted-by-reveal", "true"), e.muted = !0, e.play().catch(()=>{
                         this.onMutedVideoPlaybackNotAllowed(e);
                     }));
@@ -721,25 +721,25 @@ var $35d9630704992433$var$ee = class {
     startEmbeddedIframe(e) {
         let t = e.target;
         if (this.preventIframeAutoFocus(e), t && t.contentWindow) {
-            let n = !!$35d9630704992433$var$o(e.target, "html"), r = !!$35d9630704992433$var$o(e.target, ".present");
+            let n = !!$c33c79a16a3591fd$var$o(e.target, "html"), r = !!$c33c79a16a3591fd$var$o(e.target, ".present");
             if (n && r) {
                 let e = this.Reveal.getConfig().autoPlayMedia;
-                typeof e != "boolean" && (e = t.hasAttribute("data-autoplay") || !!$35d9630704992433$var$o(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"playVideo\",\"args\":\"\"}", "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"method\":\"play\"}", "*") : t.contentWindow.postMessage("slide:start", "*");
+                typeof e != "boolean" && (e = t.hasAttribute("data-autoplay") || !!$c33c79a16a3591fd$var$o(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"playVideo\",\"args\":\"\"}", "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage("{\"method\":\"play\"}", "*") : t.contentWindow.postMessage("slide:start", "*");
             }
         }
     }
     stopEmbeddedContent(n, r = {}) {
-        r = $35d9630704992433$var$e({
+        r = $c33c79a16a3591fd$var$e({
             unloadIframes: !0
-        }, r), n && n.parentNode && ($35d9630704992433$var$t(n, "video, audio").forEach((e)=>{
-            !e.hasAttribute("data-ignore") && typeof e.pause == "function" && (e.setAttribute("data-paused-by-reveal", ""), e.pause(), $35d9630704992433$var$g && e.removeEventListener("canplay", this.ensureMobileMediaPlaying));
-        }), $35d9630704992433$var$t(n, "iframe").forEach((e)=>{
+        }, r), n && n.parentNode && ($c33c79a16a3591fd$var$t(n, "video, audio").forEach((e)=>{
+            !e.hasAttribute("data-ignore") && typeof e.pause == "function" && (e.setAttribute("data-paused-by-reveal", ""), e.pause(), $c33c79a16a3591fd$var$g && e.removeEventListener("canplay", this.ensureMobileMediaPlaying));
+        }), $c33c79a16a3591fd$var$t(n, "iframe").forEach((e)=>{
             e.contentWindow && e.contentWindow.postMessage("slide:stop", "*"), e.removeEventListener("load", this.preventIframeAutoFocus), e.removeEventListener("load", this.startEmbeddedIframe);
-        }), $35d9630704992433$var$t(n, "iframe[src*=\"youtube.com/embed/\"]").forEach((e)=>{
+        }), $c33c79a16a3591fd$var$t(n, "iframe[src*=\"youtube.com/embed/\"]").forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && typeof e.contentWindow.postMessage == "function" && e.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"pauseVideo\",\"args\":\"\"}", "*");
-        }), $35d9630704992433$var$t(n, "iframe[src*=\"player.vimeo.com/\"]").forEach((e)=>{
+        }), $c33c79a16a3591fd$var$t(n, "iframe[src*=\"player.vimeo.com/\"]").forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && typeof e.contentWindow.postMessage == "function" && e.contentWindow.postMessage("{\"method\":\"pause\"}", "*");
-        }), r.unloadIframes === !0 && $35d9630704992433$var$t(n, "iframe[data-src]").forEach((e)=>{
+        }), r.unloadIframes === !0 && $c33c79a16a3591fd$var$t(n, "iframe[data-src]").forEach((e)=>{
             e.setAttribute("src", "about:blank"), e.removeAttribute("src");
         }));
     }
@@ -783,7 +783,7 @@ var $35d9630704992433$var$ee = class {
     afterSlideChanged() {
         this.clearMediaPlaybackErrors();
     }
-}, $35d9630704992433$var$C = ".slides section", $35d9630704992433$var$w = ".slides>section", $35d9630704992433$var$te = ".slides>section.present>section", $35d9630704992433$var$T = ".backgrounds>.slide-background", $35d9630704992433$var$E = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview|previewIframe/, $35d9630704992433$var$ne = class {
+}, $c33c79a16a3591fd$var$C = ".slides section", $c33c79a16a3591fd$var$w = ".slides>section", $c33c79a16a3591fd$var$te = ".slides>section.present>section", $c33c79a16a3591fd$var$T = ".backgrounds>.slide-background", $c33c79a16a3591fd$var$E = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview|previewIframe/, $c33c79a16a3591fd$var$ne = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -832,7 +832,7 @@ var $35d9630704992433$var$ee = class {
     destroy() {
         this.element.remove();
     }
-}, $35d9630704992433$var$re = class {
+}, $c33c79a16a3591fd$var$re = class {
     constructor(e){
         this.Reveal = e, this.onInput = this.onInput.bind(this), this.onBlur = this.onBlur.bind(this), this.onKeyDown = this.onKeyDown.bind(this);
     }
@@ -887,7 +887,7 @@ var $35d9630704992433$var$ee = class {
     onBlur() {
         setTimeout(()=>this.hide(), 1);
     }
-}, $35d9630704992433$var$D = (e)=>{
+}, $c33c79a16a3591fd$var$D = (e)=>{
     let t = e.match(/^#([0-9a-f]{3})$/i);
     if (t && t[1]) {
         let e = t[1];
@@ -919,7 +919,7 @@ var $35d9630704992433$var$ee = class {
         b: parseInt(i[3], 10),
         a: parseFloat(i[4])
     } : null;
-}, $35d9630704992433$var$ie = (e)=>(typeof e == "string" && (e = $35d9630704992433$var$D(e)), e ? (e.r * 299 + e.g * 587 + e.b * 114) / 1e3 : null), $35d9630704992433$var$ae = class {
+}, $c33c79a16a3591fd$var$ie = (e)=>(typeof e == "string" && (e = $c33c79a16a3591fd$var$D(e)), e ? (e.r * 299 + e.g * 587 + e.b * 114) / 1e3 : null), $c33c79a16a3591fd$var$ae = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -929,7 +929,7 @@ var $35d9630704992433$var$ee = class {
     create() {
         this.element.innerHTML = "", this.element.classList.add("no-transition"), this.Reveal.getHorizontalSlides().forEach((e)=>{
             let n = this.createBackground(e, this.element);
-            $35d9630704992433$var$t(e, "section").forEach((e)=>{
+            $c33c79a16a3591fd$var$t(e, "section").forEach((e)=>{
                 this.createBackground(e, n), n.classList.add("stack");
             });
         }), this.Reveal.getConfig().parallaxBackgroundImage ? (this.element.style.backgroundImage = "url(\"" + this.Reveal.getConfig().parallaxBackgroundImage + "\")", this.element.style.backgroundSize = this.Reveal.getConfig().parallaxBackgroundSize, this.element.style.backgroundRepeat = this.Reveal.getConfig().parallaxBackgroundRepeat, this.element.style.backgroundPosition = this.Reveal.getConfig().parallaxBackgroundPosition, setTimeout(()=>{
@@ -962,13 +962,13 @@ var $35d9630704992433$var$ee = class {
     }
     getContrastClass(e) {
         let t = e.slideBackgroundElement, n = e.getAttribute("data-background-color");
-        if (!n || !$35d9630704992433$var$D(n)) {
+        if (!n || !$c33c79a16a3591fd$var$D(n)) {
             let e = window.getComputedStyle(t);
             e && e.backgroundColor && (n = e.backgroundColor);
         }
         if (n) {
-            let e = $35d9630704992433$var$D(n);
-            if (e && e.a !== 0) return $35d9630704992433$var$ie(n) < 128 ? "has-dark-background" : "has-light-background";
+            let e = $c33c79a16a3591fd$var$D(n);
+            if (e && e.a !== 0) return $c33c79a16a3591fd$var$ie(n) < 128 ? "has-dark-background" : "has-light-background";
         }
         return null;
     }
@@ -983,7 +983,7 @@ var $35d9630704992433$var$ee = class {
     update(e = !1) {
         let n = this.Reveal.getConfig(), r = this.Reveal.getCurrentSlide(), i = this.Reveal.getIndices(), a = null, o = n.rtl ? "future" : "past", s = n.rtl ? "past" : "future";
         if (Array.from(this.element.childNodes).forEach((n, r)=>{
-            n.classList.remove("past", "present", "future"), r < i.h ? n.classList.add(o) : r > i.h ? n.classList.add(s) : (n.classList.add("present"), a = n), (e || r === i.h) && $35d9630704992433$var$t(n, ".slide-background").forEach((e, t)=>{
+            n.classList.remove("past", "present", "future"), r < i.h ? n.classList.add(o) : r > i.h ? n.classList.add(s) : (n.classList.add("present"), a = n), (e || r === i.h) && $c33c79a16a3591fd$var$t(n, ".slide-background").forEach((e, t)=>{
                 e.classList.remove("past", "present", "future");
                 let n = typeof i.v == "number" ? i.v : 0;
                 t < n ? e.classList.add("past") : t > n ? e.classList.add("future") : (e.classList.add("present"), r === i.h && (a = e));
@@ -1029,7 +1029,7 @@ var $35d9630704992433$var$ee = class {
     destroy() {
         this.element.remove();
     }
-}, $35d9630704992433$var$O = 0, $35d9630704992433$var$oe = class {
+}, $c33c79a16a3591fd$var$O = 0, $c33c79a16a3591fd$var$oe = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -1037,17 +1037,17 @@ var $35d9630704992433$var$ee = class {
         this.reset();
         let n = this.Reveal.getSlides(), r = n.indexOf(t), i = n.indexOf(e);
         if (e && t && e.hasAttribute("data-auto-animate") && t.hasAttribute("data-auto-animate") && e.getAttribute("data-auto-animate-id") === t.getAttribute("data-auto-animate-id") && !(r > i ? t : e).hasAttribute("data-auto-animate-restart")) {
-            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $35d9630704992433$var$l();
+            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $c33c79a16a3591fd$var$l();
             let n = this.getAutoAnimateOptions(t);
             e.dataset.autoAnimate = "pending", t.dataset.autoAnimate = "pending", n.slideDirection = r > i ? "forward" : "backward";
             let a = e.style.display === "none";
             a && (e.style.display = this.Reveal.getConfig().display);
-            let o = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, n, $35d9630704992433$var$O++));
+            let o = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, n, $c33c79a16a3591fd$var$O++));
             if (a && (e.style.display = "none"), t.dataset.autoAnimateUnmatched !== "false" && this.Reveal.getConfig().autoAnimateUnmatched === !0) {
                 let e = n.duration * .8, r = n.duration * .2;
                 this.getUnmatchedAutoAnimateElements(t).forEach((e)=>{
                     let t = this.getAutoAnimateOptions(e, n), r = "unmatched";
-                    (t.duration !== n.duration || t.delay !== n.delay) && (r = "unmatched-" + $35d9630704992433$var$O++, o.push(`[data-auto-animate="running"] [data-auto-animate-target="${r}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = r;
+                    (t.duration !== n.duration || t.delay !== n.delay) && (r = "unmatched-" + $c33c79a16a3591fd$var$O++, o.push(`[data-auto-animate="running"] [data-auto-animate-target="${r}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = r;
                 }, this), o.push(`[data-auto-animate="running"] [data-auto-animate-target="unmatched"] { transition: opacity ${e}s ease ${r}s; }`);
             }
             this.autoAnimateStyleSheet.innerHTML = o.join(""), requestAnimationFrame(()=>{
@@ -1063,9 +1063,9 @@ var $35d9630704992433$var$ee = class {
         }
     }
     reset() {
-        $35d9630704992433$var$t(this.Reveal.getRevealElement(), "[data-auto-animate]:not([data-auto-animate=\"\"])").forEach((e)=>{
+        $c33c79a16a3591fd$var$t(this.Reveal.getRevealElement(), "[data-auto-animate]:not([data-auto-animate=\"\"])").forEach((e)=>{
             e.dataset.autoAnimate = "";
-        }), $35d9630704992433$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
+        }), $c33c79a16a3591fd$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
             delete e.dataset.autoAnimateTarget;
         }), this.autoAnimateStyleSheet && this.autoAnimateStyleSheet.parentNode && (this.autoAnimateStyleSheet.parentNode.removeChild(this.autoAnimateStyleSheet), this.autoAnimateStyleSheet = null);
     }
@@ -1106,8 +1106,8 @@ var $35d9630704992433$var$ee = class {
             duration: this.Reveal.getConfig().autoAnimateDuration,
             delay: 0
         };
-        if (r = $35d9630704992433$var$e(r, n), t.parentNode) {
-            let e = $35d9630704992433$var$o(t.parentNode, "[data-auto-animate-target]");
+        if (r = $c33c79a16a3591fd$var$e(r, n), t.parentNode) {
+            let e = $c33c79a16a3591fd$var$o(t.parentNode, "[data-auto-animate-target]");
             e && (r = this.getAutoAnimateOptions(e, r));
         }
         return t.dataset.autoAnimateEasing && (r.easing = t.dataset.autoAnimateEasing), t.dataset.autoAnimateDuration && (r.duration = parseFloat(t.dataset.autoAnimateDuration)), t.dataset.autoAnimateDelay && (r.delay = parseFloat(t.dataset.autoAnimateDelay)), r;
@@ -1154,9 +1154,9 @@ var $35d9630704992433$var$ee = class {
     getAutoAnimatePairs(e, t) {
         let n = [], r = "h1, h2, h3, h4, h5, h6, p, li";
         return this.findAutoAnimateMatches(n, e, t, "[data-id]", (e)=>e.nodeName + ":::" + e.getAttribute("data-id")), this.findAutoAnimateMatches(n, e, t, r, (e)=>e.nodeName + ":::" + e.textContent.trim()), this.findAutoAnimateMatches(n, e, t, "img, video, iframe", (e)=>e.nodeName + ":::" + (e.getAttribute("src") || e.getAttribute("data-src"))), this.findAutoAnimateMatches(n, e, t, "pre", (e)=>e.nodeName + ":::" + e.textContent.trim()), n.forEach((e)=>{
-            $35d9630704992433$var$a(e.from, r) ? e.options = {
+            $c33c79a16a3591fd$var$a(e.from, r) ? e.options = {
                 scale: !1
-            } : $35d9630704992433$var$a(e.from, "pre") && (e.options = {
+            } : $c33c79a16a3591fd$var$a(e.from, "pre") && (e.options = {
                 scale: !1,
                 styles: [
                     "width",
@@ -1210,7 +1210,7 @@ var $35d9630704992433$var$ee = class {
             return !t.hasAttribute("data-auto-animate-target") && !n && e.push(t), t.querySelector("[data-auto-animate-target]") && (e = e.concat(this.getUnmatchedAutoAnimateElements(t))), e;
         }, []);
     }
-}, $35d9630704992433$var$k = 500, $35d9630704992433$var$A = 4, $35d9630704992433$var$se = 6, $35d9630704992433$var$j = 8, $35d9630704992433$var$ce = class {
+}, $c33c79a16a3591fd$var$k = 500, $c33c79a16a3591fd$var$A = 4, $c33c79a16a3591fd$var$se = 6, $c33c79a16a3591fd$var$j = 8, $c33c79a16a3591fd$var$ce = class {
     constructor(e){
         this.Reveal = e, this.active = !1, this.activatedCallbacks = [], this.onScroll = this.onScroll.bind(this);
     }
@@ -1218,7 +1218,7 @@ var $35d9630704992433$var$ee = class {
         if (this.active) return;
         let e = this.Reveal.getState();
         this.active = !0, this.slideHTMLBeforeActivation = this.Reveal.getSlidesElement().innerHTML;
-        let n = $35d9630704992433$var$t(this.Reveal.getRevealElement(), $35d9630704992433$var$w), r = $35d9630704992433$var$t(this.Reveal.getRevealElement(), $35d9630704992433$var$T);
+        let n = $c33c79a16a3591fd$var$t(this.Reveal.getRevealElement(), $c33c79a16a3591fd$var$w), r = $c33c79a16a3591fd$var$t(this.Reveal.getRevealElement(), $c33c79a16a3591fd$var$T);
         this.viewportElement.classList.add("loading-scroll-mode", "reveal-scroll");
         let i, a = window.getComputedStyle(this.viewportElement);
         a && a.background && (i = a.background);
@@ -1240,7 +1240,7 @@ var $35d9630704992433$var$ee = class {
             this.Reveal.isVerticalStack(e) ? e.querySelectorAll("section").forEach((e, n)=>{
                 l(e, t, n, !0);
             }) : l(e, t, 0);
-        }, this), this.createProgressBar(), $35d9630704992433$var$t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), o.forEach((e)=>s.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
+        }, this), this.createProgressBar(), $c33c79a16a3591fd$var$t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), o.forEach((e)=>s.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
             passive: !0
         });
     }
@@ -1351,9 +1351,9 @@ var $35d9630704992433$var$ee = class {
     syncProgressBar() {
         this.progressBarInner.querySelectorAll(".scrollbar-slide").forEach((e)=>e.remove());
         let e = this.viewportElement.scrollHeight, t = this.viewportElement.offsetHeight, n = t / e;
-        this.progressBarHeight = this.progressBarInner.offsetHeight, this.playheadHeight = Math.max(n * this.progressBarHeight, $35d9630704992433$var$j), this.progressBarScrollableHeight = this.progressBarHeight - this.playheadHeight;
-        let r = t / e * this.progressBarHeight, i = Math.min(r / 8, $35d9630704992433$var$A);
-        this.progressBarPlayhead.style.height = this.playheadHeight - i + "px", r > $35d9630704992433$var$se ? this.slideTriggers.forEach((e)=>{
+        this.progressBarHeight = this.progressBarInner.offsetHeight, this.playheadHeight = Math.max(n * this.progressBarHeight, $c33c79a16a3591fd$var$j), this.progressBarScrollableHeight = this.progressBarHeight - this.playheadHeight;
+        let r = t / e * this.progressBarHeight, i = Math.min(r / 8, $c33c79a16a3591fd$var$A);
+        this.progressBarPlayhead.style.height = this.playheadHeight - i + "px", r > $c33c79a16a3591fd$var$se ? this.slideTriggers.forEach((e)=>{
             let { page: t } = e;
             t.progressBarSlide = document.createElement("div"), t.progressBarSlide.className = "scrollbar-slide", t.progressBarSlide.style.top = e.range[0] * this.progressBarHeight + "px", t.progressBarSlide.style.height = (e.range[1] - e.range[0]) * this.progressBarHeight - i + "px", t.progressBarSlide.classList.toggle("has-triggers", t.scrollTriggers.length > 0), this.progressBarInner.appendChild(t.progressBarSlide), t.scrollTriggerElements = t.scrollTriggers.map((n, r)=>{
                 let a = document.createElement("div");
@@ -1380,7 +1380,7 @@ var $35d9630704992433$var$ee = class {
     showProgressBar() {
         this.progressBar.classList.add("visible"), clearTimeout(this.hideProgressBarTimeout), this.Reveal.getConfig().scrollProgress === "auto" && !this.draggingProgressBar && (this.hideProgressBarTimeout = setTimeout(()=>{
             this.progressBar && this.progressBar.classList.remove("visible");
-        }, $35d9630704992433$var$k));
+        }, $c33c79a16a3591fd$var$k));
     }
     prev() {
         this.viewportElement.scrollTop -= this.scrollTriggerHeight;
@@ -1444,7 +1444,7 @@ var $35d9630704992433$var$ee = class {
 };
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/asyncToGenerator.js
-function $35d9630704992433$var$M(e, t, n, r, i, a, o) {
+function $c33c79a16a3591fd$var$M(e, t, n, r, i, a, o) {
     try {
         var s = e[a](o), c = s.value;
     } catch (e) {
@@ -1453,16 +1453,16 @@ function $35d9630704992433$var$M(e, t, n, r, i, a, o) {
     }
     s.done ? t(c) : Promise.resolve(c).then(r, i);
 }
-function $35d9630704992433$var$N(e) {
+function $c33c79a16a3591fd$var$N(e) {
     return function() {
         var t = this, n = arguments;
         return new Promise(function(r, i) {
             var a = e.apply(t, n);
             function o(e) {
-                $35d9630704992433$var$M(a, r, i, o, s, "next", e);
+                $c33c79a16a3591fd$var$M(a, r, i, o, s, "next", e);
             }
             function s(e) {
-                $35d9630704992433$var$M(a, r, i, o, s, "throw", e);
+                $c33c79a16a3591fd$var$M(a, r, i, o, s, "throw", e);
             }
             o(void 0);
         });
@@ -1470,15 +1470,15 @@ function $35d9630704992433$var$N(e) {
 }
 //#endregion
 //#region js/controllers/printview.js
-var $35d9630704992433$var$le = class {
+var $c33c79a16a3591fd$var$le = class {
     constructor(e){
         this.Reveal = e;
     }
     activate() {
         var e = this;
-        return $35d9630704992433$var$N(function*() {
-            let n = e.Reveal.getConfig(), r = $35d9630704992433$var$t(e.Reveal.getRevealElement(), $35d9630704992433$var$C), i = n.slideNumber && /all|print/i.test(n.showSlideNumber), a = e.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), o = Math.floor(a.width * (1 + n.margin)), s = Math.floor(a.height * (1 + n.margin)), c = a.width, u = a.height;
-            yield new Promise(requestAnimationFrame), $35d9630704992433$var$l("@page{size:" + o + "px " + s + "px; margin: 0px;}"), $35d9630704992433$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + c + "px; max-height:" + u + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = o + "px", document.body.style.height = s + "px";
+        return $c33c79a16a3591fd$var$N(function*() {
+            let n = e.Reveal.getConfig(), r = $c33c79a16a3591fd$var$t(e.Reveal.getRevealElement(), $c33c79a16a3591fd$var$C), i = n.slideNumber && /all|print/i.test(n.showSlideNumber), a = e.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), o = Math.floor(a.width * (1 + n.margin)), s = Math.floor(a.height * (1 + n.margin)), c = a.width, u = a.height;
+            yield new Promise(requestAnimationFrame), $c33c79a16a3591fd$var$l("@page{size:" + o + "px " + s + "px; margin: 0px;}"), $c33c79a16a3591fd$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + c + "px; max-height:" + u + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = o + "px", document.body.style.height = s + "px";
             let d = e.Reveal.getViewportElement(), f;
             if (d) {
                 let e = window.getComputedStyle(d);
@@ -1521,7 +1521,7 @@ var $35d9630704992433$var$le = class {
                                 e.classList.remove("visible", "current-fragment");
                             });
                         });
-                    } else $35d9630704992433$var$t(_, ".fragment:not(.fade-out)").forEach(function(e) {
+                    } else $c33c79a16a3591fd$var$t(_, ".fragment:not(.fade-out)").forEach(function(e) {
                         e.classList.add("visible");
                     });
                 }
@@ -1533,7 +1533,7 @@ var $35d9630704992433$var$le = class {
     isActive() {
         return this.Reveal.getConfig().view === "print";
     }
-}, $35d9630704992433$var$ue = class {
+}, $c33c79a16a3591fd$var$ue = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -1541,12 +1541,12 @@ var $35d9630704992433$var$le = class {
         e.fragments === !1 ? this.disable() : t.fragments === !1 && this.enable();
     }
     disable() {
-        $35d9630704992433$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        $c33c79a16a3591fd$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     enable() {
-        $35d9630704992433$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        $c33c79a16a3591fd$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.remove("visible"), e.classList.remove("current-fragment");
         });
     }
@@ -1583,7 +1583,7 @@ var $35d9630704992433$var$le = class {
     }
     sortAll() {
         this.Reveal.getHorizontalSlides().forEach((e)=>{
-            let n = $35d9630704992433$var$t(e, "section");
+            let n = $c33c79a16a3591fd$var$t(e, "section");
             n.forEach((e, t)=>{
                 this.sort(e.querySelectorAll(".fragment"));
             }, this), n.length === 0 && this.sort(e.querySelectorAll(".fragment"));
@@ -1657,13 +1657,13 @@ var $35d9630704992433$var$le = class {
     prev() {
         return this.goto(null, -1);
     }
-}, $35d9630704992433$var$de = class {
+}, $c33c79a16a3591fd$var$de = class {
     constructor(e){
         this.Reveal = e, this.active = !1, this.onSlideClicked = this.onSlideClicked.bind(this);
     }
     activate() {
         if (this.Reveal.getConfig().overview && !this.Reveal.isScrollView() && !this.isActive()) {
-            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $35d9630704992433$var$t(this.Reveal.getRevealElement(), $35d9630704992433$var$C).forEach((e)=>{
+            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $c33c79a16a3591fd$var$t(this.Reveal.getRevealElement(), $c33c79a16a3591fd$var$C).forEach((e)=>{
                 e.classList.contains("stack") || e.addEventListener("click", this.onSlideClicked, !0);
             });
             let e = this.Reveal.getComputedSlideSize();
@@ -1681,12 +1681,12 @@ var $35d9630704992433$var$le = class {
     }
     layout() {
         this.Reveal.getHorizontalSlides().forEach((e, n)=>{
-            e.setAttribute("data-index-h", n), $35d9630704992433$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $35d9630704992433$var$t(e, "section").forEach((e, t)=>{
-                e.setAttribute("data-index-h", n), e.setAttribute("data-index-v", t), $35d9630704992433$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            e.setAttribute("data-index-h", n), $c33c79a16a3591fd$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $c33c79a16a3591fd$var$t(e, "section").forEach((e, t)=>{
+                e.setAttribute("data-index-h", n), e.setAttribute("data-index-v", t), $c33c79a16a3591fd$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         }), Array.from(this.Reveal.getBackgroundsElement().childNodes).forEach((e, n)=>{
-            $35d9630704992433$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), $35d9630704992433$var$t(e, ".slide-background").forEach((e, t)=>{
-                $35d9630704992433$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            $c33c79a16a3591fd$var$i(e, "translate3d(" + n * this.overviewSlideWidth + "px, 0, 0)"), $c33c79a16a3591fd$var$t(e, ".slide-background").forEach((e, t)=>{
+                $c33c79a16a3591fd$var$i(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         });
     }
@@ -1704,10 +1704,10 @@ var $35d9630704992433$var$le = class {
         if (this.Reveal.getConfig().overview) {
             this.active = !1, this.Reveal.getRevealElement().classList.remove("overview"), this.Reveal.getRevealElement().classList.add("overview-deactivating"), setTimeout(()=>{
                 this.Reveal.getRevealElement().classList.remove("overview-deactivating");
-            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $35d9630704992433$var$t(this.Reveal.getRevealElement(), $35d9630704992433$var$C).forEach((e)=>{
-                $35d9630704992433$var$i(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
-            }), $35d9630704992433$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
-                $35d9630704992433$var$i(e, "");
+            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $c33c79a16a3591fd$var$t(this.Reveal.getRevealElement(), $c33c79a16a3591fd$var$C).forEach((e)=>{
+                $c33c79a16a3591fd$var$i(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
+            }), $c33c79a16a3591fd$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
+                $c33c79a16a3591fd$var$i(e, "");
             }), this.Reveal.transformSlides({
                 overview: ""
             });
@@ -1739,7 +1739,7 @@ var $35d9630704992433$var$le = class {
             }
         }
     }
-}, $35d9630704992433$var$fe = class {
+}, $c33c79a16a3591fd$var$fe = class {
     constructor(e){
         this.Reveal = e, this.shortcuts = {}, this.bindings = {}, this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
     }
@@ -1863,12 +1863,12 @@ var $35d9630704992433$var$le = class {
             66,
             86,
             190
-        ].includes(n) || n === 191 && !e.shiftKey ? this.Reveal.togglePause() : n === 70 ? $35d9630704992433$var$s(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : n === 65 ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(r) : n === 71 ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : n === 67 && this.Reveal.isOverlayOpen() ? this.Reveal.closeOverlay() : (n === 63 || n === 191) && e.shiftKey || n === 112 ? this.Reveal.toggleHelp() : f = !1), f ? e.preventDefault && e.preventDefault() : n === 27 || n === 79 ? (this.Reveal.closeOverlay() === !1 && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()) : n === 13 && this.Reveal.overview.isActive() && (this.Reveal.overview.deactivate(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
+        ].includes(n) || n === 191 && !e.shiftKey ? this.Reveal.togglePause() : n === 70 ? $c33c79a16a3591fd$var$s(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : n === 65 ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(r) : n === 71 ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : n === 67 && this.Reveal.isOverlayOpen() ? this.Reveal.closeOverlay() : (n === 63 || n === 191) && e.shiftKey || n === 112 ? this.Reveal.toggleHelp() : f = !1), f ? e.preventDefault && e.preventDefault() : n === 27 || n === 79 ? (this.Reveal.closeOverlay() === !1 && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()) : n === 13 && this.Reveal.overview.isActive() && (this.Reveal.overview.deactivate(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
     }
 };
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/objectSpread2.js
-function $35d9630704992433$var$P(e, t) {
+function $c33c79a16a3591fd$var$P(e, t) {
     var n = Object.keys(e);
     if (Object.getOwnPropertySymbols) {
         var r = Object.getOwnPropertySymbols(e);
@@ -1878,12 +1878,12 @@ function $35d9630704992433$var$P(e, t) {
     }
     return n;
 }
-function $35d9630704992433$var$F(e) {
+function $c33c79a16a3591fd$var$F(e) {
     for(var t = 1; t < arguments.length; t++){
         var n = arguments[t] == null ? {} : arguments[t];
-        t % 2 ? $35d9630704992433$var$P(Object(n), !0).forEach(function(t) {
-            $35d9630704992433$var$S(e, t, n[t]);
-        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : $35d9630704992433$var$P(Object(n)).forEach(function(t) {
+        t % 2 ? $c33c79a16a3591fd$var$P(Object(n), !0).forEach(function(t) {
+            $c33c79a16a3591fd$var$S(e, t, n[t]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : $c33c79a16a3591fd$var$P(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
         });
     }
@@ -1891,9 +1891,9 @@ function $35d9630704992433$var$F(e) {
 }
 //#endregion
 //#region js/controllers/location.js
-var $35d9630704992433$var$pe = class {
+var $c33c79a16a3591fd$var$pe = class {
     constructor(e){
-        $35d9630704992433$var$S(this, "MAX_REPLACE_STATE_FREQUENCY", 1e3), this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
+        $c33c79a16a3591fd$var$S(this, "MAX_REPLACE_STATE_FREQUENCY", 1e3), this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
     }
     bind() {
         window.addEventListener("hashchange", this.onWindowHashChange, !1);
@@ -1910,7 +1910,7 @@ var $35d9630704992433$var$pe = class {
                 let t = decodeURIComponent(n);
                 e = (document.getElementById(t) || document.querySelector(`[data-id="${t}"]`)).closest(".slides section");
             } catch (e) {}
-            if (e) return $35d9630704992433$var$F($35d9630704992433$var$F({}, this.Reveal.getIndices(e)), {}, {
+            if (e) return $c33c79a16a3591fd$var$F($c33c79a16a3591fd$var$F({}, this.Reveal.getIndices(e)), {}, {
                 f: t
             });
         } else {
@@ -1955,7 +1955,7 @@ var $35d9630704992433$var$pe = class {
     onWindowHashChange(e) {
         this.readURL();
     }
-}, $35d9630704992433$var$me = class {
+}, $c33c79a16a3591fd$var$me = class {
     constructor(e){
         this.Reveal = e, this.onNavigateLeftClicked = this.onNavigateLeftClicked.bind(this), this.onNavigateRightClicked = this.onNavigateRightClicked.bind(this), this.onNavigateUpClicked = this.onNavigateUpClicked.bind(this), this.onNavigateDownClicked = this.onNavigateDownClicked.bind(this), this.onNavigatePrevClicked = this.onNavigatePrevClicked.bind(this), this.onNavigateNextClicked = this.onNavigateNextClicked.bind(this), this.onEnterFullscreen = this.onEnterFullscreen.bind(this);
     }
@@ -1964,7 +1964,7 @@ var $35d9630704992433$var$pe = class {
         this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = `<button class="navigate-left" aria-label="${e ? "next slide" : "previous slide"}"><div class="controls-arrow"></div></button>
 			<button class="navigate-right" aria-label="${e ? "previous slide" : "next slide"}"><div class="controls-arrow"></div></button>
 			<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>
-			<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $35d9630704992433$var$t(n, ".navigate-left"), this.controlsRight = $35d9630704992433$var$t(n, ".navigate-right"), this.controlsUp = $35d9630704992433$var$t(n, ".navigate-up"), this.controlsDown = $35d9630704992433$var$t(n, ".navigate-down"), this.controlsPrev = $35d9630704992433$var$t(n, ".navigate-prev"), this.controlsNext = $35d9630704992433$var$t(n, ".navigate-next"), this.controlsFullscreen = $35d9630704992433$var$t(n, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
+			<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $c33c79a16a3591fd$var$t(n, ".navigate-left"), this.controlsRight = $c33c79a16a3591fd$var$t(n, ".navigate-right"), this.controlsUp = $c33c79a16a3591fd$var$t(n, ".navigate-up"), this.controlsDown = $c33c79a16a3591fd$var$t(n, ".navigate-down"), this.controlsPrev = $c33c79a16a3591fd$var$t(n, ".navigate-prev"), this.controlsNext = $c33c79a16a3591fd$var$t(n, ".navigate-next"), this.controlsFullscreen = $c33c79a16a3591fd$var$t(n, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
     }
     configure(e, t) {
         let n = e.controls === "speaker" || e.controls === "speaker-only";
@@ -1975,7 +1975,7 @@ var $35d9630704992433$var$pe = class {
             "touchstart",
             "click"
         ];
-        $35d9630704992433$var$_ && (e = [
+        $c33c79a16a3591fd$var$_ && (e = [
             "touchend"
         ]), e.forEach((e)=>{
             this.controlsLeft.forEach((t)=>t.addEventListener(e, this.onNavigateLeftClicked, !1)), this.controlsRight.forEach((t)=>t.addEventListener(e, this.onNavigateRightClicked, !1)), this.controlsUp.forEach((t)=>t.addEventListener(e, this.onNavigateUpClicked, !1)), this.controlsDown.forEach((t)=>t.addEventListener(e, this.onNavigateDownClicked, !1)), this.controlsPrev.forEach((t)=>t.addEventListener(e, this.onNavigatePrevClicked, !1)), this.controlsNext.forEach((t)=>t.addEventListener(e, this.onNavigateNextClicked, !1)), this.controlsFullscreen.forEach((t)=>t.addEventListener(e, this.onEnterFullscreen, !1));
@@ -2061,9 +2061,9 @@ var $35d9630704992433$var$pe = class {
     }
     onEnterFullscreen(e) {
         let t = this.Reveal.getConfig(), n = this.Reveal.getViewportElement();
-        $35d9630704992433$var$s(t.embedded ? n : n.parentElement);
+        $c33c79a16a3591fd$var$s(t.embedded ? n : n.parentElement);
     }
-}, $35d9630704992433$var$he = class {
+}, $c33c79a16a3591fd$var$he = class {
     constructor(e){
         this.Reveal = e, this.onProgressClicked = this.onProgressClicked.bind(this);
     }
@@ -2098,7 +2098,7 @@ var $35d9630704992433$var$pe = class {
     destroy() {
         this.element.remove();
     }
-}, $35d9630704992433$var$ge = class {
+}, $c33c79a16a3591fd$var$ge = class {
     constructor(e){
         this.Reveal = e, this.lastMouseWheelStep = 0, this.cursorHidden = !1, this.cursorInactiveTimeout = 0, this.onDocumentCursorActive = this.onDocumentCursorActive.bind(this), this.onDocumentMouseScroll = this.onDocumentMouseScroll.bind(this);
     }
@@ -2124,7 +2124,7 @@ var $35d9630704992433$var$pe = class {
             t > 0 ? this.Reveal.next() : t < 0 && this.Reveal.prev();
         }
     }
-}, $35d9630704992433$var$_e = (e, t)=>{
+}, $c33c79a16a3591fd$var$_e = (e, t)=>{
     let n = document.createElement("script");
     n.type = "text/javascript", n.async = !1, n.defer = !1, n.src = e, typeof t == "function" && (n.onload = (e)=>{
         e.type === "load" && (n.onload = n.onerror = null, t());
@@ -2133,7 +2133,7 @@ var $35d9630704992433$var$pe = class {
     });
     let r = document.querySelector("head");
     r && r.insertBefore(n, r.lastChild);
-}, $35d9630704992433$var$ve = class {
+}, $c33c79a16a3591fd$var$ve = class {
     constructor(e){
         this.Reveal = e, this.state = "idle", this.registeredPlugins = {}, this.asyncDependencies = [];
     }
@@ -2148,7 +2148,7 @@ var $35d9630704992433$var$pe = class {
                     t && typeof t.callback == "function" && t.callback(), --r === 0 && this.initPlugins().then(e);
                 };
                 n.forEach((e)=>{
-                    typeof e.id == "string" ? (this.registerPlugin(e), t(e)) : typeof e.src == "string" ? $35d9630704992433$var$_e(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
+                    typeof e.id == "string" ? (this.registerPlugin(e), t(e)) : typeof e.src == "string" ? $c33c79a16a3591fd$var$_e(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
                 });
             } else this.initPlugins().then(e);
         });
@@ -2173,7 +2173,7 @@ var $35d9630704992433$var$pe = class {
     }
     loadAsync() {
         return this.state = "loaded", this.asyncDependencies.length && this.asyncDependencies.forEach((e)=>{
-            $35d9630704992433$var$_e(e.src, e.callback);
+            $c33c79a16a3591fd$var$_e(e.src, e.callback);
         }), Promise.resolve();
     }
     registerPlugin(e) {
@@ -2195,7 +2195,7 @@ var $35d9630704992433$var$pe = class {
             typeof e.destroy == "function" && e.destroy();
         }), this.registeredPlugins = {}, this.asyncDependencies = [];
     }
-}, $35d9630704992433$var$ye = class {
+}, $c33c79a16a3591fd$var$ye = class {
     constructor(e){
         this.Reveal = e, this.onSlidesClicked = this.onSlidesClicked.bind(this), this.iframeTriggerSelector = null, this.mediaTriggerSelector = "[data-preview-image], [data-preview-video]", this.stateProps = [
             "previewIframe",
@@ -2351,7 +2351,7 @@ var $35d9630704992433$var$pe = class {
     destroy() {
         this.close();
     }
-}, $35d9630704992433$var$I = 40, $35d9630704992433$var$be = class {
+}, $c33c79a16a3591fd$var$I = 40, $c33c79a16a3591fd$var$be = class {
     constructor(e){
         this.Reveal = e, this.touchStartX = 0, this.touchStartY = 0, this.touchStartCount = 0, this.touchCaptured = !1, this.onPointerDown = this.onPointerDown.bind(this), this.onPointerMove = this.onPointerMove.bind(this), this.onPointerUp = this.onPointerUp.bind(this), this.onTouchStart = this.onTouchStart.bind(this), this.onTouchMove = this.onTouchMove.bind(this), this.onTouchEnd = this.onTouchEnd.bind(this);
     }
@@ -2364,7 +2364,7 @@ var $35d9630704992433$var$pe = class {
         e.removeEventListener("pointerdown", this.onPointerDown, !1), e.removeEventListener("pointermove", this.onPointerMove, !1), e.removeEventListener("pointerup", this.onPointerUp, !1), e.removeEventListener("MSPointerDown", this.onPointerDown, !1), e.removeEventListener("MSPointerMove", this.onPointerMove, !1), e.removeEventListener("MSPointerUp", this.onPointerUp, !1), e.removeEventListener("touchstart", this.onTouchStart, !1), e.removeEventListener("touchmove", this.onTouchMove, !1), e.removeEventListener("touchend", this.onTouchEnd, !1);
     }
     isSwipePrevented(e) {
-        if ($35d9630704992433$var$a(e, "video[controls], audio[controls]")) return !0;
+        if ($c33c79a16a3591fd$var$a(e, "video[controls], audio[controls]")) return !0;
         for(; e && typeof e.hasAttribute == "function";){
             if (e.hasAttribute("data-prevent-swipe")) return !0;
             e = e.parentNode;
@@ -2378,7 +2378,7 @@ var $35d9630704992433$var$pe = class {
     onTouchMove(e) {
         if (this.isSwipePrevented(e.target)) return !0;
         let t = this.Reveal.getConfig();
-        if (this.touchCaptured) $35d9630704992433$var$_ && e.preventDefault();
+        if (this.touchCaptured) $c33c79a16a3591fd$var$_ && e.preventDefault();
         else {
             this.Reveal.onUserInput(e);
             let n = e.touches[0].clientX, r = e.touches[0].clientY;
@@ -2386,7 +2386,7 @@ var $35d9630704992433$var$pe = class {
                 let i = this.Reveal.availableRoutes({
                     includeFragments: !0
                 }), a = n - this.touchStartX, o = r - this.touchStartY;
-                a > $35d9630704992433$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.next() : this.Reveal.prev() : this.Reveal.left()) : a < -$35d9630704992433$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.prev() : this.Reveal.next() : this.Reveal.right()) : o > $35d9630704992433$var$I && i.up ? (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.prev() : this.Reveal.up()) : o < -$35d9630704992433$var$I && i.down && (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.next() : this.Reveal.down()), t.embedded ? (this.touchCaptured || this.Reveal.isVerticalSlide()) && e.preventDefault() : e.preventDefault();
+                a > $c33c79a16a3591fd$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.next() : this.Reveal.prev() : this.Reveal.left()) : a < -$c33c79a16a3591fd$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.prev() : this.Reveal.next() : this.Reveal.right()) : o > $c33c79a16a3591fd$var$I && i.up ? (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.prev() : this.Reveal.up()) : o < -$c33c79a16a3591fd$var$I && i.down && (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.next() : this.Reveal.down()), t.embedded ? (this.touchCaptured || this.Reveal.isVerticalSlide()) && e.preventDefault() : e.preventDefault();
             }
         }
     }
@@ -2417,7 +2417,7 @@ var $35d9630704992433$var$pe = class {
             }
         ], this.onTouchEnd(e));
     }
-}, $35d9630704992433$var$L = "focus", $35d9630704992433$var$R = "blur", $35d9630704992433$var$xe = class {
+}, $c33c79a16a3591fd$var$L = "focus", $c33c79a16a3591fd$var$R = "blur", $c33c79a16a3591fd$var$xe = class {
     constructor(e){
         this.Reveal = e, this.onRevealPointerDown = this.onRevealPointerDown.bind(this), this.onDocumentPointerDown = this.onDocumentPointerDown.bind(this);
     }
@@ -2431,13 +2431,13 @@ var $35d9630704992433$var$pe = class {
         this.Reveal.getRevealElement().removeEventListener("pointerdown", this.onRevealPointerDown, !1), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1);
     }
     focus() {
-        this.state !== $35d9630704992433$var$L && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $35d9630704992433$var$L;
+        this.state !== $c33c79a16a3591fd$var$L && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $c33c79a16a3591fd$var$L;
     }
     blur() {
-        this.state !== $35d9630704992433$var$R && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $35d9630704992433$var$R;
+        this.state !== $c33c79a16a3591fd$var$R && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $c33c79a16a3591fd$var$R;
     }
     isFocused() {
-        return this.state === $35d9630704992433$var$L;
+        return this.state === $c33c79a16a3591fd$var$L;
     }
     destroy() {
         this.Reveal.getRevealElement().classList.remove("focused");
@@ -2446,10 +2446,10 @@ var $35d9630704992433$var$pe = class {
         this.focus();
     }
     onDocumentPointerDown(e) {
-        let t = $35d9630704992433$var$o(e.target, ".reveal");
+        let t = $c33c79a16a3591fd$var$o(e.target, ".reveal");
         (!t || t !== this.Reveal.getRevealElement()) && this.blur();
     }
-}, $35d9630704992433$var$Se = class {
+}, $c33c79a16a3591fd$var$Se = class {
     constructor(e){
         this.Reveal = e;
     }
@@ -2479,7 +2479,7 @@ var $35d9630704992433$var$pe = class {
     destroy() {
         this.element.remove();
     }
-}, $35d9630704992433$var$Ce = class {
+}, $c33c79a16a3591fd$var$Ce = class {
     constructor(e, t){
         this.diameter = 100, this.diameter2 = this.diameter / 2, this.thickness = 6, this.playing = !1, this.progress = 0, this.progressOffset = 1, this.container = e, this.progressCheck = t, this.canvas = document.createElement("canvas"), this.canvas.className = "playback", this.canvas.width = this.diameter, this.canvas.height = this.diameter, this.canvas.style.width = this.diameter2 + "px", this.canvas.style.height = this.diameter2 + "px", this.context = this.canvas.getContext("2d"), this.container.appendChild(this.canvas), this.render();
     }
@@ -2506,7 +2506,7 @@ var $35d9630704992433$var$pe = class {
     destroy() {
         this.playing = !1, this.canvas.parentNode && this.container.removeChild(this.canvas);
     }
-}, $35d9630704992433$var$we = {
+}, $c33c79a16a3591fd$var$we = {
     width: 960,
     height: 700,
     margin: .04,
@@ -2596,10 +2596,10 @@ var $35d9630704992433$var$pe = class {
     pdfPageHeightOffset: -1,
     dependencies: [],
     plugins: []
-}, $35d9630704992433$var$Te = "6.0.1";
+}, $c33c79a16a3591fd$var$Te = "6.0.1";
 //#endregion
 //#region js/reveal.js
-function $35d9630704992433$var$z(a, s) {
+function $c33c79a16a3591fd$var$z(a, s) {
     arguments.length < 2 && (s = arguments[0], a = document.querySelector(".reveal"));
     let l = {}, f = {}, p = !1, m = !1, h, _, v, y, b = {
         hasNavigatedHorizontally: !1,
@@ -2607,15 +2607,15 @@ function $35d9630704992433$var$z(a, s) {
     }, x = [], S = 1, T = {
         layout: "",
         overview: ""
-    }, D = {}, ie = "idle", O = 0, k, A = 0, se = -1, j = !1, M = new $35d9630704992433$var$ee(l), N = new $35d9630704992433$var$ne(l), P = new $35d9630704992433$var$re(l), _e = new $35d9630704992433$var$oe(l), I = new $35d9630704992433$var$ae(l), L = new $35d9630704992433$var$ce(l), R = new $35d9630704992433$var$le(l), z = new $35d9630704992433$var$ue(l), B = new $35d9630704992433$var$de(l), V = new $35d9630704992433$var$fe(l), H = new $35d9630704992433$var$pe(l), U = new $35d9630704992433$var$me(l), W = new $35d9630704992433$var$he(l), Ee = new $35d9630704992433$var$ge(l), G = new $35d9630704992433$var$ve(l), K = new $35d9630704992433$var$ye(l), q = new $35d9630704992433$var$xe(l), De = new $35d9630704992433$var$be(l), J = new $35d9630704992433$var$Se(l);
+    }, D = {}, ie = "idle", O = 0, k, A = 0, se = -1, j = !1, M = new $c33c79a16a3591fd$var$ee(l), N = new $c33c79a16a3591fd$var$ne(l), P = new $c33c79a16a3591fd$var$re(l), _e = new $c33c79a16a3591fd$var$oe(l), I = new $c33c79a16a3591fd$var$ae(l), L = new $c33c79a16a3591fd$var$ce(l), R = new $c33c79a16a3591fd$var$le(l), z = new $c33c79a16a3591fd$var$ue(l), B = new $c33c79a16a3591fd$var$de(l), V = new $c33c79a16a3591fd$var$fe(l), H = new $c33c79a16a3591fd$var$pe(l), U = new $c33c79a16a3591fd$var$me(l), W = new $c33c79a16a3591fd$var$he(l), Ee = new $c33c79a16a3591fd$var$ge(l), G = new $c33c79a16a3591fd$var$ve(l), K = new $c33c79a16a3591fd$var$ye(l), q = new $c33c79a16a3591fd$var$xe(l), De = new $c33c79a16a3591fd$var$be(l), J = new $c33c79a16a3591fd$var$Se(l);
     function Oe(e) {
         if (!a) throw "Unable to find presentation root (<div class=\"reveal\">).";
         if (p) throw "Reveal.js has already been initialized.";
         if (p = !0, D.wrapper = a, D.slides = a.querySelector(".slides"), !D.slides) throw "Unable to find slides container (<div class=\"slides\">).";
-        return f = $35d9630704992433$var$F($35d9630704992433$var$F($35d9630704992433$var$F($35d9630704992433$var$F($35d9630704992433$var$F({}, $35d9630704992433$var$we), f), s), e), $35d9630704992433$var$u()), /print-pdf/gi.test(window.location.search) && (f.view = "print"), ke(), window.addEventListener("load", X, !1), G.load(f.plugins, f.dependencies).then(Ae), new Promise((e)=>l.on("ready", e));
+        return f = $c33c79a16a3591fd$var$F($c33c79a16a3591fd$var$F($c33c79a16a3591fd$var$F($c33c79a16a3591fd$var$F($c33c79a16a3591fd$var$F({}, $c33c79a16a3591fd$var$we), f), s), e), $c33c79a16a3591fd$var$u()), /print-pdf/gi.test(window.location.search) && (f.view = "print"), ke(), window.addEventListener("load", X, !1), G.load(f.plugins, f.dependencies).then(Ae), new Promise((e)=>l.on("ready", e));
     }
     function ke() {
-        f.embedded === !0 ? D.viewport = $35d9630704992433$var$o(a, ".reveal-viewport") || a : (D.viewport = document.body, document.documentElement.classList.add("reveal-full-page")), D.viewport.classList.add("reveal-viewport");
+        f.embedded === !0 ? D.viewport = $c33c79a16a3591fd$var$o(a, ".reveal-viewport") || a : (D.viewport = document.body, document.documentElement.classList.add("reveal-full-page")), D.viewport.classList.add("reveal-viewport");
     }
     function Ae() {
         p !== !1 && (m = !0, Me(), Ne(), Be(), Re(), ze(), _t(), Ve(), I.update(!0), je(), H.readURL(), setTimeout(()=>{
@@ -2634,13 +2634,13 @@ function $35d9630704992433$var$z(a, s) {
         (e || t) && (e ? Ue() : De.unbind(), D.viewport.classList.add("loading-scroll-mode"), e ? document.readyState === "complete" ? R.activate() : window.addEventListener("load", ()=>R.activate()) : L.activate());
     }
     function Me() {
-        f.showHiddenSlides || $35d9630704992433$var$t(D.wrapper, "section[data-visibility=\"hidden\"]").forEach((e)=>{
+        f.showHiddenSlides || $c33c79a16a3591fd$var$t(D.wrapper, "section[data-visibility=\"hidden\"]").forEach((e)=>{
             let t = e.parentNode;
             t.childElementCount === 1 && /section/i.test(t.nodeName) ? t.remove() : e.remove();
         });
     }
     function Ne() {
-        D.slides.classList.add("no-transition"), $35d9630704992433$var$g ? D.wrapper.classList.add("no-hover") : D.wrapper.classList.remove("no-hover"), I.render(), N.render(), P.render(), U.render(), W.render(), J.render(), D.pauseOverlay = $35d9630704992433$var$c(D.wrapper, "div", "pause-overlay", f.controls ? "<button class=\"resume-button\">Resume presentation</button>" : null), D.statusElement = Pe(), D.wrapper.setAttribute("role", "application");
+        D.slides.classList.add("no-transition"), $c33c79a16a3591fd$var$g ? D.wrapper.classList.add("no-hover") : D.wrapper.classList.remove("no-hover"), I.render(), N.render(), P.render(), U.render(), W.render(), J.render(), D.pauseOverlay = $c33c79a16a3591fd$var$c(D.wrapper, "div", "pause-overlay", f.controls ? "<button class=\"resume-button\">Resume presentation</button>" : null), D.statusElement = Pe(), D.wrapper.setAttribute("role", "application");
     }
     function Pe() {
         let e = D.wrapper.querySelector(".aria-status");
@@ -2695,10 +2695,10 @@ function $35d9630704992433$var$z(a, s) {
         f.postMessage && window.addEventListener("message", Jt, !1);
     }
     function Ve(t) {
-        let r = $35d9630704992433$var$F({}, f);
-        if (typeof t == "object" && $35d9630704992433$var$e(f, t), l.isReady() === !1) return;
-        let i = D.wrapper.querySelectorAll($35d9630704992433$var$C).length;
-        D.wrapper.classList.remove(r.transition), D.wrapper.classList.add(f.transition), D.wrapper.setAttribute("data-transition-speed", f.transitionSpeed), D.wrapper.setAttribute("data-background-transition", f.backgroundTransition), D.viewport.style.setProperty("--slide-width", typeof f.width == "string" ? f.width : f.width + "px"), D.viewport.style.setProperty("--slide-height", typeof f.height == "string" ? f.height : f.height + "px"), f.shuffle && vt(), $35d9630704992433$var$n(D.wrapper, "embedded", f.embedded), $35d9630704992433$var$n(D.wrapper, "rtl", f.rtl), $35d9630704992433$var$n(D.wrapper, "center", f.center), f.pause === !1 && st(), _e.reset(), k && (k.destroy(), k = null), i > 1 && f.autoSlide && f.autoSlideStoppable && (k = new $35d9630704992433$var$Ce(D.wrapper, ()=>Math.min(Math.max((Date.now() - se) / O, 0), 1)), k.on("click", en), j = !1), f.navigationMode === "default" ? D.wrapper.removeAttribute("data-navigation-mode") : D.wrapper.setAttribute("data-navigation-mode", f.navigationMode), J.configure(f, r), q.configure(f, r), Ee.configure(f, r), U.configure(f, r), W.configure(f, r), V.configure(f, r), z.configure(f, r), N.configure(f, r), ht();
+        let r = $c33c79a16a3591fd$var$F({}, f);
+        if (typeof t == "object" && $c33c79a16a3591fd$var$e(f, t), l.isReady() === !1) return;
+        let i = D.wrapper.querySelectorAll($c33c79a16a3591fd$var$C).length;
+        D.wrapper.classList.remove(r.transition), D.wrapper.classList.add(f.transition), D.wrapper.setAttribute("data-transition-speed", f.transitionSpeed), D.wrapper.setAttribute("data-background-transition", f.backgroundTransition), D.viewport.style.setProperty("--slide-width", typeof f.width == "string" ? f.width : f.width + "px"), D.viewport.style.setProperty("--slide-height", typeof f.height == "string" ? f.height : f.height + "px"), f.shuffle && vt(), $c33c79a16a3591fd$var$n(D.wrapper, "embedded", f.embedded), $c33c79a16a3591fd$var$n(D.wrapper, "rtl", f.rtl), $c33c79a16a3591fd$var$n(D.wrapper, "center", f.center), f.pause === !1 && st(), _e.reset(), k && (k.destroy(), k = null), i > 1 && f.autoSlide && f.autoSlideStoppable && (k = new $c33c79a16a3591fd$var$Ce(D.wrapper, ()=>Math.min(Math.max((Date.now() - se) / O, 0), 1)), k.on("click", en), j = !1), f.navigationMode === "default" ? D.wrapper.removeAttribute("data-navigation-mode") : D.wrapper.setAttribute("data-navigation-mode", f.navigationMode), J.configure(f, r), q.configure(f, r), Ee.configure(f, r), U.configure(f, r), W.configure(f, r), V.configure(f, r), z.configure(f, r), N.configure(f, r), ht();
     }
     function He() {
         window.addEventListener("resize", Zt, !1), f.touch && De.bind(), f.keyboard && V.bind(), f.progress && W.bind(), f.respondToHashChanges && H.bind(), U.bind(), q.bind(), D.slides.addEventListener("click", Xt, !1), D.slides.addEventListener("transitionend", Yt, !1), D.pauseOverlay.addEventListener("click", st, !1), f.focusBodyOnPageVisibilityChange && document.addEventListener("visibilitychange", Qt, !1);
@@ -2707,7 +2707,7 @@ function $35d9630704992433$var$z(a, s) {
         De.unbind(), q.unbind(), V.unbind(), U.unbind(), W.unbind(), H.unbind(), window.removeEventListener("resize", Zt, !1), D.slides.removeEventListener("click", Xt, !1), D.slides.removeEventListener("transitionend", Yt, !1), D.pauseOverlay.removeEventListener("click", st, !1);
     }
     function We() {
-        p = !1, m !== !1 && (Ue(), Rt(), J.destroy(), q.destroy(), K.destroy(), G.destroy(), Ee.destroy(), U.destroy(), W.destroy(), I.destroy(), N.destroy(), P.destroy(), document.removeEventListener("fullscreenchange", $t), document.removeEventListener("webkitfullscreenchange", $t), document.removeEventListener("visibilitychange", Qt, !1), window.removeEventListener("message", Jt, !1), window.removeEventListener("load", X, !1), D.pauseOverlay && D.pauseOverlay.remove(), D.statusElement && D.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), D.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), D.wrapper.removeAttribute("data-transition-speed"), D.wrapper.removeAttribute("data-background-transition"), D.viewport.classList.remove("reveal-viewport"), D.viewport.style.removeProperty("--slide-width"), D.viewport.style.removeProperty("--slide-height"), D.slides.style.removeProperty("width"), D.slides.style.removeProperty("height"), D.slides.style.removeProperty("zoom"), D.slides.style.removeProperty("left"), D.slides.style.removeProperty("top"), D.slides.style.removeProperty("bottom"), D.slides.style.removeProperty("right"), D.slides.style.removeProperty("transform"), Array.from(D.wrapper.querySelectorAll($35d9630704992433$var$C)).forEach((e)=>{
+        p = !1, m !== !1 && (Ue(), Rt(), J.destroy(), q.destroy(), K.destroy(), G.destroy(), Ee.destroy(), U.destroy(), W.destroy(), I.destroy(), N.destroy(), P.destroy(), document.removeEventListener("fullscreenchange", $t), document.removeEventListener("webkitfullscreenchange", $t), document.removeEventListener("visibilitychange", Qt, !1), window.removeEventListener("message", Jt, !1), window.removeEventListener("load", X, !1), D.pauseOverlay && D.pauseOverlay.remove(), D.statusElement && D.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), D.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), D.wrapper.removeAttribute("data-transition-speed"), D.wrapper.removeAttribute("data-background-transition"), D.viewport.classList.remove("reveal-viewport"), D.viewport.style.removeProperty("--slide-width"), D.viewport.style.removeProperty("--slide-height"), D.slides.style.removeProperty("width"), D.slides.style.removeProperty("height"), D.slides.style.removeProperty("zoom"), D.slides.style.removeProperty("left"), D.slides.style.removeProperty("top"), D.slides.style.removeProperty("bottom"), D.slides.style.removeProperty("right"), D.slides.style.removeProperty("transform"), Array.from(D.wrapper.querySelectorAll($c33c79a16a3591fd$var$C)).forEach((e)=>{
             e.style.removeProperty("display"), e.style.removeProperty("top"), e.removeAttribute("hidden"), e.removeAttribute("aria-hidden");
         }));
     }
@@ -2718,11 +2718,11 @@ function $35d9630704992433$var$z(a, s) {
         a.removeEventListener(e, t, n);
     }
     function qe(e) {
-        typeof e.layout == "string" && (T.layout = e.layout), typeof e.overview == "string" && (T.overview = e.overview), T.layout ? $35d9630704992433$var$i(D.slides, T.layout + " " + T.overview) : $35d9630704992433$var$i(D.slides, T.overview);
+        typeof e.layout == "string" && (T.layout = e.layout), typeof e.overview == "string" && (T.overview = e.overview), T.layout ? $c33c79a16a3591fd$var$i(D.slides, T.layout + " " + T.overview) : $c33c79a16a3591fd$var$i(D.slides, T.overview);
     }
     function Y({ target: t = D.wrapper, type: n, data: r, bubbles: i = !0 }) {
         let a = document.createEvent("HTMLEvents", 1, 2);
-        return a.initEvent(n, i, !0), $35d9630704992433$var$e(a, r), t.dispatchEvent(a), t === D.wrapper && Ye(n), a;
+        return a.initEvent(n, i, !0), $c33c79a16a3591fd$var$e(a, r), t.dispatchEvent(a), t === D.wrapper && Ye(n), a;
     }
     function Je(e) {
         Y({
@@ -2743,21 +2743,21 @@ function $35d9630704992433$var$z(a, s) {
                 eventName: t,
                 state: Ft()
             };
-            $35d9630704992433$var$e(r, n), window.parent.postMessage(JSON.stringify(r), "*");
+            $c33c79a16a3591fd$var$e(r, n), window.parent.postMessage(JSON.stringify(r), "*");
         }
     }
     function X() {
         if (D.wrapper && !R.isActive()) {
             let e = D.viewport.offsetWidth, t = D.viewport.offsetHeight;
             if (!f.disableLayout) {
-                $35d9630704992433$var$g && !f.embedded && document.documentElement.style.setProperty("--vh", window.innerHeight * .01 + "px");
+                $c33c79a16a3591fd$var$g && !f.embedded && document.documentElement.style.setProperty("--vh", window.innerHeight * .01 + "px");
                 let n = L.isActive() ? Qe(e, t) : Qe(), r = S;
                 Xe(f.width, f.height), D.slides.style.width = n.width + "px", D.slides.style.height = n.height + "px", S = Math.min(n.presentationWidth / n.width, n.presentationHeight / n.height), S = Math.max(S, f.minScale), S = Math.min(S, f.maxScale), S === 1 || L.isActive() ? (D.slides.style.zoom = "", D.slides.style.left = "", D.slides.style.top = "", D.slides.style.bottom = "", D.slides.style.right = "", qe({
                     layout: ""
                 })) : (D.slides.style.zoom = "", D.slides.style.left = "50%", D.slides.style.top = "50%", D.slides.style.bottom = "auto", D.slides.style.right = "auto", qe({
                     layout: "translate(-50%, -50%) scale(" + S + ")"
                 }));
-                let i = Array.from(D.wrapper.querySelectorAll($35d9630704992433$var$C));
+                let i = Array.from(D.wrapper.querySelectorAll($c33c79a16a3591fd$var$C));
                 for(let e = 0, t = i.length; e < t; e++){
                     let t = i[e];
                     t.style.display !== "none" && (f.center || t.classList.contains("center") ? t.classList.contains("stack") ? t.style.top = 0 : t.style.top = Math.max((n.height - t.scrollHeight) / 2, 0) + "px" : t.style.top = "");
@@ -2775,8 +2775,8 @@ function $35d9630704992433$var$z(a, s) {
         }
     }
     function Xe(e, n) {
-        $35d9630704992433$var$t(D.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
-            let r = $35d9630704992433$var$d(t, n);
+        $c33c79a16a3591fd$var$t(D.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
+            let r = $c33c79a16a3591fd$var$d(t, n);
             if (/(img|video)/gi.test(t.nodeName)) {
                 let n = t.naturalWidth || t.videoWidth, i = t.naturalHeight || t.videoHeight, a = Math.min(e / n, r / i);
                 t.style.width = n * a + "px", t.style.height = i * a + "px";
@@ -2864,7 +2864,7 @@ function $35d9630704992433$var$z(a, s) {
             }
         }).defaultPrevented) return;
         v = y;
-        let i = D.wrapper.querySelectorAll($35d9630704992433$var$w);
+        let i = D.wrapper.querySelectorAll($c33c79a16a3591fd$var$w);
         if (L.isActive()) {
             let n = L.getSlideByIndices(e, t);
             n && L.scrollToSlide(n);
@@ -2875,7 +2875,7 @@ function $35d9630704992433$var$z(a, s) {
         let o = x.concat();
         x.length = 0;
         let s = h || 0, c = _ || 0;
-        h = yt($35d9630704992433$var$w, e === void 0 ? h : e), _ = yt($35d9630704992433$var$te, t === void 0 ? _ : t);
+        h = yt($c33c79a16a3591fd$var$w, e === void 0 ? h : e), _ = yt($c33c79a16a3591fd$var$te, t === void 0 ? _ : t);
         let l = h !== s || _ !== c;
         l || (v = null);
         let u = i[h], d = u.querySelectorAll("section");
@@ -2914,7 +2914,7 @@ function $35d9630704992433$var$z(a, s) {
         }), Je();
     }
     function ht() {
-        Ue(), He(), X(), O = f.autoSlide, Lt(), I.create(), H.writeURL(), f.sortFragmentsOnSync === !0 && z.sortAll(), h !== void 0 && (h = yt($35d9630704992433$var$w, h), _ = yt($35d9630704992433$var$te, _)), U.update(), W.update(), St(), J.update(), J.updateVisibility(), K.update(), I.update(!0), N.update(), M.formatEmbeddedContent(), f.autoPlayMedia === !1 ? M.stopEmbeddedContent(y, {
+        Ue(), He(), X(), O = f.autoSlide, Lt(), I.create(), H.writeURL(), f.sortFragmentsOnSync === !0 && z.sortAll(), h !== void 0 && (h = yt($c33c79a16a3591fd$var$w, h), _ = yt($c33c79a16a3591fd$var$te, _)), U.update(), W.update(), St(), J.update(), J.updateVisibility(), K.update(), I.update(!0), N.update(), M.formatEmbeddedContent(), f.autoPlayMedia === !1 ? M.stopEmbeddedContent(y, {
             unloadIframes: !1
         }) : M.startEmbeddedContent(y), B.isActive() && B.layout(), Y({
             type: "sync"
@@ -2930,7 +2930,7 @@ function $35d9630704992433$var$z(a, s) {
     }
     function _t() {
         $().forEach((e)=>{
-            $35d9630704992433$var$t(e, "section").forEach((e, t)=>{
+            $c33c79a16a3591fd$var$t(e, "section").forEach((e, t)=>{
                 t > 0 && (e.classList.remove("present"), e.classList.remove("past"), e.classList.add("future"), e.setAttribute("aria-hidden", "true"));
             });
         });
@@ -2944,7 +2944,7 @@ function $35d9630704992433$var$z(a, s) {
         });
     }
     function yt(e, n) {
-        let r = $35d9630704992433$var$t(D.wrapper, e), i = r.length, a = L.isActive() || R.isActive(), o = !1, s = !1;
+        let r = $c33c79a16a3591fd$var$t(D.wrapper, e), i = r.length, a = L.isActive() || R.isActive(), o = !1, s = !1;
         if (i) {
             f.loop && (n >= i && (o = !0), n %= i, n < 0 && (n = i + n, s = !0)), n = Math.max(Math.min(n, i - 1), 0);
             for(let e = 0; e < i; e++){
@@ -2967,12 +2967,12 @@ function $35d9630704992433$var$z(a, s) {
         return n;
     }
     function bt(e) {
-        $35d9630704992433$var$t(e, ".fragment").forEach((e)=>{
+        $c33c79a16a3591fd$var$t(e, ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     function xt(e) {
-        $35d9630704992433$var$t(e, ".fragment.visible").forEach((e)=>{
+        $c33c79a16a3591fd$var$t(e, ".fragment.visible").forEach((e)=>{
             e.classList.remove("visible", "current-fragment");
         });
     }
@@ -2980,9 +2980,9 @@ function $35d9630704992433$var$z(a, s) {
         let e = $(), n = e.length, r, i;
         if (n && h !== void 0) {
             let a = B.isActive(), o = a ? 10 : f.viewDistance;
-            $35d9630704992433$var$g && (o = a ? 6 : f.mobileViewDistance), R.isActive() && (o = Number.MAX_VALUE);
+            $c33c79a16a3591fd$var$g && (o = a ? 6 : f.mobileViewDistance), R.isActive() && (o = Number.MAX_VALUE);
             for(let s = 0; s < n; s++){
-                let c = e[s], l = $35d9630704992433$var$t(c, "section"), u = l.length;
+                let c = e[s], l = $c33c79a16a3591fd$var$t(c, "section"), u = l.length;
                 if (r = Math.abs((h || 0) - s) || 0, f.loop && (r = Math.abs(((h || 0) - s) % (n - o)) || 0), r < o ? M.load(c) : M.unload(c), u) {
                     let e = a ? 0 : et(c);
                     for(let t = 0; t < u; t++){
@@ -2995,7 +2995,7 @@ function $35d9630704992433$var$z(a, s) {
         }
     }
     function Q({ includeFragments: e = !1 } = {}) {
-        let t = D.wrapper.querySelectorAll($35d9630704992433$var$w), n = D.wrapper.querySelectorAll($35d9630704992433$var$te), r = {
+        let t = D.wrapper.querySelectorAll($c33c79a16a3591fd$var$w), n = D.wrapper.querySelectorAll($c33c79a16a3591fd$var$te), r = {
             left: h > 0,
             right: h < t.length - 1,
             up: _ > 0,
@@ -3041,7 +3041,7 @@ function $35d9630704992433$var$z(a, s) {
             if (L.isActive()) n = parseInt(e.getAttribute("data-index-h"), 10), e.getAttribute("data-index-v") && (r = parseInt(e.getAttribute("data-index-v"), 10));
             else {
                 let i = tt(e), a = i ? e.parentNode : e, o = $();
-                n = Math.max(o.indexOf(a), 0), r = void 0, i && (r = Math.max($35d9630704992433$var$t(e.parentNode, "section").indexOf(e), 0));
+                n = Math.max(o.indexOf(a), 0), r = void 0, i && (r = Math.max($c33c79a16a3591fd$var$t(e.parentNode, "section").indexOf(e), 0));
             }
         }
         if (!e && y && y.querySelectorAll(".fragment").length > 0) {
@@ -3055,16 +3055,16 @@ function $35d9630704992433$var$z(a, s) {
         };
     }
     function Et() {
-        return $35d9630704992433$var$t(D.wrapper, $35d9630704992433$var$C + ":not(.stack):not([data-visibility=\"uncounted\"])");
+        return $c33c79a16a3591fd$var$t(D.wrapper, $c33c79a16a3591fd$var$C + ":not(.stack):not([data-visibility=\"uncounted\"])");
     }
     function $() {
-        return $35d9630704992433$var$t(D.wrapper, $35d9630704992433$var$w);
+        return $c33c79a16a3591fd$var$t(D.wrapper, $c33c79a16a3591fd$var$w);
     }
     function Dt() {
-        return $35d9630704992433$var$t(D.wrapper, ".slides>section>section");
+        return $c33c79a16a3591fd$var$t(D.wrapper, ".slides>section>section");
     }
     function Ot() {
-        return $35d9630704992433$var$t(D.wrapper, $35d9630704992433$var$w + ".stack");
+        return $c33c79a16a3591fd$var$t(D.wrapper, $c33c79a16a3591fd$var$w + ".stack");
     }
     function kt() {
         return $().length > 1;
@@ -3095,7 +3095,7 @@ function $35d9630704992433$var$z(a, s) {
     }
     function Ft() {
         let e = Tt();
-        return $35d9630704992433$var$F({
+        return $c33c79a16a3591fd$var$F({
             indexh: e.h,
             indexv: e.v,
             indexf: e.f,
@@ -3105,15 +3105,15 @@ function $35d9630704992433$var$z(a, s) {
     }
     function It(e) {
         if (typeof e == "object") {
-            Z($35d9630704992433$var$r(e.indexh), $35d9630704992433$var$r(e.indexv), $35d9630704992433$var$r(e.indexf));
-            let t = $35d9630704992433$var$r(e.paused), n = $35d9630704992433$var$r(e.overview);
+            Z($c33c79a16a3591fd$var$r(e.indexh), $c33c79a16a3591fd$var$r(e.indexv), $c33c79a16a3591fd$var$r(e.indexf));
+            let t = $c33c79a16a3591fd$var$r(e.paused), n = $c33c79a16a3591fd$var$r(e.overview);
             typeof t == "boolean" && t !== lt() && ct(t), typeof n == "boolean" && n !== B.isActive() && B.toggle(n), K.setState(e);
         }
     }
     function Lt() {
         if (Rt(), y && f.autoSlide !== !1) {
             let e = y.querySelector(".current-fragment[data-autoslide]"), n = e ? e.getAttribute("data-autoslide") : null, r = y.parentNode ? y.parentNode.getAttribute("data-autoslide") : null, i = y.getAttribute("data-autoslide");
-            n ? O = parseInt(n, 10) : i ? O = parseInt(i, 10) : r ? O = parseInt(r, 10) : (O = f.autoSlide, y.querySelectorAll(".fragment").length === 0 && $35d9630704992433$var$t(y, "video, audio").forEach((e)=>{
+            n ? O = parseInt(n, 10) : i ? O = parseInt(i, 10) : r ? O = parseInt(r, 10) : (O = f.autoSlide, y.querySelectorAll(".fragment").length === 0 && $c33c79a16a3591fd$var$t(y, "video, audio").forEach((e)=>{
                 e.hasAttribute("data-autoplay") && O && e.duration * 1e3 / e.playbackRate > O && (O = e.duration * 1e3 / e.playbackRate + 1e3);
             })), O && !j && !lt() && !B.isActive() && (!at() || z.availableRoutes().next || f.loop === !0) && (A = setTimeout(()=>{
                 typeof f.autoSlideMethod == "function" ? f.autoSlideMethod() : Kt(), Lt();
@@ -3157,7 +3157,7 @@ function $35d9630704992433$var$z(a, s) {
             });
             else {
                 let n;
-                if (n = f.rtl ? $35d9630704992433$var$t(D.wrapper, $35d9630704992433$var$w + ".future").pop() : $35d9630704992433$var$t(D.wrapper, $35d9630704992433$var$w + ".past").pop(), n && n.classList.contains("stack")) {
+                if (n = f.rtl ? $c33c79a16a3591fd$var$t(D.wrapper, $c33c79a16a3591fd$var$w + ".future").pop() : $c33c79a16a3591fd$var$t(D.wrapper, $c33c79a16a3591fd$var$w + ".past").pop(), n && n.classList.contains("stack")) {
                     let e = n.querySelectorAll("section").length - 1 || void 0;
                     Z(h - 1, e);
                 } else f.rtl ? Ht({
@@ -3187,7 +3187,7 @@ function $35d9630704992433$var$z(a, s) {
     function Jt(e) {
         let t = e.data;
         if (typeof t == "string" && t.charAt(0) === "{" && t.charAt(t.length - 1) === "}" && (t = JSON.parse(t), t.method && typeof l[t.method] == "function")) {
-            if ($35d9630704992433$var$E.test(t.method) === !1) {
+            if ($c33c79a16a3591fd$var$E.test(t.method) === !1) {
                 let e = l[t.method].apply(l, t.args);
                 Ye("callback", {
                     method: t.method,
@@ -3208,7 +3208,7 @@ function $35d9630704992433$var$z(a, s) {
         }));
     }
     function Xt(e) {
-        let t = $35d9630704992433$var$o(e.target, "a[href^=\"#\"]");
+        let t = $c33c79a16a3591fd$var$o(e.target, "a[href^=\"#\"]");
         if (t) {
             let n = t.getAttribute("href"), r = H.getIndicesFromHash(n);
             r && (l.slide(r.h, r.v, r.f), e.preventDefault());
@@ -3229,7 +3229,7 @@ function $35d9630704992433$var$z(a, s) {
         at() && f.loop === !1 ? (Z(0, 0), Bt()) : j ? Bt() : zt();
     }
     let tn = {
-        VERSION: $35d9630704992433$var$Te,
+        VERSION: $c33c79a16a3591fd$var$Te,
         initialize: Oe,
         configure: Ve,
         destroy: We,
@@ -3323,7 +3323,7 @@ function $35d9630704992433$var$z(a, s) {
         removeHiddenSlides: Me,
         getScale: ()=>S,
         getConfig: ()=>f,
-        getQueryHash: $35d9630704992433$var$u,
+        getQueryHash: $c33c79a16a3591fd$var$u,
         getSlidePath: H.getHash.bind(H),
         getRevealElement: ()=>a,
         getSlidesElement: ()=>D.slides,
@@ -3334,7 +3334,7 @@ function $35d9630704992433$var$z(a, s) {
         getPlugin: G.getPlugin.bind(G),
         getPlugins: G.getRegisteredPlugins.bind(G)
     };
-    return $35d9630704992433$var$e(l, $35d9630704992433$var$F($35d9630704992433$var$F({}, tn), {}, {
+    return $c33c79a16a3591fd$var$e(l, $c33c79a16a3591fd$var$F($c33c79a16a3591fd$var$F({}, tn), {}, {
         announceStatus: Fe,
         getStatusText: Ie,
         focus: q,
@@ -3359,11 +3359,11 @@ function $35d9630704992433$var$z(a, s) {
 }
 //#endregion
 //#region js/index.ts
-var $35d9630704992433$export$2e2bcd8739ae039 = $35d9630704992433$var$z, $35d9630704992433$var$V = [];
-$35d9630704992433$export$2e2bcd8739ae039.initialize = (e)=>{
+var $c33c79a16a3591fd$export$2e2bcd8739ae039 = $c33c79a16a3591fd$var$z, $c33c79a16a3591fd$var$V = [];
+$c33c79a16a3591fd$export$2e2bcd8739ae039.initialize = (e)=>{
     let t = document.querySelector(".reveal");
     if (!(t instanceof HTMLElement)) throw Error("Unable to find presentation root (<div class=\"reveal\">).");
-    return Object.assign($35d9630704992433$export$2e2bcd8739ae039, new $35d9630704992433$var$z(t, e)), $35d9630704992433$var$V.map((e)=>e($35d9630704992433$export$2e2bcd8739ae039)), $35d9630704992433$export$2e2bcd8739ae039.initialize();
+    return Object.assign($c33c79a16a3591fd$export$2e2bcd8739ae039, new $c33c79a16a3591fd$var$z(t, e)), $c33c79a16a3591fd$var$V.map((e)=>e($c33c79a16a3591fd$export$2e2bcd8739ae039)), $c33c79a16a3591fd$export$2e2bcd8739ae039.initialize();
 }, [
     "configure",
     "on",
@@ -3372,16 +3372,16 @@ $35d9630704992433$export$2e2bcd8739ae039.initialize = (e)=>{
     "removeEventListener",
     "registerPlugin"
 ].forEach((e)=>{
-    $35d9630704992433$export$2e2bcd8739ae039[e] = (...t)=>{
-        $35d9630704992433$var$V.push((n)=>n[e].call(null, ...t));
+    $c33c79a16a3591fd$export$2e2bcd8739ae039[e] = (...t)=>{
+        $c33c79a16a3591fd$var$V.push((n)=>n[e].call(null, ...t));
     };
-}), $35d9630704992433$export$2e2bcd8739ae039.isReady = ()=>!1, $35d9630704992433$export$2e2bcd8739ae039.VERSION = $35d9630704992433$var$Te;
+}), $c33c79a16a3591fd$export$2e2bcd8739ae039.isReady = ()=>!1, $c33c79a16a3591fd$export$2e2bcd8739ae039.VERSION = $c33c79a16a3591fd$var$Te;
 
 
-var $1de9f47059195007$exports = {};
+var $06711e56132ffd4a$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $1de9f47059195007$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealHighlight = t());
-})($1de9f47059195007$exports, function() {
+    "object" == `object` && "object" < `u` ? $06711e56132ffd4a$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealHighlight = t());
+})($06711e56132ffd4a$exports, function() {
     var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescriptor, r = Object.getOwnPropertyNames, i = Object.getPrototypeOf, a = Object.prototype.hasOwnProperty, o = (e, t)=>()=>(t || e((t = {
                 exports: {}
             }).exports, t), t.exports), s = (e, i, o, s)=>{
@@ -26096,10 +26096,10 @@ https://github.com/highlightjs/highlight.js/issues/2277`), i = e, r = t), n === 
 });
 
 
-var $e7882c78a6ef65ef$exports = {};
+var $9542d52d0a50b869$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $e7882c78a6ef65ef$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealMarkdown = t());
-})($e7882c78a6ef65ef$exports, function() {
+    "object" == `object` && "object" < `u` ? $9542d52d0a50b869$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealMarkdown = t());
+})($9542d52d0a50b869$exports, function() {
     function e() {
         return {
             async: !1,
@@ -27875,10 +27875,10 @@ Please report this to https://github.com/markedjs/marked.`, e) {
 });
 
 
-var $466267fee0c461a2$exports = {};
+var $50780f8d488a8102$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $466267fee0c461a2$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealZoom = t());
-})($466267fee0c461a2$exports, function() {
+    "object" == `object` && "object" < `u` ? $50780f8d488a8102$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealZoom = t());
+})($50780f8d488a8102$exports, function() {
     var e = {
         id: `zoom`,
         init: function(e) {
@@ -27957,10 +27957,10 @@ var $466267fee0c461a2$exports = {};
 });
 
 
-var $f208adb359af1f3c$exports = {};
+var $2bf17d74a42c335a$exports = {};
 (function(e, t) {
-    "object" == `object` && "object" < `u` ? $f208adb359af1f3c$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealNotes = t());
-})($f208adb359af1f3c$exports, function() {
+    "object" == `object` && "object" < `u` ? $2bf17d74a42c335a$exports = t() : typeof define == `function` && define.amd ? define([], t) : (e = typeof globalThis < `u` ? globalThis : e || self, e.RevealNotes = t());
+})($2bf17d74a42c335a$exports, function() {
     var e = `<!--
 	NOTE: You need to build the notes plugin after making changes to this file.
 -->
@@ -31823,7 +31823,7 @@ window.pixuTalks = {
 
 
 addEventListener("DOMContentLoaded", ()=>{
-    let deck = new (0, $35d9630704992433$export$2e2bcd8739ae039)(document.querySelector(".reveal"), {
+    let deck = new (0, $c33c79a16a3591fd$export$2e2bcd8739ae039)(document.querySelector(".reveal"), {
         ...window.location.href.includes("?print-pdf") && {
             pdfSeparateFragments: false
         },
@@ -31831,10 +31831,10 @@ addEventListener("DOMContentLoaded", ()=>{
         // plugins: [Markdown, Highlight, Zoom, Notes, Menu, Toolbar, Header],
         // plugins: [Markdown, Highlight, Zoom, Notes, Toolbar, Menu],
         plugins: [
-            (0, (/*@__PURE__*/$parcel$interopDefault($e7882c78a6ef65ef$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($1de9f47059195007$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($466267fee0c461a2$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($f208adb359af1f3c$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($9542d52d0a50b869$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($06711e56132ffd4a$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($50780f8d488a8102$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($2bf17d74a42c335a$exports))),
             (0, $2a0b0ccd43eb8ff9$export$2e2bcd8739ae039)
         ],
         navigationMode: "linear",
@@ -33004,4 +33004,4 @@ const $70d75dd0125a0f69$export$8b945488eb7acd70 = ()=>{
 });
 
 
-//# sourceMappingURL=talk-kinetic-css-osdsay-2026.36092f5e.js.map
+//# sourceMappingURL=talk-kinetic-css-osdsay-2026.310defdf.js.map

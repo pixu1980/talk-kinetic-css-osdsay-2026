@@ -603,14 +603,14 @@ function $7d9b3dc01f926a9b$export$71511d61b312f219(thisArg, body) {
 }
 
 
-var $ce895cd182e417c7$var$e = function(e, t) {
+var $38d07f699c4264a6$var$e = function(e, t) {
     for(var n in t)e[n] = t[n];
     return e;
-}, $ce895cd182e417c7$var$t = function(e, t) {
+}, $38d07f699c4264a6$var$t = function(e, t) {
     return Array.from(e.querySelectorAll(t));
-}, $ce895cd182e417c7$var$n = function(e, t, n) {
+}, $38d07f699c4264a6$var$n = function(e, t, n) {
     n ? e.classList.add(t) : e.classList.remove(t);
-}, $ce895cd182e417c7$var$r = function(e) {
+}, $38d07f699c4264a6$var$r = function(e) {
     if (typeof e == "string") {
         if (e === "null") return null;
         if (e === "true") return !0;
@@ -618,23 +618,23 @@ var $ce895cd182e417c7$var$e = function(e, t) {
         if (e.match(/^-?[\d\.]+$/)) return parseFloat(e);
     }
     return e;
-}, $ce895cd182e417c7$var$i = function(e, t) {
+}, $38d07f699c4264a6$var$i = function(e, t) {
     e.style.transform = t;
-}, $ce895cd182e417c7$var$a = function(e, t) {
+}, $38d07f699c4264a6$var$a = function(e, t) {
     var n = e.matches || e.matchesSelector || e.msMatchesSelector;
     return !!(n && n.call(e, t));
-}, $ce895cd182e417c7$var$o = function(e, t) {
+}, $38d07f699c4264a6$var$o = function(e, t) {
     if (e && typeof e.closest == "function") return e.closest(t);
     for(; e;){
-        if ($ce895cd182e417c7$var$a(e, t)) return e;
+        if ($38d07f699c4264a6$var$a(e, t)) return e;
         e = e.parentElement;
     }
     return null;
-}, $ce895cd182e417c7$var$s = function(e) {
+}, $38d07f699c4264a6$var$s = function(e) {
     e = e || document.documentElement;
     var t = e.requestFullscreen || e.webkitRequestFullscreen || e.webkitRequestFullScreen || e.mozRequestFullScreen || e.msRequestFullscreen;
     t && t.apply(e);
-}, $ce895cd182e417c7$var$c = function(e, t, n) {
+}, $38d07f699c4264a6$var$c = function(e, t, n) {
     var r = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : "";
     var i = e.querySelectorAll("." + n);
     for(var _$t = 0; _$t < i.length; _$t++){
@@ -643,10 +643,10 @@ var $ce895cd182e417c7$var$e = function(e, t) {
     }
     var a = document.createElement(t);
     return a.className = n, a.innerHTML = r, e.appendChild(a), a;
-}, $ce895cd182e417c7$var$l = function(e) {
+}, $38d07f699c4264a6$var$l = function(e) {
     var t = document.createElement("style");
     return e && e.length > 0 && t.appendChild(document.createTextNode(e)), document.head.appendChild(t), t;
-}, $ce895cd182e417c7$var$u = function() {
+}, $38d07f699c4264a6$var$u = function() {
     var e = {};
     location.search.replace(/[A-Z0-9]+?=([\w\.%-]*)/gi, function(t) {
         var n = t.split("=").shift(), r = t.split("=").pop();
@@ -654,10 +654,10 @@ var $ce895cd182e417c7$var$e = function(e, t) {
     });
     for(var t in e){
         var n = e[t];
-        e[t] = $ce895cd182e417c7$var$r(unescape(n));
+        e[t] = $38d07f699c4264a6$var$r(unescape(n));
     }
     return e.dependencies !== void 0 && delete e.dependencies, e;
-}, $ce895cd182e417c7$var$d = function(e) {
+}, $38d07f699c4264a6$var$d = function(e) {
     var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
     if (e) {
         var n;
@@ -665,24 +665,24 @@ var $ce895cd182e417c7$var$e = function(e, t) {
         return e.style.height = "0px", e.parentElement && (e.parentElement.style.height = "auto"), r = t - (((n = e.parentElement) == null ? void 0 : n.offsetHeight) || 0), e.style.height = i + "px", e.parentElement && e.parentElement.style.removeProperty("height"), r;
     }
     return t;
-}, $ce895cd182e417c7$var$f = {
+}, $38d07f699c4264a6$var$f = {
     mp4: "video/mp4",
     m4a: "video/mp4",
     ogv: "video/ogg",
     mpeg: "video/mpeg",
     webm: "video/webm"
-}, $ce895cd182e417c7$var$p = function() {
+}, $38d07f699c4264a6$var$p = function() {
     var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
     var t = e.split(".").pop();
-    return t ? $ce895cd182e417c7$var$f[t] : void 0;
-}, $ce895cd182e417c7$var$m = function() {
+    return t ? $38d07f699c4264a6$var$f[t] : void 0;
+}, $38d07f699c4264a6$var$m = function() {
     var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "";
     return encodeURI(e).replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[!'()*]/g, function(e) {
         return "%".concat(e.charCodeAt(0).toString(16).toUpperCase());
     });
-}, $ce895cd182e417c7$var$h = navigator.userAgent, $ce895cd182e417c7$var$g = /(iphone|ipod|ipad|android)/gi.test($ce895cd182e417c7$var$h) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
-/chrome/i.test($ce895cd182e417c7$var$h) && /edge/i.test($ce895cd182e417c7$var$h);
-var $ce895cd182e417c7$var$_ = /android/gi.test($ce895cd182e417c7$var$h), $ce895cd182e417c7$var$v = function(e) {
+}, $38d07f699c4264a6$var$h = navigator.userAgent, $38d07f699c4264a6$var$g = /(iphone|ipod|ipad|android)/gi.test($38d07f699c4264a6$var$h) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+/chrome/i.test($38d07f699c4264a6$var$h) && /edge/i.test($38d07f699c4264a6$var$h);
+var $38d07f699c4264a6$var$_ = /android/gi.test($38d07f699c4264a6$var$h), $38d07f699c4264a6$var$v = function(e) {
     if (e) {
         var t = function t(e) {
             return [].slice.call(e);
@@ -811,36 +811,36 @@ var $ce895cd182e417c7$var$_ = /android/gi.test($ce895cd182e417c7$var$h), $ce895c
 }((typeof window === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(window)) > "u" ? null : window);
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/typeof.js
-function $ce895cd182e417c7$var$y(e) {
+function $38d07f699c4264a6$var$y(e) {
     "@babel/helpers - typeof";
-    return $ce895cd182e417c7$var$y = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function y(e) {
+    return $38d07f699c4264a6$var$y = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function y(e) {
         return typeof e;
     } : function(e) {
         return e && typeof Symbol == "function" && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
-    }, $ce895cd182e417c7$var$y(e);
+    }, $38d07f699c4264a6$var$y(e);
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/toPrimitive.js
-function $ce895cd182e417c7$var$b(e, t) {
-    if ($ce895cd182e417c7$var$y(e) != "object" || !e) return e;
+function $38d07f699c4264a6$var$b(e, t) {
+    if ($38d07f699c4264a6$var$y(e) != "object" || !e) return e;
     var n = e[Symbol.toPrimitive];
     if (n !== void 0) {
         var r = n.call(e, t || "default");
-        if ($ce895cd182e417c7$var$y(r) != "object") return r;
+        if ($38d07f699c4264a6$var$y(r) != "object") return r;
         throw TypeError("@@toPrimitive must return a primitive value.");
     }
     return (t === "string" ? String : Number)(e);
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/toPropertyKey.js
-function $ce895cd182e417c7$var$x(e) {
-    var t = $ce895cd182e417c7$var$b(e, "string");
-    return $ce895cd182e417c7$var$y(t) == "symbol" ? t : t + "";
+function $38d07f699c4264a6$var$x(e) {
+    var t = $38d07f699c4264a6$var$b(e, "string");
+    return $38d07f699c4264a6$var$y(t) == "symbol" ? t : t + "";
 }
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/defineProperty.js
-function $ce895cd182e417c7$var$S(e, t, n) {
-    return (t = $ce895cd182e417c7$var$x(t)) in e ? Object.defineProperty(e, t, {
+function $38d07f699c4264a6$var$S(e, t, n) {
+    return (t = $38d07f699c4264a6$var$x(t)) in e ? Object.defineProperty(e, t, {
         value: n,
         enumerable: !0,
         configurable: !0,
@@ -849,11 +849,11 @@ function $ce895cd182e417c7$var$S(e, t, n) {
 }
 //#endregion
 //#region js/controllers/slidecontent.js
-var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
+var $38d07f699c4264a6$var$ee = /*#__PURE__*/ function() {
     "use strict";
     function ee(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ee);
-        $ce895cd182e417c7$var$S(this, "allowedToPlayAudio", null), this.Reveal = e, this.startEmbeddedMedia = this.startEmbeddedMedia.bind(this), this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this), this.preventIframeAutoFocus = this.preventIframeAutoFocus.bind(this), this.ensureMobileMediaPlaying = this.ensureMobileMediaPlaying.bind(this), this.failedAudioPlaybackTargets = /* @__PURE__ */ new Set(), this.failedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.failedMutedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.renderMediaPlayButton();
+        $38d07f699c4264a6$var$S(this, "allowedToPlayAudio", null), this.Reveal = e, this.startEmbeddedMedia = this.startEmbeddedMedia.bind(this), this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this), this.preventIframeAutoFocus = this.preventIframeAutoFocus.bind(this), this.ensureMobileMediaPlaying = this.ensureMobileMediaPlaying.bind(this), this.failedAudioPlaybackTargets = /* @__PURE__ */ new Set(), this.failedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.failedMutedVideoPlaybackTargets = /* @__PURE__ */ new Set(), this.renderMediaPlayButton();
     }
     (0, $2774859258aff5c8$export$71511d61b312f219)(ee, [
         {
@@ -887,14 +887,14 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                     var t1 = r.replace(/\s*!important\s*$/, "").trim();
                     e.style.setProperty("display", t1, "important");
                 } else e.style.display = r;
-                $ce895cd182e417c7$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach(function(e) {
+                $38d07f699c4264a6$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach(function(e) {
                     var t = e.tagName === "IFRAME";
                     (!t || _this.shouldPreload(e)) && (e.setAttribute("src", e.getAttribute("data-src")), e.setAttribute("data-lazy-loaded", ""), e.removeAttribute("data-src"), t && e.addEventListener("load", _this.preventIframeAutoFocus));
-                }), $ce895cd182e417c7$var$t(e, "video, audio").forEach(function(e) {
+                }), $38d07f699c4264a6$var$t(e, "video, audio").forEach(function(e) {
                     var n = 0;
-                    $ce895cd182e417c7$var$t(e, "source[data-src]").forEach(function(e) {
+                    $38d07f699c4264a6$var$t(e, "source[data-src]").forEach(function(e) {
                         e.setAttribute("src", e.getAttribute("data-src")), e.removeAttribute("data-src"), e.setAttribute("data-lazy-loaded", ""), n += 1;
-                    }), $ce895cd182e417c7$var$g && e.tagName === "VIDEO" && e.setAttribute("playsinline", ""), n > 0 && e.load();
+                    }), $38d07f699c4264a6$var$g && e.tagName === "VIDEO" && e.setAttribute("playsinline", ""), n > 0 && e.load();
                 });
                 var i = e.slideBackgroundElement;
                 if (i) {
@@ -904,14 +904,14 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                         i.setAttribute("data-loaded", "true");
                         var a = e.getAttribute("data-background-image"), o = e.getAttribute("data-background-video"), s = e.hasAttribute("data-background-video-loop"), c = e.hasAttribute("data-background-video-muted");
                         if (a) /^data:/.test(a.trim()) ? t2.style.backgroundImage = "url(".concat(a.trim(), ")") : t2.style.backgroundImage = a.split(",").map(function(e) {
-                            return "url(".concat($ce895cd182e417c7$var$m(decodeURI(e.trim())), ")");
+                            return "url(".concat($38d07f699c4264a6$var$m(decodeURI(e.trim())), ")");
                         }).join(",");
                         else if (o) {
                             var _$e = document.createElement("video");
-                            s && _$e.setAttribute("loop", ""), (c || this.Reveal.isSpeakerNotes()) && (_$e.muted = !0), $ce895cd182e417c7$var$g && _$e.setAttribute("playsinline", ""), o.split(",").forEach(function(t) {
+                            s && _$e.setAttribute("loop", ""), (c || this.Reveal.isSpeakerNotes()) && (_$e.muted = !0), $38d07f699c4264a6$var$g && _$e.setAttribute("playsinline", ""), o.split(",").forEach(function(t) {
                                 var n = document.createElement("source");
                                 n.setAttribute("src", t);
-                                var r = $ce895cd182e417c7$var$p(t);
+                                var r = $38d07f699c4264a6$var$p(t);
                                 r && n.setAttribute("type", r), _$e.appendChild(n);
                             }), t2.appendChild(_$e);
                         } else if (r1 && n.excludeIframes !== !0) {
@@ -930,7 +930,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
             value: function layout(e) {
                 var _this = this;
                 Array.from(e.querySelectorAll(".r-fit-text")).forEach(function(e) {
-                    $ce895cd182e417c7$var$v(e, {
+                    $38d07f699c4264a6$var$v(e, {
                         minSize: 24,
                         maxSize: _this.Reveal.getConfig().height * .8,
                         observeMutations: !1,
@@ -944,11 +944,11 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
             value: function unload(e) {
                 e.style.display = "none";
                 var n = this.Reveal.getSlideBackground(e);
-                n && (n.style.display = "none", $ce895cd182e417c7$var$t(n, "iframe[src]").forEach(function(e) {
+                n && (n.style.display = "none", $38d07f699c4264a6$var$t(n, "iframe[src]").forEach(function(e) {
                     e.removeAttribute("src");
-                })), $ce895cd182e417c7$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach(function(e) {
+                })), $38d07f699c4264a6$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach(function(e) {
                     e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
-                }), $ce895cd182e417c7$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach(function(e) {
+                }), $38d07f699c4264a6$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach(function(e) {
                     e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
                 });
             }
@@ -958,7 +958,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
             value: function formatEmbeddedContent() {
                 var _this = this;
                 var e = function(e, n, r) {
-                    $ce895cd182e417c7$var$t(_this.Reveal.getSlidesElement(), "iframe[" + e + "*=\"" + n + "\"]").forEach(function(t) {
+                    $38d07f699c4264a6$var$t(_this.Reveal.getSlidesElement(), "iframe[" + e + "*=\"" + n + "\"]").forEach(function(t) {
                         var _$n = t.getAttribute(e);
                         _$n && _$n.indexOf(r) === -1 && t.setAttribute(e, _$n + (/\?/.test(_$n) ? "&" : "?") + r);
                     });
@@ -972,23 +972,23 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                 var _this = this;
                 if (e) {
                     var n = this.Reveal.isSpeakerNotes();
-                    $ce895cd182e417c7$var$t(e, "img[src$=\".gif\"]").forEach(function(e) {
+                    $38d07f699c4264a6$var$t(e, "img[src$=\".gif\"]").forEach(function(e) {
                         e.setAttribute("src", e.getAttribute("src"));
-                    }), $ce895cd182e417c7$var$t(e, "video, audio").forEach(function(e) {
-                        if ($ce895cd182e417c7$var$o(e, ".fragment") && !$ce895cd182e417c7$var$o(e, ".fragment.visible")) return;
+                    }), $38d07f699c4264a6$var$t(e, "video, audio").forEach(function(e) {
+                        if ($38d07f699c4264a6$var$o(e, ".fragment") && !$38d07f699c4264a6$var$o(e, ".fragment.visible")) return;
                         var t = _this.Reveal.getConfig().autoPlayMedia;
-                        if (typeof t != "boolean" && (t = e.hasAttribute("data-autoplay") || !!$ce895cd182e417c7$var$o(e, ".slide-background")), t && typeof e.play == "function") {
+                        if (typeof t != "boolean" && (t = e.hasAttribute("data-autoplay") || !!$38d07f699c4264a6$var$o(e, ".slide-background")), t && typeof e.play == "function") {
                             if (n && !e.muted) return;
                             e.readyState > 1 ? _this.startEmbeddedMedia({
                                 target: e
-                            }) : $ce895cd182e417c7$var$g ? (e.addEventListener("canplay", _this.ensureMobileMediaPlaying), _this.playMediaElement(e)) : (e.removeEventListener("loadeddata", _this.startEmbeddedMedia), e.addEventListener("loadeddata", _this.startEmbeddedMedia));
+                            }) : $38d07f699c4264a6$var$g ? (e.addEventListener("canplay", _this.ensureMobileMediaPlaying), _this.playMediaElement(e)) : (e.removeEventListener("loadeddata", _this.startEmbeddedMedia), e.addEventListener("loadeddata", _this.startEmbeddedMedia));
                         }
-                    }), n || ($ce895cd182e417c7$var$t(e, "iframe[src]").forEach(function(e) {
-                        $ce895cd182e417c7$var$o(e, ".fragment") && !$ce895cd182e417c7$var$o(e, ".fragment.visible") || _this.startEmbeddedIframe({
+                    }), n || ($38d07f699c4264a6$var$t(e, "iframe[src]").forEach(function(e) {
+                        $38d07f699c4264a6$var$o(e, ".fragment") && !$38d07f699c4264a6$var$o(e, ".fragment.visible") || _this.startEmbeddedIframe({
                             target: e
                         });
-                    }), $ce895cd182e417c7$var$t(e, "iframe[data-src]").forEach(function(e) {
-                        $ce895cd182e417c7$var$o(e, ".fragment") && !$ce895cd182e417c7$var$o(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", _this.startEmbeddedIframe), e.addEventListener("load", _this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
+                    }), $38d07f699c4264a6$var$t(e, "iframe[data-src]").forEach(function(e) {
+                        $38d07f699c4264a6$var$o(e, ".fragment") && !$38d07f699c4264a6$var$o(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", _this.startEmbeddedIframe), e.addEventListener("load", _this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
                     }));
                 }
             }
@@ -1006,7 +1006,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         {
             key: "startEmbeddedMedia",
             value: function startEmbeddedMedia(e) {
-                var t = !!$ce895cd182e417c7$var$o(e.target, "html"), n = !!$ce895cd182e417c7$var$o(e.target, ".present");
+                var t = !!$38d07f699c4264a6$var$o(e.target, "html"), n = !!$38d07f699c4264a6$var$o(e.target, ".present");
                 t && n && (e.target.paused || e.target.ended) && (e.target.currentTime = 0, this.playMediaElement(e.target)), e.target.removeEventListener("loadeddata", this.startEmbeddedMedia);
             }
         },
@@ -1021,7 +1021,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                     if (t.name === "NotAllowedError") {
                         if (_this.allowedToPlayAudio = !1, e.tagName === "VIDEO") {
                             _this.onVideoPlaybackNotAllowed(e);
-                            var _$t = !!$ce895cd182e417c7$var$o(e, "html"), n = !!$ce895cd182e417c7$var$o(e, ".present"), r = e.muted;
+                            var _$t = !!$38d07f699c4264a6$var$o(e, "html"), n = !!$38d07f699c4264a6$var$o(e, ".present"), r = e.muted;
                             _$t && n && !r && (e.setAttribute("data-muted-by-reveal", "true"), e.muted = !0, e.play().catch(function() {
                                 _this.onMutedVideoPlaybackNotAllowed(e);
                             }));
@@ -1035,10 +1035,10 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
             value: function startEmbeddedIframe(e) {
                 var t = e.target;
                 if (this.preventIframeAutoFocus(e), t && t.contentWindow) {
-                    var n = !!$ce895cd182e417c7$var$o(e.target, "html"), r = !!$ce895cd182e417c7$var$o(e.target, ".present");
+                    var n = !!$38d07f699c4264a6$var$o(e.target, "html"), r = !!$38d07f699c4264a6$var$o(e.target, ".present");
                     if (n && r) {
                         var _$e = this.Reveal.getConfig().autoPlayMedia;
-                        typeof _$e != "boolean" && (_$e = t.hasAttribute("data-autoplay") || !!$ce895cd182e417c7$var$o(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && _$e ? t.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"playVideo\",\"args\":\"\"}", "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && _$e ? t.contentWindow.postMessage("{\"method\":\"play\"}", "*") : t.contentWindow.postMessage("slide:start", "*");
+                        typeof _$e != "boolean" && (_$e = t.hasAttribute("data-autoplay") || !!$38d07f699c4264a6$var$o(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && _$e ? t.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"playVideo\",\"args\":\"\"}", "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && _$e ? t.contentWindow.postMessage("{\"method\":\"play\"}", "*") : t.contentWindow.postMessage("slide:start", "*");
                     }
                 }
             }
@@ -1048,17 +1048,17 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
             value: function stopEmbeddedContent(n) {
                 var _this = this;
                 var r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                r = $ce895cd182e417c7$var$e({
+                r = $38d07f699c4264a6$var$e({
                     unloadIframes: !0
-                }, r), n && n.parentNode && ($ce895cd182e417c7$var$t(n, "video, audio").forEach(function(e) {
-                    !e.hasAttribute("data-ignore") && typeof e.pause == "function" && (e.setAttribute("data-paused-by-reveal", ""), e.pause(), $ce895cd182e417c7$var$g && e.removeEventListener("canplay", _this.ensureMobileMediaPlaying));
-                }), $ce895cd182e417c7$var$t(n, "iframe").forEach(function(e) {
+                }, r), n && n.parentNode && ($38d07f699c4264a6$var$t(n, "video, audio").forEach(function(e) {
+                    !e.hasAttribute("data-ignore") && typeof e.pause == "function" && (e.setAttribute("data-paused-by-reveal", ""), e.pause(), $38d07f699c4264a6$var$g && e.removeEventListener("canplay", _this.ensureMobileMediaPlaying));
+                }), $38d07f699c4264a6$var$t(n, "iframe").forEach(function(e) {
                     e.contentWindow && e.contentWindow.postMessage("slide:stop", "*"), e.removeEventListener("load", _this.preventIframeAutoFocus), e.removeEventListener("load", _this.startEmbeddedIframe);
-                }), $ce895cd182e417c7$var$t(n, "iframe[src*=\"youtube.com/embed/\"]").forEach(function(e) {
+                }), $38d07f699c4264a6$var$t(n, "iframe[src*=\"youtube.com/embed/\"]").forEach(function(e) {
                     !e.hasAttribute("data-ignore") && e.contentWindow && typeof e.contentWindow.postMessage == "function" && e.contentWindow.postMessage("{\"event\":\"command\",\"func\":\"pauseVideo\",\"args\":\"\"}", "*");
-                }), $ce895cd182e417c7$var$t(n, "iframe[src*=\"player.vimeo.com/\"]").forEach(function(e) {
+                }), $38d07f699c4264a6$var$t(n, "iframe[src*=\"player.vimeo.com/\"]").forEach(function(e) {
                     !e.hasAttribute("data-ignore") && e.contentWindow && typeof e.contentWindow.postMessage == "function" && e.contentWindow.postMessage("{\"method\":\"pause\"}", "*");
-                }), r.unloadIframes === !0 && $ce895cd182e417c7$var$t(n, "iframe[data-src]").forEach(function(e) {
+                }), r.unloadIframes === !0 && $38d07f699c4264a6$var$t(n, "iframe[data-src]").forEach(function(e) {
                     e.setAttribute("src", "about:blank"), e.removeAttribute("src");
                 }));
             }
@@ -1128,7 +1128,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         }
     ]);
     return ee;
-}(), $ce895cd182e417c7$var$C = ".slides section", $ce895cd182e417c7$var$w = ".slides>section", $ce895cd182e417c7$var$te = ".slides>section.present>section", $ce895cd182e417c7$var$T = ".backgrounds>.slide-background", $ce895cd182e417c7$var$E = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview|previewIframe/, $ce895cd182e417c7$var$ne = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$C = ".slides section", $38d07f699c4264a6$var$w = ".slides>section", $38d07f699c4264a6$var$te = ".slides>section.present>section", $38d07f699c4264a6$var$T = ".backgrounds>.slide-background", $38d07f699c4264a6$var$E = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview|previewIframe/, $38d07f699c4264a6$var$ne = /*#__PURE__*/ function() {
     "use strict";
     function ne(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ne);
@@ -1196,7 +1196,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         }
     ]);
     return ne;
-}(), $ce895cd182e417c7$var$re = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$re = /*#__PURE__*/ function() {
     "use strict";
     function re(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, re);
@@ -1303,7 +1303,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         }
     ]);
     return re;
-}(), $ce895cd182e417c7$var$D = function(e) {
+}(), $38d07f699c4264a6$var$D = function(e) {
     var t = e.match(/^#([0-9a-f]{3})$/i);
     if (t && t[1]) {
         var _$e = t[1];
@@ -1335,9 +1335,9 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         b: parseInt(i[3], 10),
         a: parseFloat(i[4])
     } : null;
-}, $ce895cd182e417c7$var$ie = function(e) {
-    return typeof e == "string" && (e = $ce895cd182e417c7$var$D(e)), e ? (e.r * 299 + e.g * 587 + e.b * 114) / 1e3 : null;
-}, $ce895cd182e417c7$var$ae = /*#__PURE__*/ function() {
+}, $38d07f699c4264a6$var$ie = function(e) {
+    return typeof e == "string" && (e = $38d07f699c4264a6$var$D(e)), e ? (e.r * 299 + e.g * 587 + e.b * 114) / 1e3 : null;
+}, $38d07f699c4264a6$var$ae = /*#__PURE__*/ function() {
     "use strict";
     function ae(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ae);
@@ -1356,7 +1356,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                 var _this = this;
                 this.element.innerHTML = "", this.element.classList.add("no-transition"), this.Reveal.getHorizontalSlides().forEach(function(e) {
                     var n = _this.createBackground(e, _this.element);
-                    $ce895cd182e417c7$var$t(e, "section").forEach(function(e) {
+                    $38d07f699c4264a6$var$t(e, "section").forEach(function(e) {
                         _this.createBackground(e, n), n.classList.add("stack");
                     });
                 }), this.Reveal.getConfig().parallaxBackgroundImage ? (this.element.style.backgroundImage = "url(\"" + this.Reveal.getConfig().parallaxBackgroundImage + "\")", this.element.style.backgroundSize = this.Reveal.getConfig().parallaxBackgroundSize, this.element.style.backgroundRepeat = this.Reveal.getConfig().parallaxBackgroundRepeat, this.element.style.backgroundPosition = this.Reveal.getConfig().parallaxBackgroundPosition, setTimeout(function() {
@@ -1398,13 +1398,13 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
             key: "getContrastClass",
             value: function getContrastClass(e) {
                 var t = e.slideBackgroundElement, n = e.getAttribute("data-background-color");
-                if (!n || !$ce895cd182e417c7$var$D(n)) {
+                if (!n || !$38d07f699c4264a6$var$D(n)) {
                     var _$e = window.getComputedStyle(t);
                     _$e && _$e.backgroundColor && (n = _$e.backgroundColor);
                 }
                 if (n) {
-                    var _$e1 = $ce895cd182e417c7$var$D(n);
-                    if (_$e1 && _$e1.a !== 0) return $ce895cd182e417c7$var$ie(n) < 128 ? "has-dark-background" : "has-light-background";
+                    var _$e1 = $38d07f699c4264a6$var$D(n);
+                    if (_$e1 && _$e1.a !== 0) return $38d07f699c4264a6$var$ie(n) < 128 ? "has-dark-background" : "has-light-background";
                 }
                 return null;
             }
@@ -1427,7 +1427,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                 var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1;
                 var n = this.Reveal.getConfig(), r = this.Reveal.getCurrentSlide(), i = this.Reveal.getIndices(), a = null, o = n.rtl ? "future" : "past", s = n.rtl ? "past" : "future";
                 if (Array.from(this.element.childNodes).forEach(function(n, r) {
-                    n.classList.remove("past", "present", "future"), r < i.h ? n.classList.add(o) : r > i.h ? n.classList.add(s) : (n.classList.add("present"), a = n), (e || r === i.h) && $ce895cd182e417c7$var$t(n, ".slide-background").forEach(function(e, t) {
+                    n.classList.remove("past", "present", "future"), r < i.h ? n.classList.add(o) : r > i.h ? n.classList.add(s) : (n.classList.add("present"), a = n), (e || r === i.h) && $38d07f699c4264a6$var$t(n, ".slide-background").forEach(function(e, t) {
                         e.classList.remove("past", "present", "future");
                         var _$n = typeof i.v == "number" ? i.v : 0;
                         t < _$n ? e.classList.add("past") : t > _$n ? e.classList.add("future") : (e.classList.add("present"), r === i.h && (a = e));
@@ -1482,7 +1482,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         }
     ]);
     return ae;
-}(), $ce895cd182e417c7$var$O = 0, $ce895cd182e417c7$var$oe = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$O = 0, $38d07f699c4264a6$var$oe = /*#__PURE__*/ function() {
     "use strict";
     function oe(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, oe);
@@ -1496,19 +1496,19 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                 this.reset();
                 var n = this.Reveal.getSlides(), r = n.indexOf(t), i = n.indexOf(e);
                 if (e && t && e.hasAttribute("data-auto-animate") && t.hasAttribute("data-auto-animate") && e.getAttribute("data-auto-animate-id") === t.getAttribute("data-auto-animate-id") && !(r > i ? t : e).hasAttribute("data-auto-animate-restart")) {
-                    this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $ce895cd182e417c7$var$l();
+                    this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $38d07f699c4264a6$var$l();
                     var n1 = this.getAutoAnimateOptions(t);
                     e.dataset.autoAnimate = "pending", t.dataset.autoAnimate = "pending", n1.slideDirection = r > i ? "forward" : "backward";
                     var a = e.style.display === "none";
                     a && (e.style.display = this.Reveal.getConfig().display);
                     var o = this.getAutoAnimatableElements(e, t).map(function(e) {
-                        return _this.autoAnimateElements(e.from, e.to, e.options || {}, n1, $ce895cd182e417c7$var$O++);
+                        return _this.autoAnimateElements(e.from, e.to, e.options || {}, n1, $38d07f699c4264a6$var$O++);
                     });
                     if (a && (e.style.display = "none"), t.dataset.autoAnimateUnmatched !== "false" && this.Reveal.getConfig().autoAnimateUnmatched === !0) {
                         var _$e = n1.duration * .8, r1 = n1.duration * .2;
                         this.getUnmatchedAutoAnimateElements(t).forEach(function(e) {
                             var _$t = _this.getAutoAnimateOptions(e, n1), r = "unmatched";
-                            (_$t.duration !== n1.duration || _$t.delay !== n1.delay) && (r = "unmatched-" + $ce895cd182e417c7$var$O++, o.push('[data-auto-animate="running"] [data-auto-animate-target="'.concat(r, '"] { transition: opacity ').concat(_$t.duration, "s ease ").concat(_$t.delay, "s; }"))), e.dataset.autoAnimateTarget = r;
+                            (_$t.duration !== n1.duration || _$t.delay !== n1.delay) && (r = "unmatched-" + $38d07f699c4264a6$var$O++, o.push('[data-auto-animate="running"] [data-auto-animate-target="'.concat(r, '"] { transition: opacity ').concat(_$t.duration, "s ease ").concat(_$t.delay, "s; }"))), e.dataset.autoAnimateTarget = r;
                         }, this), o.push('[data-auto-animate="running"] [data-auto-animate-target="unmatched"] { transition: opacity '.concat(_$e, "s ease ").concat(r1, "s; }"));
                     }
                     this.autoAnimateStyleSheet.innerHTML = o.join(""), requestAnimationFrame(function() {
@@ -1527,9 +1527,9 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         {
             key: "reset",
             value: function reset() {
-                $ce895cd182e417c7$var$t(this.Reveal.getRevealElement(), "[data-auto-animate]:not([data-auto-animate=\"\"])").forEach(function(e) {
+                $38d07f699c4264a6$var$t(this.Reveal.getRevealElement(), "[data-auto-animate]:not([data-auto-animate=\"\"])").forEach(function(e) {
                     e.dataset.autoAnimate = "";
-                }), $ce895cd182e417c7$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach(function(e) {
+                }), $38d07f699c4264a6$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach(function(e) {
                     delete e.dataset.autoAnimateTarget;
                 }), this.autoAnimateStyleSheet && this.autoAnimateStyleSheet.parentNode && (this.autoAnimateStyleSheet.parentNode.removeChild(this.autoAnimateStyleSheet), this.autoAnimateStyleSheet = null);
             }
@@ -1580,8 +1580,8 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                     duration: this.Reveal.getConfig().autoAnimateDuration,
                     delay: 0
                 };
-                if (r = $ce895cd182e417c7$var$e(r, n), t.parentNode) {
-                    var e1 = $ce895cd182e417c7$var$o(t.parentNode, "[data-auto-animate-target]");
+                if (r = $38d07f699c4264a6$var$e(r, n), t.parentNode) {
+                    var e1 = $38d07f699c4264a6$var$o(t.parentNode, "[data-auto-animate-target]");
                     e1 && (r = this.getAutoAnimateOptions(e1, r));
                 }
                 return t.dataset.autoAnimateEasing && (r.easing = t.dataset.autoAnimateEasing), t.dataset.autoAnimateDuration && (r.duration = parseFloat(t.dataset.autoAnimateDuration)), t.dataset.autoAnimateDelay && (r.delay = parseFloat(t.dataset.autoAnimateDelay)), r;
@@ -1646,9 +1646,9 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                 }), this.findAutoAnimateMatches(n, e, t, "pre", function(e) {
                     return e.nodeName + ":::" + e.textContent.trim();
                 }), n.forEach(function(e) {
-                    $ce895cd182e417c7$var$a(e.from, r) ? e.options = {
+                    $38d07f699c4264a6$var$a(e.from, r) ? e.options = {
                         scale: !1
-                    } : $ce895cd182e417c7$var$a(e.from, "pre") && (e.options = {
+                    } : $38d07f699c4264a6$var$a(e.from, "pre") && (e.options = {
                         scale: !1,
                         styles: [
                             "width",
@@ -1719,7 +1719,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
         }
     ]);
     return oe;
-}(), $ce895cd182e417c7$var$k = 500, $ce895cd182e417c7$var$A = 4, $ce895cd182e417c7$var$se = 6, $ce895cd182e417c7$var$j = 8, $ce895cd182e417c7$var$ce = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$k = 500, $38d07f699c4264a6$var$A = 4, $38d07f699c4264a6$var$se = 6, $38d07f699c4264a6$var$j = 8, $38d07f699c4264a6$var$ce = /*#__PURE__*/ function() {
     "use strict";
     function ce(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ce);
@@ -1733,7 +1733,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                 if (this.active) return;
                 var e = this.Reveal.getState();
                 this.active = !0, this.slideHTMLBeforeActivation = this.Reveal.getSlidesElement().innerHTML;
-                var n = $ce895cd182e417c7$var$t(this.Reveal.getRevealElement(), $ce895cd182e417c7$var$w), r = $ce895cd182e417c7$var$t(this.Reveal.getRevealElement(), $ce895cd182e417c7$var$T);
+                var n = $38d07f699c4264a6$var$t(this.Reveal.getRevealElement(), $38d07f699c4264a6$var$w), r = $38d07f699c4264a6$var$t(this.Reveal.getRevealElement(), $38d07f699c4264a6$var$T);
                 this.viewportElement.classList.add("loading-scroll-mode", "reveal-scroll");
                 var i, a = window.getComputedStyle(this.viewportElement);
                 a && a.background && (i = a.background);
@@ -1755,7 +1755,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                     _this.Reveal.isVerticalStack(e) ? e.querySelectorAll("section").forEach(function(e, n) {
                         l(e, t, n, !0);
                     }) : l(e, t, 0);
-                }, this), this.createProgressBar(), $ce895cd182e417c7$var$t(this.Reveal.getRevealElement(), ".stack").forEach(function(e) {
+                }, this), this.createProgressBar(), $38d07f699c4264a6$var$t(this.Reveal.getRevealElement(), ".stack").forEach(function(e) {
                     return e.remove();
                 }), o.forEach(function(e) {
                     return s.appendChild(e);
@@ -1931,9 +1931,9 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                     return e.remove();
                 });
                 var e = this.viewportElement.scrollHeight, t = this.viewportElement.offsetHeight, n = t / e;
-                this.progressBarHeight = this.progressBarInner.offsetHeight, this.playheadHeight = Math.max(n * this.progressBarHeight, $ce895cd182e417c7$var$j), this.progressBarScrollableHeight = this.progressBarHeight - this.playheadHeight;
-                var r = t / e * this.progressBarHeight, i = Math.min(r / 8, $ce895cd182e417c7$var$A);
-                this.progressBarPlayhead.style.height = this.playheadHeight - i + "px", r > $ce895cd182e417c7$var$se ? this.slideTriggers.forEach(function(e) {
+                this.progressBarHeight = this.progressBarInner.offsetHeight, this.playheadHeight = Math.max(n * this.progressBarHeight, $38d07f699c4264a6$var$j), this.progressBarScrollableHeight = this.progressBarHeight - this.playheadHeight;
+                var r = t / e * this.progressBarHeight, i = Math.min(r / 8, $38d07f699c4264a6$var$A);
+                this.progressBarPlayhead.style.height = this.playheadHeight - i + "px", r > $38d07f699c4264a6$var$se ? this.slideTriggers.forEach(function(e) {
                     var t = e.page;
                     t.progressBarSlide = document.createElement("div"), t.progressBarSlide.className = "scrollbar-slide", t.progressBarSlide.style.top = e.range[0] * _this.progressBarHeight + "px", t.progressBarSlide.style.height = (e.range[1] - e.range[0]) * _this.progressBarHeight - i + "px", t.progressBarSlide.classList.toggle("has-triggers", t.scrollTriggers.length > 0), _this.progressBarInner.appendChild(t.progressBarSlide), t.scrollTriggerElements = t.scrollTriggers.map(function(n, r) {
                         var a = document.createElement("div");
@@ -1975,7 +1975,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
                 var _this = this;
                 this.progressBar.classList.add("visible"), clearTimeout(this.hideProgressBarTimeout), this.Reveal.getConfig().scrollProgress === "auto" && !this.draggingProgressBar && (this.hideProgressBarTimeout = setTimeout(function() {
                     _this.progressBar && _this.progressBar.classList.remove("visible");
-                }, $ce895cd182e417c7$var$k));
+                }, $38d07f699c4264a6$var$k));
             }
         },
         {
@@ -2093,7 +2093,7 @@ var $ce895cd182e417c7$var$ee = /*#__PURE__*/ function() {
 }();
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/asyncToGenerator.js
-function $ce895cd182e417c7$var$M(e, t, n, r, i, a, o) {
+function $38d07f699c4264a6$var$M(e, t, n, r, i, a, o) {
     try {
         var s = e[a](o), c = s.value;
     } catch (e) {
@@ -2102,16 +2102,16 @@ function $ce895cd182e417c7$var$M(e, t, n, r, i, a, o) {
     }
     s.done ? t(c) : Promise.resolve(c).then(r, i);
 }
-function $ce895cd182e417c7$var$N(e) {
+function $38d07f699c4264a6$var$N(e) {
     return function() {
         var t = this, n = arguments;
         return new Promise(function(r, i) {
             var a = e.apply(t, n);
             function o(e) {
-                $ce895cd182e417c7$var$M(a, r, i, o, s, "next", e);
+                $38d07f699c4264a6$var$M(a, r, i, o, s, "next", e);
             }
             function s(e) {
-                $ce895cd182e417c7$var$M(a, r, i, o, s, "throw", e);
+                $38d07f699c4264a6$var$M(a, r, i, o, s, "throw", e);
             }
             o(void 0);
         });
@@ -2119,7 +2119,7 @@ function $ce895cd182e417c7$var$N(e) {
 }
 //#endregion
 //#region js/controllers/printview.js
-var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
+var $38d07f699c4264a6$var$le = /*#__PURE__*/ function() {
     "use strict";
     function le(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, le);
@@ -2130,18 +2130,18 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
             key: "activate",
             value: function activate() {
                 var e = this;
-                return $ce895cd182e417c7$var$N(function() {
+                return $38d07f699c4264a6$var$N(function() {
                     var n, r, i, a, o, s, c, u, d, f, e1, p, m, h, g;
                     return (0, $7d9b3dc01f926a9b$export$71511d61b312f219)(this, function(_state) {
                         switch(_state.label){
                             case 0:
-                                n = e.Reveal.getConfig(), r = $ce895cd182e417c7$var$t(e.Reveal.getRevealElement(), $ce895cd182e417c7$var$C), i = n.slideNumber && /all|print/i.test(n.showSlideNumber), a = e.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), o = Math.floor(a.width * (1 + n.margin)), s = Math.floor(a.height * (1 + n.margin)), c = a.width, u = a.height;
+                                n = e.Reveal.getConfig(), r = $38d07f699c4264a6$var$t(e.Reveal.getRevealElement(), $38d07f699c4264a6$var$C), i = n.slideNumber && /all|print/i.test(n.showSlideNumber), a = e.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), o = Math.floor(a.width * (1 + n.margin)), s = Math.floor(a.height * (1 + n.margin)), c = a.width, u = a.height;
                                 return [
                                     4,
                                     new Promise(requestAnimationFrame)
                                 ];
                             case 1:
-                                _state.sent(), $ce895cd182e417c7$var$l("@page{size:" + o + "px " + s + "px; margin: 0px;}"), $ce895cd182e417c7$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + c + "px; max-height:" + u + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = o + "px", document.body.style.height = s + "px";
+                                _state.sent(), $38d07f699c4264a6$var$l("@page{size:" + o + "px " + s + "px; margin: 0px;}"), $38d07f699c4264a6$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + c + "px; max-height:" + u + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = o + "px", document.body.style.height = s + "px";
                                 d = e.Reveal.getViewportElement();
                                 if (d) {
                                     e1 = window.getComputedStyle(d);
@@ -2197,7 +2197,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
                                                     e.classList.remove("visible", "current-fragment");
                                                 });
                                             });
-                                        } else $ce895cd182e417c7$var$t(_, ".fragment:not(.fade-out)").forEach(function(e) {
+                                        } else $38d07f699c4264a6$var$t(_, ".fragment:not(.fade-out)").forEach(function(e) {
                                             e.classList.add("visible");
                                         });
                                     }
@@ -2228,7 +2228,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
         }
     ]);
     return le;
-}(), $ce895cd182e417c7$var$ue = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$ue = /*#__PURE__*/ function() {
     "use strict";
     function ue(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ue);
@@ -2244,7 +2244,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
         {
             key: "disable",
             value: function disable() {
-                $ce895cd182e417c7$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach(function(e) {
+                $38d07f699c4264a6$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach(function(e) {
                     e.classList.add("visible"), e.classList.remove("current-fragment");
                 });
             }
@@ -2252,7 +2252,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
         {
             key: "enable",
             value: function enable() {
-                $ce895cd182e417c7$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach(function(e) {
+                $38d07f699c4264a6$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach(function(e) {
                     e.classList.remove("visible"), e.classList.remove("current-fragment");
                 });
             }
@@ -2300,7 +2300,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
             value: function sortAll() {
                 var _this = this;
                 this.Reveal.getHorizontalSlides().forEach(function(e) {
-                    var n = $ce895cd182e417c7$var$t(e, "section");
+                    var n = $38d07f699c4264a6$var$t(e, "section");
                     n.forEach(function(e, t) {
                         _this.sort(e.querySelectorAll(".fragment"));
                     }, _this), n.length === 0 && _this.sort(e.querySelectorAll(".fragment"));
@@ -2396,7 +2396,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
         }
     ]);
     return ue;
-}(), $ce895cd182e417c7$var$de = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$de = /*#__PURE__*/ function() {
     "use strict";
     function de(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, de);
@@ -2408,7 +2408,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
             value: function activate() {
                 var _this = this;
                 if (this.Reveal.getConfig().overview && !this.Reveal.isScrollView() && !this.isActive()) {
-                    this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $ce895cd182e417c7$var$t(this.Reveal.getRevealElement(), $ce895cd182e417c7$var$C).forEach(function(e) {
+                    this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $38d07f699c4264a6$var$t(this.Reveal.getRevealElement(), $38d07f699c4264a6$var$C).forEach(function(e) {
                         e.classList.contains("stack") || e.addEventListener("click", _this.onSlideClicked, !0);
                     });
                     var e = this.Reveal.getComputedSlideSize();
@@ -2430,12 +2430,12 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
             value: function layout() {
                 var _this = this;
                 this.Reveal.getHorizontalSlides().forEach(function(e, n) {
-                    e.setAttribute("data-index-h", n), $ce895cd182e417c7$var$i(e, "translate3d(" + n * _this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $ce895cd182e417c7$var$t(e, "section").forEach(function(e, t) {
-                        e.setAttribute("data-index-h", n), e.setAttribute("data-index-v", t), $ce895cd182e417c7$var$i(e, "translate3d(0, " + t * _this.overviewSlideHeight + "px, 0)");
+                    e.setAttribute("data-index-h", n), $38d07f699c4264a6$var$i(e, "translate3d(" + n * _this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $38d07f699c4264a6$var$t(e, "section").forEach(function(e, t) {
+                        e.setAttribute("data-index-h", n), e.setAttribute("data-index-v", t), $38d07f699c4264a6$var$i(e, "translate3d(0, " + t * _this.overviewSlideHeight + "px, 0)");
                     });
                 }), Array.from(this.Reveal.getBackgroundsElement().childNodes).forEach(function(e, n) {
-                    $ce895cd182e417c7$var$i(e, "translate3d(" + n * _this.overviewSlideWidth + "px, 0, 0)"), $ce895cd182e417c7$var$t(e, ".slide-background").forEach(function(e, t) {
-                        $ce895cd182e417c7$var$i(e, "translate3d(0, " + t * _this.overviewSlideHeight + "px, 0)");
+                    $38d07f699c4264a6$var$i(e, "translate3d(" + n * _this.overviewSlideWidth + "px, 0, 0)"), $38d07f699c4264a6$var$t(e, ".slide-background").forEach(function(e, t) {
+                        $38d07f699c4264a6$var$i(e, "translate3d(0, " + t * _this.overviewSlideHeight + "px, 0)");
                     });
                 });
             }
@@ -2460,10 +2460,10 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
                 if (this.Reveal.getConfig().overview) {
                     this.active = !1, this.Reveal.getRevealElement().classList.remove("overview"), this.Reveal.getRevealElement().classList.add("overview-deactivating"), setTimeout(function() {
                         _this.Reveal.getRevealElement().classList.remove("overview-deactivating");
-                    }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $ce895cd182e417c7$var$t(this.Reveal.getRevealElement(), $ce895cd182e417c7$var$C).forEach(function(e) {
-                        $ce895cd182e417c7$var$i(e, ""), e.removeEventListener("click", _this.onSlideClicked, !0);
-                    }), $ce895cd182e417c7$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach(function(e) {
-                        $ce895cd182e417c7$var$i(e, "");
+                    }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $38d07f699c4264a6$var$t(this.Reveal.getRevealElement(), $38d07f699c4264a6$var$C).forEach(function(e) {
+                        $38d07f699c4264a6$var$i(e, ""), e.removeEventListener("click", _this.onSlideClicked, !0);
+                    }), $38d07f699c4264a6$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach(function(e) {
+                        $38d07f699c4264a6$var$i(e, "");
                     }), this.Reveal.transformSlides({
                         overview: ""
                     });
@@ -2507,7 +2507,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
         }
     ]);
     return de;
-}(), $ce895cd182e417c7$var$fe = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$fe = /*#__PURE__*/ function() {
     "use strict";
     function fe(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, fe);
@@ -2663,7 +2663,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
                     66,
                     86,
                     190
-                ].includes(n) || n === 191 && !e.shiftKey ? this.Reveal.togglePause() : n === 70 ? $ce895cd182e417c7$var$s(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : n === 65 ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(r) : n === 71 ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : n === 67 && this.Reveal.isOverlayOpen() ? this.Reveal.closeOverlay() : (n === 63 || n === 191) && e.shiftKey || n === 112 ? this.Reveal.toggleHelp() : f = !1), f ? e.preventDefault && e.preventDefault() : n === 27 || n === 79 ? (this.Reveal.closeOverlay() === !1 && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()) : n === 13 && this.Reveal.overview.isActive() && (this.Reveal.overview.deactivate(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
+                ].includes(n) || n === 191 && !e.shiftKey ? this.Reveal.togglePause() : n === 70 ? $38d07f699c4264a6$var$s(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : n === 65 ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(r) : n === 71 ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : n === 67 && this.Reveal.isOverlayOpen() ? this.Reveal.closeOverlay() : (n === 63 || n === 191) && e.shiftKey || n === 112 ? this.Reveal.toggleHelp() : f = !1), f ? e.preventDefault && e.preventDefault() : n === 27 || n === 79 ? (this.Reveal.closeOverlay() === !1 && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()) : n === 13 && this.Reveal.overview.isActive() && (this.Reveal.overview.deactivate(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
             }
         }
     ]);
@@ -2671,7 +2671,7 @@ var $ce895cd182e417c7$var$le = /*#__PURE__*/ function() {
 }();
 //#endregion
 //#region \0@oxc-project+runtime@0.124.0/helpers/objectSpread2.js
-function $ce895cd182e417c7$var$P(e, t) {
+function $38d07f699c4264a6$var$P(e, t) {
     var n = Object.keys(e);
     if (Object.getOwnPropertySymbols) {
         var r = Object.getOwnPropertySymbols(e);
@@ -2681,12 +2681,12 @@ function $ce895cd182e417c7$var$P(e, t) {
     }
     return n;
 }
-function $ce895cd182e417c7$var$F(e) {
+function $38d07f699c4264a6$var$F(e) {
     for(var t = 1; t < arguments.length; t++){
         var n = arguments[t] == null ? {} : arguments[t];
-        t % 2 ? $ce895cd182e417c7$var$P(Object(n), !0).forEach(function(t) {
-            $ce895cd182e417c7$var$S(e, t, n[t]);
-        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : $ce895cd182e417c7$var$P(Object(n)).forEach(function(t) {
+        t % 2 ? $38d07f699c4264a6$var$P(Object(n), !0).forEach(function(t) {
+            $38d07f699c4264a6$var$S(e, t, n[t]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : $38d07f699c4264a6$var$P(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
         });
     }
@@ -2694,11 +2694,11 @@ function $ce895cd182e417c7$var$F(e) {
 }
 //#endregion
 //#region js/controllers/location.js
-var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
+var $38d07f699c4264a6$var$pe = /*#__PURE__*/ function() {
     "use strict";
     function pe(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, pe);
-        $ce895cd182e417c7$var$S(this, "MAX_REPLACE_STATE_FREQUENCY", 1e3), this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
+        $38d07f699c4264a6$var$S(this, "MAX_REPLACE_STATE_FREQUENCY", 1e3), this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
     }
     (0, $2774859258aff5c8$export$71511d61b312f219)(pe, [
         {
@@ -2725,7 +2725,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
                         var t2 = decodeURIComponent(n);
                         e1 = (document.getElementById(t2) || document.querySelector('[data-id="'.concat(t2, '"]'))).closest(".slides section");
                     } catch (e) {}
-                    if (e1) return $ce895cd182e417c7$var$F($ce895cd182e417c7$var$F({}, this.Reveal.getIndices(e1)), {}, {
+                    if (e1) return $38d07f699c4264a6$var$F($38d07f699c4264a6$var$F({}, this.Reveal.getIndices(e1)), {}, {
                         f: t1
                     });
                 } else {
@@ -2794,7 +2794,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return pe;
-}(), $ce895cd182e417c7$var$me = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$me = /*#__PURE__*/ function() {
     "use strict";
     function me(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, me);
@@ -2805,7 +2805,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
             key: "render",
             value: function render() {
                 var e = this.Reveal.getConfig().rtl, n = this.Reveal.getRevealElement();
-                this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = '<button class="navigate-left" aria-label="'.concat(e ? "next slide" : "previous slide", '"><div class="controls-arrow"></div></button>\n			<button class="navigate-right" aria-label="').concat(e ? "previous slide" : "next slide", '"><div class="controls-arrow"></div></button>\n			<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>\n			<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>'), this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $ce895cd182e417c7$var$t(n, ".navigate-left"), this.controlsRight = $ce895cd182e417c7$var$t(n, ".navigate-right"), this.controlsUp = $ce895cd182e417c7$var$t(n, ".navigate-up"), this.controlsDown = $ce895cd182e417c7$var$t(n, ".navigate-down"), this.controlsPrev = $ce895cd182e417c7$var$t(n, ".navigate-prev"), this.controlsNext = $ce895cd182e417c7$var$t(n, ".navigate-next"), this.controlsFullscreen = $ce895cd182e417c7$var$t(n, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
+                this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = '<button class="navigate-left" aria-label="'.concat(e ? "next slide" : "previous slide", '"><div class="controls-arrow"></div></button>\n			<button class="navigate-right" aria-label="').concat(e ? "previous slide" : "next slide", '"><div class="controls-arrow"></div></button>\n			<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>\n			<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>'), this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $38d07f699c4264a6$var$t(n, ".navigate-left"), this.controlsRight = $38d07f699c4264a6$var$t(n, ".navigate-right"), this.controlsUp = $38d07f699c4264a6$var$t(n, ".navigate-up"), this.controlsDown = $38d07f699c4264a6$var$t(n, ".navigate-down"), this.controlsPrev = $38d07f699c4264a6$var$t(n, ".navigate-prev"), this.controlsNext = $38d07f699c4264a6$var$t(n, ".navigate-next"), this.controlsFullscreen = $38d07f699c4264a6$var$t(n, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
             }
         },
         {
@@ -2823,7 +2823,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
                     "touchstart",
                     "click"
                 ];
-                $ce895cd182e417c7$var$_ && (e = [
+                $38d07f699c4264a6$var$_ && (e = [
                     "touchend"
                 ]), e.forEach(function(e) {
                     _this.controlsLeft.forEach(function(t) {
@@ -2961,12 +2961,12 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
             key: "onEnterFullscreen",
             value: function onEnterFullscreen(e) {
                 var t = this.Reveal.getConfig(), n = this.Reveal.getViewportElement();
-                $ce895cd182e417c7$var$s(t.embedded ? n : n.parentElement);
+                $38d07f699c4264a6$var$s(t.embedded ? n : n.parentElement);
             }
         }
     ]);
     return me;
-}(), $ce895cd182e417c7$var$he = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$he = /*#__PURE__*/ function() {
     "use strict";
     function he(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, he);
@@ -3030,7 +3030,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return he;
-}(), $ce895cd182e417c7$var$ge = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$ge = /*#__PURE__*/ function() {
     "use strict";
     function ge(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ge);
@@ -3079,7 +3079,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return ge;
-}(), $ce895cd182e417c7$var$_e = function(e, t) {
+}(), $38d07f699c4264a6$var$_e = function(e, t) {
     var n = document.createElement("script");
     n.type = "text/javascript", n.async = !1, n.defer = !1, n.src = e, typeof t == "function" && (n.onload = function(e) {
         e.type === "load" && (n.onload = n.onerror = null, t());
@@ -3088,7 +3088,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
     });
     var r = document.querySelector("head");
     r && r.insertBefore(n, r.lastChild);
-}, $ce895cd182e417c7$var$ve = /*#__PURE__*/ function() {
+}, $38d07f699c4264a6$var$ve = /*#__PURE__*/ function() {
     "use strict";
     function ve(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ve);
@@ -3109,7 +3109,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
                             t && typeof t.callback == "function" && t.callback(), --r === 0 && _this.initPlugins().then(e);
                         };
                         n.forEach(function(e) {
-                            typeof e.id == "string" ? (_this.registerPlugin(e), _$t(e)) : typeof e.src == "string" ? $ce895cd182e417c7$var$_e(e.src, function() {
+                            typeof e.id == "string" ? (_this.registerPlugin(e), _$t(e)) : typeof e.src == "string" ? $38d07f699c4264a6$var$_e(e.src, function() {
                                 return _$t(e);
                             }) : (console.warn("Unrecognized plugin format", e), _$t());
                         });
@@ -3143,7 +3143,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
             key: "loadAsync",
             value: function loadAsync() {
                 return this.state = "loaded", this.asyncDependencies.length && this.asyncDependencies.forEach(function(e) {
-                    $ce895cd182e417c7$var$_e(e.src, e.callback);
+                    $38d07f699c4264a6$var$_e(e.src, e.callback);
                 }), Promise.resolve();
             }
         },
@@ -3183,7 +3183,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return ve;
-}(), $ce895cd182e417c7$var$ye = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$ye = /*#__PURE__*/ function() {
     "use strict";
     function ye(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, ye);
@@ -3375,7 +3375,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return ye;
-}(), $ce895cd182e417c7$var$I = 40, $ce895cd182e417c7$var$be = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$I = 40, $38d07f699c4264a6$var$be = /*#__PURE__*/ function() {
     "use strict";
     function be(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, be);
@@ -3399,7 +3399,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         {
             key: "isSwipePrevented",
             value: function isSwipePrevented(e) {
-                if ($ce895cd182e417c7$var$a(e, "video[controls], audio[controls]")) return !0;
+                if ($38d07f699c4264a6$var$a(e, "video[controls], audio[controls]")) return !0;
                 for(; e && typeof e.hasAttribute == "function";){
                     if (e.hasAttribute("data-prevent-swipe")) return !0;
                     e = e.parentNode;
@@ -3419,7 +3419,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
             value: function onTouchMove(e) {
                 if (this.isSwipePrevented(e.target)) return !0;
                 var t = this.Reveal.getConfig();
-                if (this.touchCaptured) $ce895cd182e417c7$var$_ && e.preventDefault();
+                if (this.touchCaptured) $38d07f699c4264a6$var$_ && e.preventDefault();
                 else {
                     this.Reveal.onUserInput(e);
                     var n = e.touches[0].clientX, r = e.touches[0].clientY;
@@ -3427,7 +3427,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
                         var i = this.Reveal.availableRoutes({
                             includeFragments: !0
                         }), a = n - this.touchStartX, o = r - this.touchStartY;
-                        a > $ce895cd182e417c7$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.next() : this.Reveal.prev() : this.Reveal.left()) : a < -$ce895cd182e417c7$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.prev() : this.Reveal.next() : this.Reveal.right()) : o > $ce895cd182e417c7$var$I && i.up ? (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.prev() : this.Reveal.up()) : o < -$ce895cd182e417c7$var$I && i.down && (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.next() : this.Reveal.down()), t.embedded ? (this.touchCaptured || this.Reveal.isVerticalSlide()) && e.preventDefault() : e.preventDefault();
+                        a > $38d07f699c4264a6$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.next() : this.Reveal.prev() : this.Reveal.left()) : a < -$38d07f699c4264a6$var$I && Math.abs(a) > Math.abs(o) ? (this.touchCaptured = !0, t.navigationMode === "linear" ? t.rtl ? this.Reveal.prev() : this.Reveal.next() : this.Reveal.right()) : o > $38d07f699c4264a6$var$I && i.up ? (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.prev() : this.Reveal.up()) : o < -$38d07f699c4264a6$var$I && i.down && (this.touchCaptured = !0, t.navigationMode === "linear" ? this.Reveal.next() : this.Reveal.down()), t.embedded ? (this.touchCaptured || this.Reveal.isVerticalSlide()) && e.preventDefault() : e.preventDefault();
                     }
                 }
             }
@@ -3473,7 +3473,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return be;
-}(), $ce895cd182e417c7$var$L = "focus", $ce895cd182e417c7$var$R = "blur", $ce895cd182e417c7$var$xe = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$L = "focus", $38d07f699c4264a6$var$R = "blur", $38d07f699c4264a6$var$xe = /*#__PURE__*/ function() {
     "use strict";
     function xe(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, xe);
@@ -3501,19 +3501,19 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         {
             key: "focus",
             value: function focus() {
-                this.state !== $ce895cd182e417c7$var$L && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $ce895cd182e417c7$var$L;
+                this.state !== $38d07f699c4264a6$var$L && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $38d07f699c4264a6$var$L;
             }
         },
         {
             key: "blur",
             value: function blur() {
-                this.state !== $ce895cd182e417c7$var$R && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $ce895cd182e417c7$var$R;
+                this.state !== $38d07f699c4264a6$var$R && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $38d07f699c4264a6$var$R;
             }
         },
         {
             key: "isFocused",
             value: function isFocused() {
-                return this.state === $ce895cd182e417c7$var$L;
+                return this.state === $38d07f699c4264a6$var$L;
             }
         },
         {
@@ -3531,13 +3531,13 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         {
             key: "onDocumentPointerDown",
             value: function onDocumentPointerDown(e) {
-                var t = $ce895cd182e417c7$var$o(e.target, ".reveal");
+                var t = $38d07f699c4264a6$var$o(e.target, ".reveal");
                 (!t || t !== this.Reveal.getRevealElement()) && this.blur();
             }
         }
     ]);
     return xe;
-}(), $ce895cd182e417c7$var$Se = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$Se = /*#__PURE__*/ function() {
     "use strict";
     function Se(e) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, Se);
@@ -3599,7 +3599,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return Se;
-}(), $ce895cd182e417c7$var$Ce = /*#__PURE__*/ function() {
+}(), $38d07f699c4264a6$var$Ce = /*#__PURE__*/ function() {
     "use strict";
     function Ce(e, t) {
         (0, $c86157bca02376b3$export$71511d61b312f219)(this, Ce);
@@ -3649,7 +3649,7 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
         }
     ]);
     return Ce;
-}(), $ce895cd182e417c7$var$we = {
+}(), $38d07f699c4264a6$var$we = {
     width: 960,
     height: 700,
     margin: .04,
@@ -3739,10 +3739,10 @@ var $ce895cd182e417c7$var$pe = /*#__PURE__*/ function() {
     pdfPageHeightOffset: -1,
     dependencies: [],
     plugins: []
-}, $ce895cd182e417c7$var$Te = "6.0.1";
+}, $38d07f699c4264a6$var$Te = "6.0.1";
 //#endregion
 //#region js/reveal.js
-function $ce895cd182e417c7$var$z(a, s) {
+function $38d07f699c4264a6$var$z(a, s) {
     arguments.length < 2 && (s = arguments[0], a = document.querySelector(".reveal"));
     var l = {}, f = {}, p = !1, m = !1, h, _, v, y, b = {
         hasNavigatedHorizontally: !1,
@@ -3750,17 +3750,17 @@ function $ce895cd182e417c7$var$z(a, s) {
     }, x = [], S = 1, T = {
         layout: "",
         overview: ""
-    }, D = {}, ie = "idle", O = 0, k, A = 0, se = -1, j = !1, M = new $ce895cd182e417c7$var$ee(l), N = new $ce895cd182e417c7$var$ne(l), P = new $ce895cd182e417c7$var$re(l), _e = new $ce895cd182e417c7$var$oe(l), I = new $ce895cd182e417c7$var$ae(l), L = new $ce895cd182e417c7$var$ce(l), R = new $ce895cd182e417c7$var$le(l), _$z = new $ce895cd182e417c7$var$ue(l), B = new $ce895cd182e417c7$var$de(l), V = new $ce895cd182e417c7$var$fe(l), H = new $ce895cd182e417c7$var$pe(l), U = new $ce895cd182e417c7$var$me(l), W = new $ce895cd182e417c7$var$he(l), Ee = new $ce895cd182e417c7$var$ge(l), G = new $ce895cd182e417c7$var$ve(l), K = new $ce895cd182e417c7$var$ye(l), q = new $ce895cd182e417c7$var$xe(l), De = new $ce895cd182e417c7$var$be(l), J = new $ce895cd182e417c7$var$Se(l);
+    }, D = {}, ie = "idle", O = 0, k, A = 0, se = -1, j = !1, M = new $38d07f699c4264a6$var$ee(l), N = new $38d07f699c4264a6$var$ne(l), P = new $38d07f699c4264a6$var$re(l), _e = new $38d07f699c4264a6$var$oe(l), I = new $38d07f699c4264a6$var$ae(l), L = new $38d07f699c4264a6$var$ce(l), R = new $38d07f699c4264a6$var$le(l), _$z = new $38d07f699c4264a6$var$ue(l), B = new $38d07f699c4264a6$var$de(l), V = new $38d07f699c4264a6$var$fe(l), H = new $38d07f699c4264a6$var$pe(l), U = new $38d07f699c4264a6$var$me(l), W = new $38d07f699c4264a6$var$he(l), Ee = new $38d07f699c4264a6$var$ge(l), G = new $38d07f699c4264a6$var$ve(l), K = new $38d07f699c4264a6$var$ye(l), q = new $38d07f699c4264a6$var$xe(l), De = new $38d07f699c4264a6$var$be(l), J = new $38d07f699c4264a6$var$Se(l);
     function Oe(e) {
         if (!a) throw "Unable to find presentation root (<div class=\"reveal\">).";
         if (p) throw "Reveal.js has already been initialized.";
         if (p = !0, D.wrapper = a, D.slides = a.querySelector(".slides"), !D.slides) throw "Unable to find slides container (<div class=\"slides\">).";
-        return f = $ce895cd182e417c7$var$F($ce895cd182e417c7$var$F($ce895cd182e417c7$var$F($ce895cd182e417c7$var$F($ce895cd182e417c7$var$F({}, $ce895cd182e417c7$var$we), f), s), e), $ce895cd182e417c7$var$u()), /print-pdf/gi.test(window.location.search) && (f.view = "print"), ke(), window.addEventListener("load", X, !1), G.load(f.plugins, f.dependencies).then(Ae), new Promise(function(e) {
+        return f = $38d07f699c4264a6$var$F($38d07f699c4264a6$var$F($38d07f699c4264a6$var$F($38d07f699c4264a6$var$F($38d07f699c4264a6$var$F({}, $38d07f699c4264a6$var$we), f), s), e), $38d07f699c4264a6$var$u()), /print-pdf/gi.test(window.location.search) && (f.view = "print"), ke(), window.addEventListener("load", X, !1), G.load(f.plugins, f.dependencies).then(Ae), new Promise(function(e) {
             return l.on("ready", e);
         });
     }
     function ke() {
-        f.embedded === !0 ? D.viewport = $ce895cd182e417c7$var$o(a, ".reveal-viewport") || a : (D.viewport = document.body, document.documentElement.classList.add("reveal-full-page")), D.viewport.classList.add("reveal-viewport");
+        f.embedded === !0 ? D.viewport = $38d07f699c4264a6$var$o(a, ".reveal-viewport") || a : (D.viewport = document.body, document.documentElement.classList.add("reveal-full-page")), D.viewport.classList.add("reveal-viewport");
     }
     function Ae() {
         p !== !1 && (m = !0, Me(), Ne(), Be(), Re(), ze(), _t(), Ve(), I.update(!0), je(), H.readURL(), setTimeout(function() {
@@ -3781,13 +3781,13 @@ function $ce895cd182e417c7$var$z(a, s) {
         }) : L.activate());
     }
     function Me() {
-        f.showHiddenSlides || $ce895cd182e417c7$var$t(D.wrapper, "section[data-visibility=\"hidden\"]").forEach(function(e) {
+        f.showHiddenSlides || $38d07f699c4264a6$var$t(D.wrapper, "section[data-visibility=\"hidden\"]").forEach(function(e) {
             var t = e.parentNode;
             t.childElementCount === 1 && /section/i.test(t.nodeName) ? t.remove() : e.remove();
         });
     }
     function Ne() {
-        D.slides.classList.add("no-transition"), $ce895cd182e417c7$var$g ? D.wrapper.classList.add("no-hover") : D.wrapper.classList.remove("no-hover"), I.render(), N.render(), P.render(), U.render(), W.render(), J.render(), D.pauseOverlay = $ce895cd182e417c7$var$c(D.wrapper, "div", "pause-overlay", f.controls ? "<button class=\"resume-button\">Resume presentation</button>" : null), D.statusElement = Pe(), D.wrapper.setAttribute("role", "application");
+        D.slides.classList.add("no-transition"), $38d07f699c4264a6$var$g ? D.wrapper.classList.add("no-hover") : D.wrapper.classList.remove("no-hover"), I.render(), N.render(), P.render(), U.render(), W.render(), J.render(), D.pauseOverlay = $38d07f699c4264a6$var$c(D.wrapper, "div", "pause-overlay", f.controls ? "<button class=\"resume-button\">Resume presentation</button>" : null), D.statusElement = Pe(), D.wrapper.setAttribute("role", "application");
     }
     function Pe() {
         var e = D.wrapper.querySelector(".aria-status");
@@ -3842,10 +3842,10 @@ function $ce895cd182e417c7$var$z(a, s) {
         f.postMessage && window.addEventListener("message", Jt, !1);
     }
     function Ve(t) {
-        var r = $ce895cd182e417c7$var$F({}, f);
-        if ((typeof t === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(t)) == "object" && $ce895cd182e417c7$var$e(f, t), l.isReady() === !1) return;
-        var i = D.wrapper.querySelectorAll($ce895cd182e417c7$var$C).length;
-        D.wrapper.classList.remove(r.transition), D.wrapper.classList.add(f.transition), D.wrapper.setAttribute("data-transition-speed", f.transitionSpeed), D.wrapper.setAttribute("data-background-transition", f.backgroundTransition), D.viewport.style.setProperty("--slide-width", typeof f.width == "string" ? f.width : f.width + "px"), D.viewport.style.setProperty("--slide-height", typeof f.height == "string" ? f.height : f.height + "px"), f.shuffle && vt(), $ce895cd182e417c7$var$n(D.wrapper, "embedded", f.embedded), $ce895cd182e417c7$var$n(D.wrapper, "rtl", f.rtl), $ce895cd182e417c7$var$n(D.wrapper, "center", f.center), f.pause === !1 && st(), _e.reset(), k && (k.destroy(), k = null), i > 1 && f.autoSlide && f.autoSlideStoppable && (k = new $ce895cd182e417c7$var$Ce(D.wrapper, function() {
+        var r = $38d07f699c4264a6$var$F({}, f);
+        if ((typeof t === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(t)) == "object" && $38d07f699c4264a6$var$e(f, t), l.isReady() === !1) return;
+        var i = D.wrapper.querySelectorAll($38d07f699c4264a6$var$C).length;
+        D.wrapper.classList.remove(r.transition), D.wrapper.classList.add(f.transition), D.wrapper.setAttribute("data-transition-speed", f.transitionSpeed), D.wrapper.setAttribute("data-background-transition", f.backgroundTransition), D.viewport.style.setProperty("--slide-width", typeof f.width == "string" ? f.width : f.width + "px"), D.viewport.style.setProperty("--slide-height", typeof f.height == "string" ? f.height : f.height + "px"), f.shuffle && vt(), $38d07f699c4264a6$var$n(D.wrapper, "embedded", f.embedded), $38d07f699c4264a6$var$n(D.wrapper, "rtl", f.rtl), $38d07f699c4264a6$var$n(D.wrapper, "center", f.center), f.pause === !1 && st(), _e.reset(), k && (k.destroy(), k = null), i > 1 && f.autoSlide && f.autoSlideStoppable && (k = new $38d07f699c4264a6$var$Ce(D.wrapper, function() {
             return Math.min(Math.max((Date.now() - se) / O, 0), 1);
         }), k.on("click", en), j = !1), f.navigationMode === "default" ? D.wrapper.removeAttribute("data-navigation-mode") : D.wrapper.setAttribute("data-navigation-mode", f.navigationMode), J.configure(f, r), q.configure(f, r), Ee.configure(f, r), U.configure(f, r), W.configure(f, r), V.configure(f, r), _$z.configure(f, r), N.configure(f, r), ht();
     }
@@ -3856,7 +3856,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         De.unbind(), q.unbind(), V.unbind(), U.unbind(), W.unbind(), H.unbind(), window.removeEventListener("resize", Zt, !1), D.slides.removeEventListener("click", Xt, !1), D.slides.removeEventListener("transitionend", Yt, !1), D.pauseOverlay.removeEventListener("click", st, !1);
     }
     function We() {
-        p = !1, m !== !1 && (Ue(), Rt(), J.destroy(), q.destroy(), K.destroy(), G.destroy(), Ee.destroy(), U.destroy(), W.destroy(), I.destroy(), N.destroy(), P.destroy(), document.removeEventListener("fullscreenchange", $t), document.removeEventListener("webkitfullscreenchange", $t), document.removeEventListener("visibilitychange", Qt, !1), window.removeEventListener("message", Jt, !1), window.removeEventListener("load", X, !1), D.pauseOverlay && D.pauseOverlay.remove(), D.statusElement && D.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), D.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), D.wrapper.removeAttribute("data-transition-speed"), D.wrapper.removeAttribute("data-background-transition"), D.viewport.classList.remove("reveal-viewport"), D.viewport.style.removeProperty("--slide-width"), D.viewport.style.removeProperty("--slide-height"), D.slides.style.removeProperty("width"), D.slides.style.removeProperty("height"), D.slides.style.removeProperty("zoom"), D.slides.style.removeProperty("left"), D.slides.style.removeProperty("top"), D.slides.style.removeProperty("bottom"), D.slides.style.removeProperty("right"), D.slides.style.removeProperty("transform"), Array.from(D.wrapper.querySelectorAll($ce895cd182e417c7$var$C)).forEach(function(e) {
+        p = !1, m !== !1 && (Ue(), Rt(), J.destroy(), q.destroy(), K.destroy(), G.destroy(), Ee.destroy(), U.destroy(), W.destroy(), I.destroy(), N.destroy(), P.destroy(), document.removeEventListener("fullscreenchange", $t), document.removeEventListener("webkitfullscreenchange", $t), document.removeEventListener("visibilitychange", Qt, !1), window.removeEventListener("message", Jt, !1), window.removeEventListener("load", X, !1), D.pauseOverlay && D.pauseOverlay.remove(), D.statusElement && D.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), D.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), D.wrapper.removeAttribute("data-transition-speed"), D.wrapper.removeAttribute("data-background-transition"), D.viewport.classList.remove("reveal-viewport"), D.viewport.style.removeProperty("--slide-width"), D.viewport.style.removeProperty("--slide-height"), D.slides.style.removeProperty("width"), D.slides.style.removeProperty("height"), D.slides.style.removeProperty("zoom"), D.slides.style.removeProperty("left"), D.slides.style.removeProperty("top"), D.slides.style.removeProperty("bottom"), D.slides.style.removeProperty("right"), D.slides.style.removeProperty("transform"), Array.from(D.wrapper.querySelectorAll($38d07f699c4264a6$var$C)).forEach(function(e) {
             e.style.removeProperty("display"), e.style.removeProperty("top"), e.removeAttribute("hidden"), e.removeAttribute("aria-hidden");
         }));
     }
@@ -3867,12 +3867,12 @@ function $ce895cd182e417c7$var$z(a, s) {
         a.removeEventListener(e, t, n);
     }
     function qe(e) {
-        typeof e.layout == "string" && (T.layout = e.layout), typeof e.overview == "string" && (T.overview = e.overview), T.layout ? $ce895cd182e417c7$var$i(D.slides, T.layout + " " + T.overview) : $ce895cd182e417c7$var$i(D.slides, T.overview);
+        typeof e.layout == "string" && (T.layout = e.layout), typeof e.overview == "string" && (T.overview = e.overview), T.layout ? $38d07f699c4264a6$var$i(D.slides, T.layout + " " + T.overview) : $38d07f699c4264a6$var$i(D.slides, T.overview);
     }
     function Y(param) {
         var tmp = param.target, t = tmp === void 0 ? D.wrapper : tmp, n = param.type, r = param.data, tmp1 = param.bubbles, i = tmp1 === void 0 ? !0 : tmp1;
         var _$a = document.createEvent("HTMLEvents", 1, 2);
-        return _$a.initEvent(n, i, !0), $ce895cd182e417c7$var$e(_$a, r), t.dispatchEvent(_$a), t === D.wrapper && Ye(n), _$a;
+        return _$a.initEvent(n, i, !0), $38d07f699c4264a6$var$e(_$a, r), t.dispatchEvent(_$a), t === D.wrapper && Ye(n), _$a;
     }
     function Je(e) {
         Y({
@@ -3893,21 +3893,21 @@ function $ce895cd182e417c7$var$z(a, s) {
                 eventName: t,
                 state: Ft()
             };
-            $ce895cd182e417c7$var$e(r, n), window.parent.postMessage(JSON.stringify(r), "*");
+            $38d07f699c4264a6$var$e(r, n), window.parent.postMessage(JSON.stringify(r), "*");
         }
     }
     function X() {
         if (D.wrapper && !R.isActive()) {
             var e = D.viewport.offsetWidth, t = D.viewport.offsetHeight;
             if (!f.disableLayout) {
-                $ce895cd182e417c7$var$g && !f.embedded && document.documentElement.style.setProperty("--vh", window.innerHeight * .01 + "px");
+                $38d07f699c4264a6$var$g && !f.embedded && document.documentElement.style.setProperty("--vh", window.innerHeight * .01 + "px");
                 var n = L.isActive() ? Qe(e, t) : Qe(), r = S;
                 Xe(f.width, f.height), D.slides.style.width = n.width + "px", D.slides.style.height = n.height + "px", S = Math.min(n.presentationWidth / n.width, n.presentationHeight / n.height), S = Math.max(S, f.minScale), S = Math.min(S, f.maxScale), S === 1 || L.isActive() ? (D.slides.style.zoom = "", D.slides.style.left = "", D.slides.style.top = "", D.slides.style.bottom = "", D.slides.style.right = "", qe({
                     layout: ""
                 })) : (D.slides.style.zoom = "", D.slides.style.left = "50%", D.slides.style.top = "50%", D.slides.style.bottom = "auto", D.slides.style.right = "auto", qe({
                     layout: "translate(-50%, -50%) scale(" + S + ")"
                 }));
-                var i = Array.from(D.wrapper.querySelectorAll($ce895cd182e417c7$var$C));
+                var i = Array.from(D.wrapper.querySelectorAll($38d07f699c4264a6$var$C));
                 for(var e1 = 0, t1 = i.length; e1 < t1; e1++){
                     var t2 = i[e1];
                     t2.style.display !== "none" && (f.center || t2.classList.contains("center") ? t2.classList.contains("stack") ? t2.style.top = 0 : t2.style.top = Math.max((n.height - t2.scrollHeight) / 2, 0) + "px" : t2.style.top = "");
@@ -3925,8 +3925,8 @@ function $ce895cd182e417c7$var$z(a, s) {
         }
     }
     function Xe(e, n) {
-        $ce895cd182e417c7$var$t(D.slides, "section > .stretch, section > .r-stretch").forEach(function(t) {
-            var r = $ce895cd182e417c7$var$d(t, n);
+        $38d07f699c4264a6$var$t(D.slides, "section > .stretch, section > .r-stretch").forEach(function(t) {
+            var r = $38d07f699c4264a6$var$d(t, n);
             if (/(img|video)/gi.test(t.nodeName)) {
                 var _$n = t.naturalWidth || t.videoWidth, i = t.naturalHeight || t.videoHeight, _$a = Math.min(e / _$n, r / i);
                 t.style.width = _$n * _$a + "px", t.style.height = i * _$a + "px";
@@ -4016,7 +4016,7 @@ function $ce895cd182e417c7$var$z(a, s) {
             }
         }).defaultPrevented) return;
         v = y;
-        var i = D.wrapper.querySelectorAll($ce895cd182e417c7$var$w);
+        var i = D.wrapper.querySelectorAll($38d07f699c4264a6$var$w);
         if (L.isActive()) {
             var _$n = L.getSlideByIndices(e, t);
             _$n && L.scrollToSlide(_$n);
@@ -4027,7 +4027,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         var o = x.concat();
         x.length = 0;
         var _$s = h || 0, c = _ || 0;
-        h = yt($ce895cd182e417c7$var$w, e === void 0 ? h : e), _ = yt($ce895cd182e417c7$var$te, t === void 0 ? _ : t);
+        h = yt($38d07f699c4264a6$var$w, e === void 0 ? h : e), _ = yt($38d07f699c4264a6$var$te, t === void 0 ? _ : t);
         var l = h !== _$s || _ !== c;
         l || (v = null);
         var u = i[h], d = u.querySelectorAll("section");
@@ -4066,7 +4066,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         }), Je();
     }
     function ht() {
-        Ue(), He(), X(), O = f.autoSlide, Lt(), I.create(), H.writeURL(), f.sortFragmentsOnSync === !0 && _$z.sortAll(), h !== void 0 && (h = yt($ce895cd182e417c7$var$w, h), _ = yt($ce895cd182e417c7$var$te, _)), U.update(), W.update(), St(), J.update(), J.updateVisibility(), K.update(), I.update(!0), N.update(), M.formatEmbeddedContent(), f.autoPlayMedia === !1 ? M.stopEmbeddedContent(y, {
+        Ue(), He(), X(), O = f.autoSlide, Lt(), I.create(), H.writeURL(), f.sortFragmentsOnSync === !0 && _$z.sortAll(), h !== void 0 && (h = yt($38d07f699c4264a6$var$w, h), _ = yt($38d07f699c4264a6$var$te, _)), U.update(), W.update(), St(), J.update(), J.updateVisibility(), K.update(), I.update(!0), N.update(), M.formatEmbeddedContent(), f.autoPlayMedia === !1 ? M.stopEmbeddedContent(y, {
             unloadIframes: !1
         }) : M.startEmbeddedContent(y), B.isActive() && B.layout(), Y({
             type: "sync"
@@ -4083,7 +4083,7 @@ function $ce895cd182e417c7$var$z(a, s) {
     }
     function _t() {
         $().forEach(function(e) {
-            $ce895cd182e417c7$var$t(e, "section").forEach(function(e, t) {
+            $38d07f699c4264a6$var$t(e, "section").forEach(function(e, t) {
                 t > 0 && (e.classList.remove("present"), e.classList.remove("past"), e.classList.add("future"), e.setAttribute("aria-hidden", "true"));
             });
         });
@@ -4098,7 +4098,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         });
     }
     function yt(e, n) {
-        var r = $ce895cd182e417c7$var$t(D.wrapper, e), i = r.length, _$a = L.isActive() || R.isActive(), o = !1, _$s = !1;
+        var r = $38d07f699c4264a6$var$t(D.wrapper, e), i = r.length, _$a = L.isActive() || R.isActive(), o = !1, _$s = !1;
         if (i) {
             f.loop && (n >= i && (o = !0), n %= i, n < 0 && (n = i + n, _$s = !0)), n = Math.max(Math.min(n, i - 1), 0);
             for(var _$e = 0; _$e < i; _$e++){
@@ -4121,12 +4121,12 @@ function $ce895cd182e417c7$var$z(a, s) {
         return n;
     }
     function bt(e) {
-        $ce895cd182e417c7$var$t(e, ".fragment").forEach(function(e) {
+        $38d07f699c4264a6$var$t(e, ".fragment").forEach(function(e) {
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     function xt(e) {
-        $ce895cd182e417c7$var$t(e, ".fragment.visible").forEach(function(e) {
+        $38d07f699c4264a6$var$t(e, ".fragment.visible").forEach(function(e) {
             e.classList.remove("visible", "current-fragment");
         });
     }
@@ -4134,9 +4134,9 @@ function $ce895cd182e417c7$var$z(a, s) {
         var e = $(), n = e.length, r, i;
         if (n && h !== void 0) {
             var _$a = B.isActive(), o = _$a ? 10 : f.viewDistance;
-            $ce895cd182e417c7$var$g && (o = _$a ? 6 : f.mobileViewDistance), R.isActive() && (o = Number.MAX_VALUE);
+            $38d07f699c4264a6$var$g && (o = _$a ? 6 : f.mobileViewDistance), R.isActive() && (o = Number.MAX_VALUE);
             for(var _$s = 0; _$s < n; _$s++){
-                var c = e[_$s], l = $ce895cd182e417c7$var$t(c, "section"), u = l.length;
+                var c = e[_$s], l = $38d07f699c4264a6$var$t(c, "section"), u = l.length;
                 if (r = Math.abs((h || 0) - _$s) || 0, f.loop && (r = Math.abs(((h || 0) - _$s) % (n - o)) || 0), r < o ? M.load(c) : M.unload(c), u) {
                     var e1 = _$a ? 0 : et(c);
                     for(var t1 = 0; t1 < u; t1++){
@@ -4150,7 +4150,7 @@ function $ce895cd182e417c7$var$z(a, s) {
     }
     function Q() {
         var _ref = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, tmp = _ref.includeFragments, e = tmp === void 0 ? !1 : tmp;
-        var t = D.wrapper.querySelectorAll($ce895cd182e417c7$var$w), n = D.wrapper.querySelectorAll($ce895cd182e417c7$var$te), r = {
+        var t = D.wrapper.querySelectorAll($38d07f699c4264a6$var$w), n = D.wrapper.querySelectorAll($38d07f699c4264a6$var$te), r = {
             left: h > 0,
             right: h < t.length - 1,
             up: _ > 0,
@@ -4197,7 +4197,7 @@ function $ce895cd182e417c7$var$z(a, s) {
             if (L.isActive()) n = parseInt(e.getAttribute("data-index-h"), 10), e.getAttribute("data-index-v") && (r = parseInt(e.getAttribute("data-index-v"), 10));
             else {
                 var i1 = tt(e), _$a = i1 ? e.parentNode : e, o = $();
-                n = Math.max(o.indexOf(_$a), 0), r = void 0, i1 && (r = Math.max($ce895cd182e417c7$var$t(e.parentNode, "section").indexOf(e), 0));
+                n = Math.max(o.indexOf(_$a), 0), r = void 0, i1 && (r = Math.max($38d07f699c4264a6$var$t(e.parentNode, "section").indexOf(e), 0));
             }
         }
         if (!e && y && y.querySelectorAll(".fragment").length > 0) {
@@ -4211,16 +4211,16 @@ function $ce895cd182e417c7$var$z(a, s) {
         };
     }
     function Et() {
-        return $ce895cd182e417c7$var$t(D.wrapper, $ce895cd182e417c7$var$C + ":not(.stack):not([data-visibility=\"uncounted\"])");
+        return $38d07f699c4264a6$var$t(D.wrapper, $38d07f699c4264a6$var$C + ":not(.stack):not([data-visibility=\"uncounted\"])");
     }
     function $() {
-        return $ce895cd182e417c7$var$t(D.wrapper, $ce895cd182e417c7$var$w);
+        return $38d07f699c4264a6$var$t(D.wrapper, $38d07f699c4264a6$var$w);
     }
     function Dt() {
-        return $ce895cd182e417c7$var$t(D.wrapper, ".slides>section>section");
+        return $38d07f699c4264a6$var$t(D.wrapper, ".slides>section>section");
     }
     function Ot() {
-        return $ce895cd182e417c7$var$t(D.wrapper, $ce895cd182e417c7$var$w + ".stack");
+        return $38d07f699c4264a6$var$t(D.wrapper, $38d07f699c4264a6$var$w + ".stack");
     }
     function kt() {
         return $().length > 1;
@@ -4251,7 +4251,7 @@ function $ce895cd182e417c7$var$z(a, s) {
     }
     function Ft() {
         var e = Tt();
-        return $ce895cd182e417c7$var$F({
+        return $38d07f699c4264a6$var$F({
             indexh: e.h,
             indexv: e.v,
             indexf: e.f,
@@ -4261,15 +4261,15 @@ function $ce895cd182e417c7$var$z(a, s) {
     }
     function It(e) {
         if ((typeof e === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(e)) == "object") {
-            Z($ce895cd182e417c7$var$r(e.indexh), $ce895cd182e417c7$var$r(e.indexv), $ce895cd182e417c7$var$r(e.indexf));
-            var t = $ce895cd182e417c7$var$r(e.paused), n = $ce895cd182e417c7$var$r(e.overview);
+            Z($38d07f699c4264a6$var$r(e.indexh), $38d07f699c4264a6$var$r(e.indexv), $38d07f699c4264a6$var$r(e.indexf));
+            var t = $38d07f699c4264a6$var$r(e.paused), n = $38d07f699c4264a6$var$r(e.overview);
             typeof t == "boolean" && t !== lt() && ct(t), typeof n == "boolean" && n !== B.isActive() && B.toggle(n), K.setState(e);
         }
     }
     function Lt() {
         if (Rt(), y && f.autoSlide !== !1) {
             var e = y.querySelector(".current-fragment[data-autoslide]"), n = e ? e.getAttribute("data-autoslide") : null, r = y.parentNode ? y.parentNode.getAttribute("data-autoslide") : null, i = y.getAttribute("data-autoslide");
-            n ? O = parseInt(n, 10) : i ? O = parseInt(i, 10) : r ? O = parseInt(r, 10) : (O = f.autoSlide, y.querySelectorAll(".fragment").length === 0 && $ce895cd182e417c7$var$t(y, "video, audio").forEach(function(e) {
+            n ? O = parseInt(n, 10) : i ? O = parseInt(i, 10) : r ? O = parseInt(r, 10) : (O = f.autoSlide, y.querySelectorAll(".fragment").length === 0 && $38d07f699c4264a6$var$t(y, "video, audio").forEach(function(e) {
                 e.hasAttribute("data-autoplay") && O && e.duration * 1e3 / e.playbackRate > O && (O = e.duration * 1e3 / e.playbackRate + 1e3);
             })), O && !j && !lt() && !B.isActive() && (!at() || _$z.availableRoutes().next || f.loop === !0) && (A = setTimeout(function() {
                 typeof f.autoSlideMethod == "function" ? f.autoSlideMethod() : Kt(), Lt();
@@ -4318,7 +4318,7 @@ function $ce895cd182e417c7$var$z(a, s) {
             });
             else {
                 var n;
-                if (n = f.rtl ? $ce895cd182e417c7$var$t(D.wrapper, $ce895cd182e417c7$var$w + ".future").pop() : $ce895cd182e417c7$var$t(D.wrapper, $ce895cd182e417c7$var$w + ".past").pop(), n && n.classList.contains("stack")) {
+                if (n = f.rtl ? $38d07f699c4264a6$var$t(D.wrapper, $38d07f699c4264a6$var$w + ".future").pop() : $38d07f699c4264a6$var$t(D.wrapper, $38d07f699c4264a6$var$w + ".past").pop(), n && n.classList.contains("stack")) {
                     var e1 = n.querySelectorAll("section").length - 1 || void 0;
                     Z(h - 1, e1);
                 } else f.rtl ? Ht({
@@ -4349,7 +4349,7 @@ function $ce895cd182e417c7$var$z(a, s) {
     function Jt(e) {
         var t = e.data;
         if (typeof t == "string" && t.charAt(0) === "{" && t.charAt(t.length - 1) === "}" && (t = JSON.parse(t), t.method && typeof l[t.method] == "function")) {
-            if ($ce895cd182e417c7$var$E.test(t.method) === !1) {
+            if ($38d07f699c4264a6$var$E.test(t.method) === !1) {
                 var _$e = l[t.method].apply(l, t.args);
                 Ye("callback", {
                     method: t.method,
@@ -4370,7 +4370,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         }));
     }
     function Xt(e) {
-        var t = $ce895cd182e417c7$var$o(e.target, "a[href^=\"#\"]");
+        var t = $38d07f699c4264a6$var$o(e.target, "a[href^=\"#\"]");
         if (t) {
             var n = t.getAttribute("href"), r = H.getIndicesFromHash(n);
             r && (l.slide(r.h, r.v, r.f), e.preventDefault());
@@ -4391,7 +4391,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         at() && f.loop === !1 ? (Z(0, 0), Bt()) : j ? Bt() : zt();
     }
     var tn = {
-        VERSION: $ce895cd182e417c7$var$Te,
+        VERSION: $38d07f699c4264a6$var$Te,
         initialize: Oe,
         configure: Ve,
         destroy: We,
@@ -4503,7 +4503,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         getConfig: function() {
             return f;
         },
-        getQueryHash: $ce895cd182e417c7$var$u,
+        getQueryHash: $38d07f699c4264a6$var$u,
         getSlidePath: H.getHash.bind(H),
         getRevealElement: function() {
             return a;
@@ -4522,7 +4522,7 @@ function $ce895cd182e417c7$var$z(a, s) {
         getPlugin: G.getPlugin.bind(G),
         getPlugins: G.getRegisteredPlugins.bind(G)
     };
-    return $ce895cd182e417c7$var$e(l, $ce895cd182e417c7$var$F($ce895cd182e417c7$var$F({}, tn), {}, {
+    return $38d07f699c4264a6$var$e(l, $38d07f699c4264a6$var$F($38d07f699c4264a6$var$F({}, tn), {}, {
         announceStatus: Fe,
         getStatusText: Ie,
         focus: q,
@@ -4547,13 +4547,13 @@ function $ce895cd182e417c7$var$z(a, s) {
 }
 //#endregion
 //#region js/index.ts
-var $ce895cd182e417c7$export$2e2bcd8739ae039 = $ce895cd182e417c7$var$z, $ce895cd182e417c7$var$V = [];
-$ce895cd182e417c7$export$2e2bcd8739ae039.initialize = function(e) {
+var $38d07f699c4264a6$export$2e2bcd8739ae039 = $38d07f699c4264a6$var$z, $38d07f699c4264a6$var$V = [];
+$38d07f699c4264a6$export$2e2bcd8739ae039.initialize = function(e) {
     var t = document.querySelector(".reveal");
     if (!(t instanceof HTMLElement)) throw Error("Unable to find presentation root (<div class=\"reveal\">).");
-    return Object.assign($ce895cd182e417c7$export$2e2bcd8739ae039, new $ce895cd182e417c7$var$z(t, e)), $ce895cd182e417c7$var$V.map(function(e) {
-        return e($ce895cd182e417c7$export$2e2bcd8739ae039);
-    }), $ce895cd182e417c7$export$2e2bcd8739ae039.initialize();
+    return Object.assign($38d07f699c4264a6$export$2e2bcd8739ae039, new $38d07f699c4264a6$var$z(t, e)), $38d07f699c4264a6$var$V.map(function(e) {
+        return e($38d07f699c4264a6$export$2e2bcd8739ae039);
+    }), $38d07f699c4264a6$export$2e2bcd8739ae039.initialize();
 }, [
     "configure",
     "on",
@@ -4562,23 +4562,23 @@ $ce895cd182e417c7$export$2e2bcd8739ae039.initialize = function(e) {
     "removeEventListener",
     "registerPlugin"
 ].forEach(function(e) {
-    $ce895cd182e417c7$export$2e2bcd8739ae039[e] = function() {
+    $38d07f699c4264a6$export$2e2bcd8739ae039[e] = function() {
         for(var _len = arguments.length, t = new Array(_len), _key = 0; _key < _len; _key++){
             t[_key] = arguments[_key];
         }
         var _n_e;
-        $ce895cd182e417c7$var$V.push(function(n) {
+        $38d07f699c4264a6$var$V.push(function(n) {
             return (_n_e = n[e]).call.apply(_n_e, [
                 null
             ].concat((0, $d03632865b9d1e32$export$71511d61b312f219)(t)));
         });
     };
-}), $ce895cd182e417c7$export$2e2bcd8739ae039.isReady = function() {
+}), $38d07f699c4264a6$export$2e2bcd8739ae039.isReady = function() {
     return !1;
-}, $ce895cd182e417c7$export$2e2bcd8739ae039.VERSION = $ce895cd182e417c7$var$Te;
+}, $38d07f699c4264a6$export$2e2bcd8739ae039.VERSION = $38d07f699c4264a6$var$Te;
 
 
-var $9c3d12fe884e17c3$exports = {};
+var $6b2075e1759cf906$exports = {};
 function $d5e2e1a9c28638d3$export$71511d61b312f219(o) {
     $d5e2e1a9c28638d3$export$71511d61b312f219 = Object.setPrototypeOf ? Object.getPrototypeOf : function getPrototypeOf(o) {
         return o.__proto__ || Object.getPrototypeOf(o);
@@ -4743,7 +4743,7 @@ function $06b0da70ee1bea52$export$71511d61b312f219(Class) {
 
 
 (function(e, t) {
-    "object" == "object" && "object" < "u" ? $9c3d12fe884e17c3$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealHighlight = t());
+    "object" == "object" && "object" < "u" ? $6b2075e1759cf906$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealHighlight = t());
 })(undefined, function() {
     var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescriptor, r = Object.getOwnPropertyNames, i = Object.getPrototypeOf, a = Object.prototype.hasOwnProperty, o = function(e, t) {
         return function() {
@@ -27767,7 +27767,7 @@ function $06b0da70ee1bea52$export$71511d61b312f219(Class) {
 });
 
 
-var $49a82204cfcfb916$exports = {};
+var $50f3125f643fc36e$exports = {};
 function $9b265843ed84cd57$var$asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
     try {
         var info = gen[key](arg);
@@ -27846,7 +27846,7 @@ function $5ba6c6a9bfc2aee9$export$71511d61b312f219(source, excluded) {
 
 
 (function(e, t) {
-    "object" == "object" && "object" < "u" ? $49a82204cfcfb916$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealMarkdown = t());
+    "object" == "object" && "object" < "u" ? $50f3125f643fc36e$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealMarkdown = t());
 })(undefined, function() {
     var _class;
     function e() {
@@ -30305,10 +30305,10 @@ function $5ba6c6a9bfc2aee9$export$71511d61b312f219(source, excluded) {
 });
 
 
-var $71a359463b471cd2$exports = {};
+var $78ba6cf9e6f9b495$exports = {};
 
 (function(e, t) {
-    "object" == "object" && "object" < "u" ? $71a359463b471cd2$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealZoom = t());
+    "object" == "object" && "object" < "u" ? $78ba6cf9e6f9b495$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealZoom = t());
 })(undefined, function() {
     var e = {
         id: "zoom",
@@ -30390,7 +30390,7 @@ var $71a359463b471cd2$exports = {};
 });
 
 
-var $22916b45e4a44718$exports = {};
+var $9e4aa07cf950db67$exports = {};
 
 
 
@@ -30402,7 +30402,7 @@ var $22916b45e4a44718$exports = {};
 
 
 (function(e, t) {
-    "object" == "object" && "object" < "u" ? $22916b45e4a44718$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealNotes = t());
+    "object" == "object" && "object" < "u" ? $9e4aa07cf950db67$exports = t() : typeof define == "function" && define.amd ? define([], t) : (e = (typeof globalThis === "undefined" ? "undefined" : (0, $fd87d4ed65fcea7f$export$71511d61b312f219)(globalThis)) < "u" ? globalThis : e || self, e.RevealNotes = t());
 })(undefined, function() {
     var _class;
     var e = "<!--\n	NOTE: You need to build the notes plugin after making changes to this file.\n-->\n<html lang=\"en\">\n	<head>\n		<meta charset=\"utf-8\">\n\n		<title>reveal.js - Speaker View</title>\n\n		<style>\n			body {\n				font-family: Helvetica;\n				font-size: 18px;\n			}\n\n			#current-slide,\n			#upcoming-slide,\n			#speaker-controls {\n				padding: 6px;\n				box-sizing: border-box;\n				-moz-box-sizing: border-box;\n			}\n\n			#current-slide iframe,\n			#upcoming-slide iframe {\n				width: 100%;\n				height: 100%;\n				border: 1px solid #ddd;\n			}\n\n			#current-slide .label,\n			#upcoming-slide .label {\n				position: absolute;\n				top: 10px;\n				left: 10px;\n				z-index: 2;\n			}\n\n			#connection-status {\n				position: absolute;\n				top: 0;\n				left: 0;\n				width: 100%;\n				height: 100%;\n				z-index: 20;\n				padding: 30% 20% 20% 20%;\n				font-size: 18px;\n				color: #222;\n				background: #fff;\n				text-align: center;\n				box-sizing: border-box;\n				line-height: 1.4;\n			}\n\n			.overlay-element {\n				height: 34px;\n				line-height: 34px;\n				padding: 0 10px;\n				text-shadow: none;\n				background: rgba( 220, 220, 220, 0.8 );\n				color: #222;\n				font-size: 14px;\n			}\n\n			.overlay-element.interactive:hover {\n				background: rgba( 220, 220, 220, 1 );\n			}\n\n			#current-slide {\n				position: absolute;\n				width: 60%;\n				height: 100%;\n				top: 0;\n				left: 0;\n				padding-right: 0;\n			}\n\n			#upcoming-slide {\n				position: absolute;\n				width: 40%;\n				height: 40%;\n				right: 0;\n				top: 0;\n			}\n\n			/* Speaker controls */\n			#speaker-controls {\n				position: absolute;\n				top: 40%;\n				right: 0;\n				width: 40%;\n				height: 60%;\n				overflow: auto;\n				font-size: 18px;\n			}\n\n				.speaker-controls-time.hidden,\n				.speaker-controls-notes.hidden {\n					display: none;\n				}\n\n				.speaker-controls-time .label,\n				.speaker-controls-pace .label,\n				.speaker-controls-notes .label {\n					text-transform: uppercase;\n					font-weight: normal;\n					font-size: 0.66em;\n					color: #666;\n					margin: 0;\n				}\n\n				.speaker-controls-time, .speaker-controls-pace {\n					border-bottom: 1px solid rgba( 200, 200, 200, 0.5 );\n					margin-bottom: 10px;\n					padding: 10px 16px;\n					padding-bottom: 20px;\n					cursor: pointer;\n				}\n\n				.speaker-controls-time .reset-button {\n					opacity: 0;\n					float: right;\n					color: #666;\n					text-decoration: none;\n				}\n				.speaker-controls-time:hover .reset-button {\n					opacity: 1;\n				}\n\n				.speaker-controls-time .timer,\n				.speaker-controls-time .clock {\n					width: 50%;\n				}\n\n				.speaker-controls-time .timer,\n				.speaker-controls-time .clock,\n				.speaker-controls-time .pacing .hours-value,\n				.speaker-controls-time .pacing .minutes-value,\n				.speaker-controls-time .pacing .seconds-value {\n					font-size: 1.9em;\n				}\n\n				.speaker-controls-time .timer {\n					float: left;\n				}\n\n				.speaker-controls-time .clock {\n					float: right;\n					text-align: right;\n				}\n\n				.speaker-controls-time span.mute {\n					opacity: 0.3;\n				}\n\n				.speaker-controls-time .pacing-title {\n					margin-top: 5px;\n				}\n\n				.speaker-controls-time .pacing.ahead {\n					color: blue;\n				}\n\n				.speaker-controls-time .pacing.on-track {\n					color: green;\n				}\n\n				.speaker-controls-time .pacing.behind {\n					color: red;\n				}\n\n				.speaker-controls-notes {\n					padding: 10px 16px;\n				}\n\n				.speaker-controls-notes .value {\n					margin-top: 5px;\n					line-height: 1.4;\n					font-size: 1.2em;\n				}\n\n			/* Layout selector\xa0*/\n			#speaker-layout {\n				position: absolute;\n				top: 10px;\n				right: 10px;\n				color: #222;\n				z-index: 10;\n			}\n				#speaker-layout select {\n					position: absolute;\n					width: 100%;\n					height: 100%;\n					top: 0;\n					left: 0;\n					border: 0;\n					box-shadow: 0;\n					cursor: pointer;\n					opacity: 0;\n\n					font-size: 1em;\n					background-color: transparent;\n\n					-moz-appearance: none;\n					-webkit-appearance: none;\n					-webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n				}\n\n				#speaker-layout select:focus {\n					outline: none;\n					box-shadow: none;\n				}\n\n			.clear {\n				clear: both;\n			}\n\n			/* Speaker layout: Wide */\n			body[data-speaker-layout=\"wide\"] #current-slide,\n			body[data-speaker-layout=\"wide\"] #upcoming-slide {\n				width: 50%;\n				height: 45%;\n				padding: 6px;\n			}\n\n			body[data-speaker-layout=\"wide\"] #current-slide {\n				top: 0;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"wide\"] #upcoming-slide {\n				top: 0;\n				left: 50%;\n			}\n\n			body[data-speaker-layout=\"wide\"] #speaker-controls {\n				top: 45%;\n				left: 0;\n				width: 100%;\n				height: 50%;\n				font-size: 1.25em;\n			}\n\n			/* Speaker layout: Tall */\n			body[data-speaker-layout=\"tall\"] #current-slide,\n			body[data-speaker-layout=\"tall\"] #upcoming-slide {\n				width: 45%;\n				height: 50%;\n				padding: 6px;\n			}\n\n			body[data-speaker-layout=\"tall\"] #current-slide {\n				top: 0;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"tall\"] #upcoming-slide {\n				top: 50%;\n				left: 0;\n			}\n\n			body[data-speaker-layout=\"tall\"] #speaker-controls {\n				padding-top: 40px;\n				top: 0;\n				left: 45%;\n				width: 55%;\n				height: 100%;\n				font-size: 1.25em;\n			}\n\n			/* Speaker layout: Notes only */\n			body[data-speaker-layout=\"notes-only\"] #current-slide,\n			body[data-speaker-layout=\"notes-only\"] #upcoming-slide {\n				display: none;\n			}\n\n			body[data-speaker-layout=\"notes-only\"] #speaker-controls {\n				padding-top: 40px;\n				top: 0;\n				left: 0;\n				width: 100%;\n				height: 100%;\n				font-size: 1.25em;\n			}\n\n			@media screen and (max-width: 1080px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 16px;\n				}\n			}\n\n			@media screen and (max-width: 900px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 14px;\n				}\n			}\n\n			@media screen and (max-width: 800px) {\n				body[data-speaker-layout=\"default\"] #speaker-controls {\n					font-size: 12px;\n				}\n			}\n\n		</style>\n	</head>\n\n	<body>\n\n		<div id=\"connection-status\">Loading speaker view...</div>\n\n		<div id=\"current-slide\"></div>\n		<div id=\"upcoming-slide\"><span class=\"overlay-element label\">Upcoming</span></div>\n		<div id=\"speaker-controls\">\n			<div class=\"speaker-controls-time\">\n				<h4 class=\"label\">Time <span class=\"reset-button\">Click to Reset</span></h4>\n				<div class=\"clock\">\n					<span class=\"clock-value\">0:00 AM</span>\n				</div>\n				<div class=\"timer\">\n					<span class=\"hours-value\">00</span><span class=\"minutes-value\">:00</span><span class=\"seconds-value\">:00</span>\n				</div>\n				<div class=\"clear\"></div>\n\n				<h4 class=\"label pacing-title\" style=\"display: none\">Pacing \u2013 Time to finish current slide</h4>\n				<div class=\"pacing\" style=\"display: none\">\n					<span class=\"hours-value\">00</span><span class=\"minutes-value\">:00</span><span class=\"seconds-value\">:00</span>\n				</div>\n			</div>\n\n			<div class=\"speaker-controls-notes hidden\">\n				<h4 class=\"label\">Notes</h4>\n				<div class=\"value\"></div>\n			</div>\n		</div>\n		<div id=\"speaker-layout\" class=\"overlay-element interactive\">\n			<span class=\"speaker-layout-label\"></span>\n			<select class=\"speaker-layout-dropdown\"></select>\n		</div>\n\n		<script>\n\n			(function() {\n\n				var notes,\n					notesValue,\n					currentState,\n					currentSlide,\n					upcomingSlide,\n					layoutLabel,\n					layoutDropdown,\n					pendingCalls = {},\n					lastRevealApiCallId = 0,\n					connected = false\n\n				var connectionStatus = document.querySelector( '#connection-status' );\n\n				var SPEAKER_LAYOUTS = {\n					'default': 'Default',\n					'wide': 'Wide',\n					'tall': 'Tall',\n					'notes-only': 'Notes only'\n				};\n\n				setupLayout();\n\n				let openerOrigin;\n\n				try {\n					openerOrigin = window.opener.location.origin;\n				}\n				catch ( error ) { console.warn( error ) }\n\n				// In order to prevent XSS, the speaker view will only run if its\n				// opener has the same origin as itself\n				if( window.location.origin !== openerOrigin ) {\n					connectionStatus.innerHTML = 'Cross origin error.<br>The speaker window can only be opened from the same origin.';\n					return;\n				}\n\n				var connectionTimeout = setTimeout( function() {\n					connectionStatus.innerHTML = 'Error connecting to main window.<br>Please try closing and reopening the speaker view.';\n				}, 5000 );\n\n				window.addEventListener( 'message', function( event ) {\n\n					// Validate the origin of all messages to avoid parsing messages\n					// that aren't meant for us. Ignore when running off file:// so\n					// that the speaker view continues to work without a web server.\n					if( window.location.origin !== event.origin && window.location.origin !== 'file://' ) {\n						return\n					}\n\n					clearTimeout( connectionTimeout );\n					connectionStatus.style.display = 'none';\n\n					var data = JSON.parse( event.data );\n\n					// The overview mode is only useful to the reveal.js instance\n					// where navigation occurs so we don't sync it\n					if( data.state ) delete data.state.overview;\n\n					// Messages sent by the notes plugin inside of the main window\n					if( data && data.namespace === 'reveal-notes' ) {\n						if( data.type === 'connect' ) {\n							handleConnectMessage( data );\n						}\n						else if( data.type === 'state' ) {\n							handleStateMessage( data );\n						}\n						else if( data.type === 'return' ) {\n							pendingCalls[data.callId](data.result);\n							delete pendingCalls[data.callId];\n						}\n					}\n					// Messages sent by the reveal.js inside of the current slide preview\n					else if( data && data.namespace === 'reveal' ) {\n						const supportedEvents = [\n							'slidechanged',\n							'fragmentshown',\n							'fragmenthidden',\n							'paused',\n							'resumed',\n							'previewiframe',\n							'previewimage',\n							'previewvideo',\n							'closeoverlay'\n						];\n\n						if( /ready/.test( data.eventName ) ) {\n							// Send a message back to notify that the handshake is complete\n							window.opener.postMessage( JSON.stringify({ namespace: 'reveal-notes', type: 'connected'} ), '*' );\n						}\n						else if( supportedEvents.includes( data.eventName ) && currentState !== JSON.stringify( data.state ) ) {\n							dispatchStateToMainWindow( data.state );\n						}\n					}\n\n				} );\n\n				/**\n				 * Updates the presentation in the main window to match the state\n				 * of the presentation in the notes window.\n				 */\n				const dispatchStateToMainWindow = debounce(( state ) => {\n					window.opener.postMessage( JSON.stringify({ method: 'setState', args: [ state ]} ), '*' );\n				}, 500);\n\n				/**\n				 * Asynchronously calls the Reveal.js API of the main frame.\n				 */\n				function callRevealApi( methodName, methodArguments, callback ) {\n\n					var callId = ++lastRevealApiCallId;\n					pendingCalls[callId] = callback;\n					window.opener.postMessage( JSON.stringify( {\n						namespace: 'reveal-notes',\n						type: 'call',\n						callId: callId,\n						methodName: methodName,\n						arguments: methodArguments\n					} ), '*' );\n\n				}\n\n				/**\n				 * Called when the main window is trying to establish a\n				 * connection.\n				 */\n				function handleConnectMessage( data ) {\n\n					if( connected === false ) {\n						connected = true;\n\n						setupIframes( data );\n						setupKeyboard();\n						setupNotes();\n						setupTimer();\n						setupHeartbeat();\n					}\n\n				}\n\n				/**\n				 * Called when the main window sends an updated state.\n				 */\n				function handleStateMessage( data ) {\n\n					// Store the most recently set state to avoid circular loops\n					// applying the same state\n					currentState = JSON.stringify( data.state );\n\n					// No need for updating the notes in case of fragment changes\n					if ( data.notes ) {\n						notes.classList.remove( 'hidden' );\n						notesValue.style.whiteSpace = data.whitespace;\n						if( data.markdown ) {\n							notesValue.innerHTML = marked.parse( data.notes );\n						}\n						else {\n							notesValue.innerHTML = data.notes;\n						}\n					}\n					else {\n						notes.classList.add( 'hidden' );\n					}\n\n					// Don't show lightboxes in the upcoming slide\n					const { previewVideo, previewImage, previewIframe, ...upcomingState } = data.state;\n\n					// Update the note slides\n					currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ data.state ] }), '*' );\n					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ upcomingState ] }), '*' );\n					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'next' }), '*' );\n\n				}\n\n				// Limit to max one state update per X ms\n				handleStateMessage = debounce( handleStateMessage, 200 );\n\n				/**\n				 * Forward keyboard events to the current slide window.\n				 * This enables keyboard events to work even if focus\n				 * isn't set on the current slide iframe.\n				 *\n				 * Block F5 default handling, it reloads and disconnects\n				 * the speaker notes window.\n				 */\n				function setupKeyboard() {\n\n					document.addEventListener( 'keydown', function( event ) {\n						if( event.keyCode === 116 || ( event.metaKey && event.keyCode === 82 ) ) {\n							event.preventDefault();\n							return false;\n						}\n						currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );\n					} );\n\n				}\n\n				/**\n				 * Creates the preview iframes.\n				 */\n				function setupIframes( data ) {\n\n					var params = [\n						'receiver',\n						'progress=false',\n						'history=false',\n						'transition=none',\n						'autoSlide=0',\n						'backgroundTransition=none'\n					].join( '&' );\n\n					var urlSeparator = /\\?/.test(data.url) ? '&' : '?';\n					var hash = '#/' + data.state.indexh + '/' + data.state.indexv;\n					var currentURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&postMessageEvents=true' + hash;\n					var upcomingURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&controls=false' + hash;\n\n					currentSlide = document.createElement( 'iframe' );\n					currentSlide.setAttribute( 'width', 1280 );\n					currentSlide.setAttribute( 'height', 1024 );\n					currentSlide.setAttribute( 'src', currentURL );\n					document.querySelector( '#current-slide' ).appendChild( currentSlide );\n\n					upcomingSlide = document.createElement( 'iframe' );\n					upcomingSlide.setAttribute( 'width', 640 );\n					upcomingSlide.setAttribute( 'height', 512 );\n					upcomingSlide.setAttribute( 'src', upcomingURL );\n					document.querySelector( '#upcoming-slide' ).appendChild( upcomingSlide );\n\n				}\n\n				/**\n				 * Setup the notes UI.\n				 */\n				function setupNotes() {\n\n					notes = document.querySelector( '.speaker-controls-notes' );\n					notesValue = document.querySelector( '.speaker-controls-notes .value' );\n\n				}\n\n				/**\n				 * We send out a heartbeat at all times to ensure we can\n				 * reconnect with the main presentation window after reloads.\n				 */\n				function setupHeartbeat() {\n\n					setInterval( () => {\n						window.opener.postMessage( JSON.stringify({ namespace: 'reveal-notes', type: 'heartbeat'} ), '*' );\n					}, 1000 );\n\n				}\n\n				function getTimings( callback ) {\n\n					callRevealApi( 'getSlidesAttributes', [], function ( slideAttributes ) {\n						callRevealApi( 'getConfig', [], function ( config ) {\n							var totalTime = config.totalTime;\n							var minTimePerSlide = config.minimumTimePerSlide || 0;\n							var defaultTiming = config.defaultTiming;\n							if ((defaultTiming == null) && (totalTime == null)) {\n								callback(null);\n								return;\n							}\n							// Setting totalTime overrides defaultTiming\n							if (totalTime) {\n								defaultTiming = 0;\n							}\n							var timings = [];\n							for ( var i in slideAttributes ) {\n								var slide = slideAttributes[ i ];\n								var timing = defaultTiming;\n								if( slide.hasOwnProperty( 'data-timing' )) {\n									var t = slide[ 'data-timing' ];\n									timing = parseInt(t);\n									if( isNaN(timing) ) {\n										console.warn(\"Could not parse timing '\" + t + \"' of slide \" + i + \"; using default of \" + defaultTiming);\n										timing = defaultTiming;\n									}\n								}\n								timings.push(timing);\n							}\n							if ( totalTime ) {\n								// After we've allocated time to individual slides, we summarize it and\n								// subtract it from the total time\n								var remainingTime = totalTime - timings.reduce( function(a, b) { return a + b; }, 0 );\n								// The remaining time is divided by the number of slides that have 0 seconds\n								// allocated at the moment, giving the average time-per-slide on the remaining slides\n								var remainingSlides = (timings.filter( function(x) { return x == 0 }) ).length\n								var timePerSlide = Math.round( remainingTime / remainingSlides, 0 )\n								// And now we replace every zero-value timing with that average\n								timings = timings.map( function(x) { return (x==0 ? timePerSlide : x) } );\n							}\n							var slidesUnderMinimum = timings.filter( function(x) { return (x < minTimePerSlide) } ).length\n							if ( slidesUnderMinimum ) {\n								message = \"The pacing time for \" + slidesUnderMinimum + \" slide(s) is under the configured minimum of \" + minTimePerSlide + \" seconds. Check the data-timing attribute on individual slides, or consider increasing the totalTime or minimumTimePerSlide configuration options (or removing some slides).\";\n								alert(message);\n							}\n							callback( timings );\n						} );\n					} );\n\n				}\n\n				/**\n				 * Return the number of seconds allocated for presenting\n				 * all slides up to and including this one.\n				 */\n				function getTimeAllocated( timings, callback ) {\n\n					callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n						var allocated = 0;\n						for (var i in timings.slice(0, currentSlide + 1)) {\n							allocated += timings[i];\n						}\n						callback( allocated );\n					} );\n\n				}\n\n				/**\n				 * Create the timer and clock and start updating them\n				 * at an interval.\n				 */\n				function setupTimer() {\n\n					var start = new Date(),\n					timeEl = document.querySelector( '.speaker-controls-time' ),\n					clockEl = timeEl.querySelector( '.clock-value' ),\n					hoursEl = timeEl.querySelector( '.hours-value' ),\n					minutesEl = timeEl.querySelector( '.minutes-value' ),\n					secondsEl = timeEl.querySelector( '.seconds-value' ),\n					pacingTitleEl = timeEl.querySelector( '.pacing-title' ),\n					pacingEl = timeEl.querySelector( '.pacing' ),\n					pacingHoursEl = pacingEl.querySelector( '.hours-value' ),\n					pacingMinutesEl = pacingEl.querySelector( '.minutes-value' ),\n					pacingSecondsEl = pacingEl.querySelector( '.seconds-value' );\n\n					var timings = null;\n					getTimings( function ( _timings ) {\n\n						timings = _timings;\n						if (_timings !== null) {\n							pacingTitleEl.style.removeProperty('display');\n							pacingEl.style.removeProperty('display');\n						}\n\n						// Update once directly\n						_updateTimer();\n\n						// Then update every second\n						setInterval( _updateTimer, 1000 );\n\n					} );\n\n\n					function _resetTimer() {\n\n						if (timings == null) {\n							start = new Date();\n							_updateTimer();\n						}\n						else {\n							// Reset timer to beginning of current slide\n							getTimeAllocated( timings, function ( slideEndTimingSeconds ) {\n								var slideEndTiming = slideEndTimingSeconds * 1000;\n								callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n									var currentSlideTiming = timings[currentSlide] * 1000;\n									var previousSlidesTiming = slideEndTiming - currentSlideTiming;\n									var now = new Date();\n									start = new Date(now.getTime() - previousSlidesTiming);\n									_updateTimer();\n								} );\n							} );\n						}\n\n					}\n\n					timeEl.addEventListener( 'click', function() {\n						_resetTimer();\n						return false;\n					} );\n\n					function _displayTime( hrEl, minEl, secEl, time) {\n\n						var sign = Math.sign(time) == -1 ? \"-\" : \"\";\n						time = Math.abs(Math.round(time / 1000));\n						var seconds = time % 60;\n						var minutes = Math.floor( time / 60 ) % 60 ;\n						var hours = Math.floor( time / ( 60 * 60 )) ;\n						hrEl.innerHTML = sign + zeroPadInteger( hours );\n						if (hours == 0) {\n							hrEl.classList.add( 'mute' );\n						}\n						else {\n							hrEl.classList.remove( 'mute' );\n						}\n						minEl.innerHTML = ':' + zeroPadInteger( minutes );\n						if (hours == 0 && minutes == 0) {\n							minEl.classList.add( 'mute' );\n						}\n						else {\n							minEl.classList.remove( 'mute' );\n						}\n						secEl.innerHTML = ':' + zeroPadInteger( seconds );\n					}\n\n					function _updateTimer() {\n\n						var diff, hours, minutes, seconds,\n						now = new Date();\n\n						diff = now.getTime() - start.getTime();\n\n						clockEl.innerHTML = now.toLocaleTimeString( 'en-US', { hour12: true, hour: '2-digit', minute:'2-digit' } );\n						_displayTime( hoursEl, minutesEl, secondsEl, diff );\n						if (timings !== null) {\n							_updatePacing(diff);\n						}\n\n					}\n\n					function _updatePacing(diff) {\n\n						getTimeAllocated( timings, function ( slideEndTimingSeconds ) {\n							var slideEndTiming = slideEndTimingSeconds * 1000;\n\n							callRevealApi( 'getSlidePastCount', [], function ( currentSlide ) {\n								var currentSlideTiming = timings[currentSlide] * 1000;\n								var timeLeftCurrentSlide = slideEndTiming - diff;\n								if (timeLeftCurrentSlide < 0) {\n									pacingEl.className = 'pacing behind';\n								}\n								else if (timeLeftCurrentSlide < currentSlideTiming) {\n									pacingEl.className = 'pacing on-track';\n								}\n								else {\n									pacingEl.className = 'pacing ahead';\n								}\n								_displayTime( pacingHoursEl, pacingMinutesEl, pacingSecondsEl, timeLeftCurrentSlide );\n							} );\n						} );\n					}\n\n				}\n\n				/**\n				 * Sets up the speaker view layout and layout selector.\n				 */\n				function setupLayout() {\n\n					layoutDropdown = document.querySelector( '.speaker-layout-dropdown' );\n					layoutLabel = document.querySelector( '.speaker-layout-label' );\n\n					// Render the list of available layouts\n					for( var id in SPEAKER_LAYOUTS ) {\n						var option = document.createElement( 'option' );\n						option.setAttribute( 'value', id );\n						option.textContent = SPEAKER_LAYOUTS[ id ];\n						layoutDropdown.appendChild( option );\n					}\n\n					// Monitor the dropdown for changes\n					layoutDropdown.addEventListener( 'change', function( event ) {\n\n						setLayout( layoutDropdown.value );\n\n					}, false );\n\n					// Restore any currently persisted layout\n					setLayout( getLayout() );\n\n				}\n\n				/**\n				 * Sets a new speaker view layout. The layout is persisted\n				 * in local storage.\n				 */\n				function setLayout( value ) {\n\n					var title = SPEAKER_LAYOUTS[ value ];\n\n					layoutLabel.innerHTML = 'Layout' + ( title ? ( ': ' + title ) : '' );\n					layoutDropdown.value = value;\n\n					document.body.setAttribute( 'data-speaker-layout', value );\n\n					// Persist locally\n					if( supportsLocalStorage() ) {\n						window.localStorage.setItem( 'reveal-speaker-layout', value );\n					}\n\n				}\n\n				/**\n				 * Returns the ID of the most recently set speaker layout\n				 * or our default layout if none has been set.\n				 */\n				function getLayout() {\n\n					if( supportsLocalStorage() ) {\n						var layout = window.localStorage.getItem( 'reveal-speaker-layout' );\n						if( layout ) {\n							return layout;\n						}\n					}\n\n					// Default to the first record in the layouts hash\n					for( var id in SPEAKER_LAYOUTS ) {\n						return id;\n					}\n\n				}\n\n				function supportsLocalStorage() {\n\n					try {\n						localStorage.setItem('test', 'test');\n						localStorage.removeItem('test');\n						return true;\n					}\n					catch( e ) {\n						return false;\n					}\n\n				}\n\n				function zeroPadInteger( num ) {\n\n					var str = '00' + parseInt( num );\n					return str.substring( str.length - 2 );\n\n				}\n\n				/**\n				 * Limits the frequency at which a function can be called.\n				 */\n				function debounce( fn, ms ) {\n\n					var lastTime = 0,\n						timeout;\n\n					return function() {\n\n						var args = arguments;\n						var context = this;\n\n						clearTimeout( timeout );\n\n						var timeSinceLastCall = Date.now() - lastTime;\n						if( timeSinceLastCall > ms ) {\n							fn.apply( context, args );\n							lastTime = Date.now();\n						}\n						else {\n							timeout = setTimeout( function() {\n								fn.apply( context, args );\n								lastTime = Date.now();\n							}, ms - timeSinceLastCall );\n						}\n\n					}\n\n				}\n\n			})();\n\n		</script>\n	</body>\n</html>";
@@ -34271,17 +34271,17 @@ window.pixuTalks = {
 
 
 addEventListener("DOMContentLoaded", function() {
-    var deck = new (0, $ce895cd182e417c7$export$2e2bcd8739ae039)(document.querySelector(".reveal"), (0, $b78b26fcbabe00d9$export$71511d61b312f219)((0, $a2c8920e7ca519d1$export$71511d61b312f219)({}, window.location.href.includes("?print-pdf") && {
+    var deck = new (0, $38d07f699c4264a6$export$2e2bcd8739ae039)(document.querySelector(".reveal"), (0, $b78b26fcbabe00d9$export$71511d61b312f219)((0, $a2c8920e7ca519d1$export$71511d61b312f219)({}, window.location.href.includes("?print-pdf") && {
         pdfSeparateFragments: false
     }), {
         hash: true,
         // plugins: [Markdown, Highlight, Zoom, Notes, Menu, Toolbar, Header],
         // plugins: [Markdown, Highlight, Zoom, Notes, Toolbar, Menu],
         plugins: [
-            (0, (/*@__PURE__*/$parcel$interopDefault($49a82204cfcfb916$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($9c3d12fe884e17c3$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($71a359463b471cd2$exports))),
-            (0, (/*@__PURE__*/$parcel$interopDefault($22916b45e4a44718$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($50f3125f643fc36e$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($6b2075e1759cf906$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($78ba6cf9e6f9b495$exports))),
+            (0, (/*@__PURE__*/$parcel$interopDefault($9e4aa07cf950db67$exports))),
             (0, $c58bc416ad2855de$export$2e2bcd8739ae039)
         ],
         navigationMode: "linear",
@@ -35745,4 +35745,4 @@ var $83c845a9cff0bf70$export$8b945488eb7acd70 = function() {
 });
 
 })();
-//# sourceMappingURL=talk-kinetic-css-osdsay-2026.4fd12199.js.map
+//# sourceMappingURL=talk-kinetic-css-osdsay-2026.c44e2b51.js.map
